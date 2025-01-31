@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adnan\WebForm1.aspx" />
+    <Content Include="adnan\App_Data\Books.txt" />
+    <Content Include="adnan\AddBook.aspx" />
+    <Content Include="adnan\Images\Books\math.jpg" />
     <Content Include="hazem\WebForm1.aspx" />
     <Content Include="jana\WebForm1.aspx" />
     <Content Include="nada\WebForm1.aspx" />
@@ -76,12 +78,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adnan\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="adnan\AddBook.aspx.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adnan\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="adnan\AddBook.aspx.designer.cs">
+      <DependentUpon>AddBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="hazem\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -129,6 +131,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
