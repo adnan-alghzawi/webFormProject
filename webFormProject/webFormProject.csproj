@@ -71,6 +71,13 @@
     <Content Include="hazem\WebForm1.aspx" />
     <Content Include="jana\WebForm1.aspx" />
     <Content Include="nada\WebForm1.aspx" />
+    <Content Include="sally\imgs\meetingRoom1.jpg" />
+    <Content Include="sally\imgs\Lumina-removebg-preview.png" />
+    <Content Include="sally\imgs\Lumina__1_-removebg-preview.png" />
+    <Content Include="sally\imgs\privateRoom1.jpg" />
+    <Content Include="sally\imgs\persRoom1.jpeg" />
+    <Content Include="sally\RoomAdmin.aspx" />
+    <Content Include="sally\rooms.txt" />
     <Content Include="sally\WebForm1.aspx" />
     <Content Include="suleiman\WebForm1.aspx" />
     <Content Include="Web.config" />
@@ -105,6 +112,13 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sally\RoomAdmin.aspx.cs">
+      <DependentUpon>RoomAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sally\RoomAdmin.aspx.designer.cs">
+      <DependentUpon>RoomAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sally\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,6 +143,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
