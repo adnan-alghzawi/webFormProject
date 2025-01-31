@@ -22,16 +22,16 @@ namespace webFormProject.adnan
             string folderPath = Server.MapPath("~/adnan/App_Data/");
             string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
 
-            // التأكد من وجود مجلد App_Data وإنشاؤه إذا لم يكن موجودًا
+            
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }
 
-            // التأكد من وجود ملف Books.txt وإنشاؤه إذا لم يكن موجودًا
+            
             if (!File.Exists(filePath))
             {
-                File.Create(filePath).Close(); // إنشاء الملف وإغلاقه مباشرة
+                File.Create(filePath).Close(); 
             }
 
             string bookID = txtBookID.Text.Trim();
@@ -51,18 +51,18 @@ namespace webFormProject.adnan
                 // التحقق من نوع الصورة
                 if (!validExtensions.Contains(fileExtension))
                 {
-                    lblMessage.Text = "⚠️ الرجاء رفع صورة بصيغة JPG أو PNG أو GIF أو WEBP فقط!";
+                    lblMessage.Text = "⚠️  please uploade photo like JPG or PNG or GIF or WEBP only!";
                     return;
                 }
 
-                // التحقق من حجم الصورة (يجب أن يكون أقل من 2MB)
+              
                 if (fuImage.PostedFile.ContentLength > 2 * 1024 * 1024)
                 {
-                    lblMessage.Text = "⚠️ حجم الصورة يجب أن يكون أقل من 2MB!";
+                    lblMessage.Text = "⚠️  the size of image should be less than 2MB!";
                     return;
                 }
 
-                // تحديد مسار حفظ الصورة
+                
                 string imageFolder = Server.MapPath("~/adnan/Images/Books/");
                 if (!Directory.Exists(imageFolder))
                 {
@@ -73,26 +73,26 @@ namespace webFormProject.adnan
                 string savePath = Path.Combine(imageFolder, fileName);
                 fuImage.SaveAs(savePath);
 
-                // حفظ المسار النسبي للصورة
+                
                 imagePath = "~/adnan/Images/Books/" + fileName;
             }
 
-            // كتابة بيانات الكتاب في ملف Books.txt
+            
             string bookData = $"{bookID}|{bookName}|{type}|{level}|{imagePath}|{description}|{availability}";
 
             try
             {
-                // كتابة بيانات الكتاب في ملف Books.txt
+               
                 using (StreamWriter sw = new StreamWriter(filePath, true))
                 {
                     sw.WriteLine(bookData);
                 }
 
-                lblMessage.Text = "✅ تمت إضافة الكتاب بنجاح!";
+                lblMessage.Text = "✅    Book added!";
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "❌ خطأ في كتابة البيانات: " + ex.Message;
+                lblMessage.Text = "❌ Rewrite the data : " + ex.Message;
             }
 
             ClearFields();
