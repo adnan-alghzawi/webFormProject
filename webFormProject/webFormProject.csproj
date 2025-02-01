@@ -97,6 +97,7 @@
     <Content Include="sally\RoomAdmin.aspx" />
     <Content Include="sally\rooms.txt" />
     <Content Include="sally\edit.aspx" />
+    <Content Include="suleiman\aboutUs.aspx" />
     <Content Include="suleiman\contactUs.aspx" />
     <Content Include="suleiman\feedbackAdmin.aspx" />
     <Content Include="suleiman\feedback.txt" />
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="sally\edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suleiman\aboutUs.aspx.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suleiman\aboutUs.aspx.designer.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="suleiman\contactUs.aspx.cs">
       <DependentUpon>contactUs.aspx</DependentUpon>
