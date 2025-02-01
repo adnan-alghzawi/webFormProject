@@ -43,10 +43,13 @@ namespace webFormProject.sally
                             card.AppendFormat("<img class=\"card-img-top\" src=\"{0}\" alt=\"Card image cap\">", imgPath);
                             card.Append("<div class=\"card-body\">");
                             card.AppendFormat("<h5 class=\"card-title\">{0}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{1} person</h5>", columns[1], columns[3]);
-                            card.AppendFormat("<p class=\"card-text\">Type: {0}<br/>" +
-                                "Description: {1}<br/>" +
+                            card.AppendFormat("<p class=\"card-text\">" +
+                                "ID:{0}<br/>" +
+                                "Type: {1}<br/>" +
+                                "Description: {2}<br/>" +
 
-                                "Available: {2}</p>", columns[2], columns[5], columns[6]);
+                                "Available: {3}</p>",columns[0], columns[2], columns[5], columns[6]);
+                            card.Append(" <asp:Button ID=\"EditRooms\" runat=\"server\" Text=\"Edit Rooms\" CssClass=\"btn btn-green1 my-2 my-sm-0 \"></asp:Button>");
                             card.Append("</div>");
                             card.Append("</div>");
                         }
@@ -56,10 +59,11 @@ namespace webFormProject.sally
                             card.AppendFormat("<img class=\"card-img-top\" src=\"{0}\" alt=\"Card image cap\">", imgPath);
                             card.Append("<div class=\"card-body\">");
                             card.AppendFormat("<h5 class=\"card-title text-muted\">{0}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{1} person</h5>", columns[1], columns[3]);
-                            card.AppendFormat("<p class=\"card-text text-muted\">Type: {0}<br/>" +
-                                "Description: {1}<br/>" +
-
-                                "Available: {2}</p>", columns[2], columns[5], columns[6]);
+                            card.AppendFormat("<p class=\"card-text text-muted\">" +
+                                "ID:{0}<br/>" +
+                                "Type: {1}<br/>" +
+                                "Description: {2}<br/>" +
+                                "Available: {3}</p>", columns[0], columns[2], columns[5], columns[6]);
                             card.Append("</div>");
                             card.Append("</div>");
                         }
@@ -77,6 +81,12 @@ namespace webFormProject.sally
         protected void homeTab_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void EditRoom_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("edit.aspx");
         }
 
         protected void aboutTab_Click(object sender, EventArgs e)
@@ -100,7 +110,7 @@ namespace webFormProject.sally
                     using (File.Create(filePath2)) { }
                     filePath2 = Server.MapPath("~/sally/request.txt");
                 }
-
+                File.WriteAllText(filePath2, "");
                 string[] rooms = File.ReadAllLines(filePath);
 
                 foreach (string line in rooms)
@@ -113,11 +123,19 @@ namespace webFormProject.sally
                         File.WriteAllText(filePath2, content);
                         break;
                     }
+
+                    if (request == room[2].Substring(0, room[2].IndexOf(" ")).ToLower()|| request == room[2].Trim())
+                    {
+                        
+                        string content = $"{room[0]},{room[1]},{room[2]},{room[3]},{room[4]},{room[5]},{room[6]}";
+                        File.AppendAllText(filePath2, content + "\n");
+
+                    }
                 }
                 Load("request.txt");
             }
            
-           
+            
         }
     }
 }

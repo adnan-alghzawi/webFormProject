@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RoomAdmin.aspx.cs" Inherits="webFormProject.sally.RoomAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="add.aspx.cs" Inherits="webFormProject.sally.add" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>home</title>
+    <title></title>
     <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -99,19 +99,67 @@
                     </div>
                 </div>
             </nav>
+
             <div class="container my-5">
                 <div class="row d-flex w-100">
-                    <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server"></asp:TextBox>
-                    <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>
-                    <asp:Button ID="EditRooms" runat="server" Text="Edit Rooms" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="EditRoom_Click"></asp:Button>
-                    <asp:Button ID="DeleteRooms" runat="server" Text="Delete Rooms" CssClass="btn btn-green1 my-2 my-sm-0"></asp:Button>
-                    <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0"></asp:Button>
+                    <asp:Button ID="back" runat="server" Text="bcak" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="Back_Click"></asp:Button>
                 </div>
+                <asp:Label ID="lblMessage2" runat="server" CssClass="text-success mt-3"></asp:Label>
             </div>
-            <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
+            <div class="container bg-umber d-flex flex-column align-items-start text-white justify-content-center w-50 mt-5 p-5">
+                <div class="row w-100">
+                    <div class="col-md-6">
+                        <label class="form-label">Room ID:</label>
+                        <asp:TextBox ID="roomID" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fuImage">Room Image:</label>
+                        <asp:FileUpload ID="fuImage" runat="server" CssClass="form-control" />
+                    </div>
+                </div>
+                <div class="row w-100">
+                    <div class="col-md-6">
+                        <label class="form-label">Room name:</label>
+                        <asp:TextBox ID="roomName" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="type" class="form-label">Type:</label>
+                        <asp:DropDownList ID="type" runat="server" CssClass="form-control">
+                            <asp:ListItem Value="Private room">Private room</asp:ListItem>
+                            <asp:ListItem Value="Meeting room">Meeting room</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <br />
+                <br />
+
+                <div class="row w-100">
+                    <div class="col-md-6">
+                        <label class="form-label">Capacity:</label>
+                        <asp:TextBox ID="Capacity" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+
+                        <label for="Available" class="form-label">Available:</label>
+                        <asp:DropDownList ID="Available" runat="server" CssClass="form-control">
+                            <asp:ListItem Value="true">Available</asp:ListItem>
+                            <asp:ListItem Value="false">Not Available</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <label>description:</label>
+                <asp:TextBox ID="description" runat="server" CssClass="form-control"></asp:TextBox>
+
+
+                <br />
+                <br />
+                <asp:Button CssClass="btn btn-light" ID="addroom" runat="server" Text="add Room" OnClick="add_Click" />
+                <asp:Label ID="res" runat="server" Visible="false"></asp:Label>
+                <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3"></asp:Label>
             </div>
         </div>
     </form>
-
 </body>
 </html>
