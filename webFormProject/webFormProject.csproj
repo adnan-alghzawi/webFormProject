@@ -70,6 +70,9 @@
     <Content Include="adnan\App_Data\Books.txt" />
     <Content Include="adnan\AddBook.aspx" />
     <Content Include="adnan\Images\Books\math.jpg" />
+    <Content Include="adnan\EditBook.aspx" />
+    <Content Include="adnan\Images\Books\math2.jpg" />
+    <Content Include="adnan\ShowBooks.aspx" />
     <Content Include="hazem\WebForm1.aspx" />
     <Content Include="jana\WebForm1.aspx" />
     <Content Include="nada\WebForm1.aspx" />
@@ -92,6 +95,20 @@
     </Compile>
     <Compile Include="adnan\AddBook.aspx.designer.cs">
       <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adnan\EditBook.aspx.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adnan\EditBook.aspx.designer.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adnan\ShowBooks.aspx.cs">
+      <DependentUpon>ShowBooks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adnan\ShowBooks.aspx.designer.cs">
+      <DependentUpon>ShowBooks.aspx</DependentUpon>
     </Compile>
     <Compile Include="hazem\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
