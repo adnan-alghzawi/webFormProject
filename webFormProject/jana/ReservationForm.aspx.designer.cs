@@ -11,7 +11,7 @@ namespace webFormProject.jana
 {
 
 
-    public partial class ViewRooms
+    public partial class ReservationForm
     {
 
         /// <summary>
@@ -24,111 +24,93 @@ namespace webFormProject.jana
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// homeTab control.
+        /// roomID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton homeTab;
+        protected global::System.Web.UI.WebControls.TextBox roomID;
 
         /// <summary>
-        /// aboutTab control.
+        /// roomType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton aboutTab;
+        protected global::System.Web.UI.WebControls.TextBox roomType;
 
         /// <summary>
-        /// contactTab control.
+        /// fullName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton contactTab;
+        protected global::System.Web.UI.WebControls.TextBox fullName;
 
         /// <summary>
-        /// books control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton books;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// rooms control.
+        /// phoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton rooms;
+        protected global::System.Web.UI.WebControls.TextBox phoneNumber;
 
         /// <summary>
-        /// login control.
+        /// reservationDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button login;
+        protected global::System.Web.UI.WebControls.TextBox reservationDate;
 
         /// <summary>
-        /// rigester control.
+        /// startTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rigester;
+        protected global::System.Web.UI.WebControls.TextBox startTime;
 
         /// <summary>
-        /// search control.
+        /// endTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search;
+        protected global::System.Web.UI.WebControls.TextBox endTime;
 
         /// <summary>
-        /// SearchRoom control.
+        /// specialRequests control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchRoom;
+        protected global::System.Web.UI.WebControls.TextBox specialRequests;
 
         /// <summary>
-        /// resultContainer control.
+        /// btnReserve control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal resultContainer;
-
-        /// <summary>
-        /// ddlFilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFilter;
-
-        /// <summary>
-        /// Cards control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cards;
+        protected global::System.Web.UI.WebControls.Button btnReserve;
     }
 }

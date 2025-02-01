@@ -105,7 +105,7 @@
             <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
     <a class="navbar-brand ps-3 text-white" href="#">
-        <img class="imglogo" src="imgs/Lumina_1-removebg-preview.png" /></a>
+        <img class="imglogo" src="../sally/imgs/Lumina_1-removebg-preview.png" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -139,9 +139,10 @@
              
              <div class="search">
                
-                 <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server"></asp:TextBox>
-                    <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>
+                 <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server" placeholder="Search about room "></asp:TextBox>
+                    <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 "  OnClick="SearchRoom_Click"></asp:Button>
                       <div class="filter-container"> 
+                          <asp:Literal ID="resultContainer" runat="server"></asp:Literal>
                      <asp:DropDownList ID="ddlFilter" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlFilter_SelectedIndexChanged" >
                         <asp:ListItem Value="AllRoom">All Rooms</asp:ListItem>
                          <asp:ListItem Value="PrivateRoom">Private Rooms</asp:ListItem>
