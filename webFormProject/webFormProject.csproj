@@ -75,6 +75,11 @@
     <Content Include="hazem\registration.aspx" />
     <Content Include="adnan\App_Data\Books.txt" />
     <Content Include="adnan\AddBook.aspx" />
+    <Content Include="adnan\App_Data\BorrowRequests.txt" />
+    <Content Include="adnan\App_Data\UserNotifications.txt" />
+    <Content Include="adnan\BorrowBook.aspx" />
+    <Content Include="adnan\CheckBorrowStatus.aspx" />
+    <Content Include="adnan\ConfirmBorrow.aspx" />
     <Content Include="adnan\Images\Books\math.jpg" />
     <Content Include="adnan\EditBook.aspx" />
     <Content Include="adnan\Images\Books\math2.jpg" />
@@ -110,6 +115,27 @@
     </Compile>
     <Compile Include="adnan\AddBook.aspx.designer.cs">
       <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adnan\BorrowBook.aspx.cs">
+      <DependentUpon>BorrowBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adnan\BorrowBook.aspx.designer.cs">
+      <DependentUpon>BorrowBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adnan\CheckBorrowStatus.aspx.cs">
+      <DependentUpon>CheckBorrowStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adnan\CheckBorrowStatus.aspx.designer.cs">
+      <DependentUpon>CheckBorrowStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adnan\ConfirmBorrow.aspx.cs">
+      <DependentUpon>ConfirmBorrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adnan\ConfirmBorrow.aspx.designer.cs">
+      <DependentUpon>ConfirmBorrow.aspx</DependentUpon>
     </Compile>
     <Compile Include="adnan\EditBook.aspx.cs">
       <DependentUpon>EditBook.aspx</DependentUpon>
