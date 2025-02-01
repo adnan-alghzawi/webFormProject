@@ -70,7 +70,6 @@
     <Content Include="adnan\WebForm1.aspx" />
     <Content Include="hazem\data\Hazem.txt" />
     <Content Include="hazem\data\logged.txt" />
-    <Content Include="hazem\editprofile.aspx" />
     <Content Include="hazem\LogIn.aspx" />
     <Content Include="hazem\profile.aspx" />
     <Content Include="hazem\registration.aspx" />
@@ -125,13 +124,6 @@
     </Compile>
     <Compile Include="adnan\ShowBooks.aspx.designer.cs">
       <DependentUpon>ShowBooks.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="hazem\editprofile.aspx.cs">
-      <DependentUpon>editprofile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="hazem\editprofile.aspx.designer.cs">
-      <DependentUpon>editprofile.aspx</DependentUpon>
     </Compile>
     <Compile Include="hazem\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
