@@ -68,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adnan\WebForm1.aspx" />
+    <Content Include="hazem\data\Hazem.txt" />
+    <Content Include="hazem\data\logged.txt" />
+    <Content Include="hazem\editprofile.aspx" />
+    <Content Include="hazem\LogIn.aspx" />
+    <Content Include="hazem\profile.aspx" />
+    <Content Include="hazem\registration.aspx" />
     <Content Include="hazem\WebForm1.aspx" />
     <Content Include="jana\WebForm1.aspx" />
     <Content Include="nada\WebForm1.aspx" />
@@ -82,6 +88,34 @@
     </Compile>
     <Compile Include="adnan\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hazem\editprofile.aspx.cs">
+      <DependentUpon>editprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hazem\editprofile.aspx.designer.cs">
+      <DependentUpon>editprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hazem\LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hazem\LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hazem\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hazem\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hazem\registration.aspx.cs">
+      <DependentUpon>registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hazem\registration.aspx.designer.cs">
+      <DependentUpon>registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="hazem\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
