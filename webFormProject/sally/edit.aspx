@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RoomAdmin.aspx.cs" Inherits="webFormProject.sally.RoomAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="edit.aspx.cs" Inherits="webFormProject.sally.WebForm1" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>home</title>
+    <title>edit rooms</title>
     <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -62,6 +62,24 @@
             margin-right: 5px;
             width: 10% !important;
         }
+
+        .btn-red {
+            --bs-btn-color: #fff !important;
+            --bs-btn-bg: #7a0505 !important;
+            --bs-btn-border-color: #7a0505;
+            --bs-btn-hover-color: #7a0505;
+            --bs-btn-hover-bg: #fff;
+            --bs-btn-hover-border-color: #7a0505 !important;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #fff;
+            --bs-btn-active-bg: #7a0505;
+            --bs-btn-active-border-color: #7a0505;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #fff;
+            --bs-btn-disabled-bg: #7a0505;
+            --bs-btn-disabled-border-color: #7a0505;
+            border-radius: 170px !important;
+        }
     </style>
 </head>
 <body>
@@ -99,19 +117,91 @@
                     </div>
                 </div>
             </nav>
+
             <div class="container my-5">
                 <div class="row d-flex w-100">
+                    <label>Search by ID:</label>
                     <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server"></asp:TextBox>
                     <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>
-                    <asp:Button ID="EditRooms" runat="server" Text="Edit Rooms" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="EditRoom_Click"></asp:Button>
-                    <asp:Button ID="DeleteRooms" runat="server" Text="Delete Rooms" CssClass="btn btn-green1 my-2 my-sm-0"></asp:Button>
-                    <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0"></asp:Button>
+
+                    <asp:Button ID="back" runat="server" Text="bcak" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="Back_Click"></asp:Button>
                 </div>
+                <asp:Label ID="lblMessage2" runat="server" CssClass="text-success mt-3"></asp:Label>
             </div>
-            <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
+
+
+            <div class="container bg-umber d-flex flex-column align-items-start text-white justify-content-center w-50 mt-5 p-5">
+                <img id="image" runat="server" class="w-100" />
+                <br />
+                <br />
+                <div class="row w-100">
+                    <div class="col-md-6">
+                        <label class="form-label">Room name:</label>
+                        <asp:TextBox ID="roomName" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="type" class="form-label">Type:</label>
+                        <asp:DropDownList ID="type" runat="server" CssClass="form-control">
+                            <asp:ListItem Value="Private room">Private room</asp:ListItem>
+                            <asp:ListItem Value="Meeting room">Meeting room</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <br />
+                <br />
+
+                <div class="row w-100">
+                    <div class="col-md-6">
+                        <label class="form-label">Capacity:</label>
+                        <asp:TextBox ID="Capacity" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+
+                        <label for="Available" class="form-label">Available:</label>
+                        <asp:DropDownList ID="Available" runat="server" CssClass="form-control">
+                            <asp:ListItem Value="true">Available</asp:ListItem>
+                            <asp:ListItem Value="false">Not Available</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <label>description:</label>
+                <asp:TextBox ID="description" runat="server" CssClass="form-control"></asp:TextBox>
+
+
+                <br />
+                <br />
+                <div class="row">
+                    <asp:Button CssClass="btn btn-light" ID="Button1" runat="server" Text="edit room" OnClick="edit_Click" />
+                    <asp:Button CssClass="btn btn-red" ID="delete" runat="server" Text="delete room" OnClientClick="return confirmDelete();" OnClick="delete_Click" />
+                </div>
+                <asp:Label ID="res" runat="server" Visible="false"></asp:Label>
+                <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3"></asp:Label>
             </div>
         </div>
     </form>
+    <script>
+        function confirmDelete() {
+            // عرض التنبيه باستخدام SweetAlert2
+            Swal.fire({
+                title: 'ِAre you sure?',
+                text: 'Do you want to delete this room?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Delete',
+                cancelButtonText: 'Cancel',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // إذا أكد المستخدم الحذف، نسمح بإرسال الطلب إلى الخادم
+                    __doPostBack('<%= delete.ClientID %>', '');
+                }
+            });
+            return false; // منع إرسال النموذج مباشرة
+        }
 
+    </script>
 </body>
 </html>

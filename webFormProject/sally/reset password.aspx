@@ -1,12 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RoomAdmin.aspx.cs" Inherits="webFormProject.sally.RoomAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reset password.aspx.cs" Inherits="webFormProject.sally.reset_password" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>home</title>
-    <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
-
+    <title>reset password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -60,13 +58,14 @@
             --bs-btn-disabled-border-color: #22333B;
             border-radius: 170px !important;
             margin-right: 5px;
-            width: 10% !important;
+           
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+
             <!-- navbar -->
             <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
                 <a class="navbar-brand ps-3 text-white" href="#">
@@ -78,19 +77,19 @@
                     <ul class="navbar-nav ">
                         <li class="nav-item ">
 
-                            <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
+                            <asp:LinkButton ID="homeTab" CssClass="nav-link active text-white" runat="server" Text="Home"></asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
+                            <asp:LinkButton  ID="aboutTab" runat="server" Text="About Us" CssClass="nav-link text-white"></asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
+                            <asp:LinkButton  ID="contactTab" runat="server" Text="Contact Us" CssClass="nav-link text-white"></asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="contactTab_Click" Text="Books"></asp:LinkButton>
+                            <asp:LinkButton ID="books" runat="server" Text="Books" CssClass="nav-link text-white"></asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="contactTab_Click" Text="Meeting Rooms"></asp:LinkButton>
+                            <asp:LinkButton ID="rooms" runat="server" Text="Meeting Rooms" CssClass="nav-link text-white"></asp:LinkButton>
                         </li>
                     </ul>
                     <div>
@@ -99,19 +98,34 @@
                     </div>
                 </div>
             </nav>
-            <div class="container my-5">
-                <div class="row d-flex w-100">
-                    <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server"></asp:TextBox>
-                    <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>
-                    <asp:Button ID="EditRooms" runat="server" Text="Edit Rooms" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="EditRoom_Click"></asp:Button>
-                    <asp:Button ID="DeleteRooms" runat="server" Text="Delete Rooms" CssClass="btn btn-green1 my-2 my-sm-0"></asp:Button>
-                    <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0"></asp:Button>
+
+            <div class="container p-5 rounded border mt-5 w-25 bg-umber text-white">
+                <h1 class="text-center">Check your Email:</h1>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email:</label>
+                    <asp:TextBox runat="server" ID="Email" CssClass="form-control"></asp:TextBox>
                 </div>
+                <asp:Button ID="check" runat="server" class=" col-6 btn btn-green" OnClick="check_Click" Text="Check"></asp:Button>
+                <asp:Label ID="EmailLabel" runat="server" Visible="false"></asp:Label>
             </div>
-            <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
+            <div class="container p-5 rounded border mt-5 w-25 bg-umber text-white" id="resetForm" runat="server" visible="false">
+                <h1 class="text-center">Set A New Password</h1>
+                <div class="mb-3">
+                    <label for="newpass" class="form-label">New Password</label>
+                    <asp:TextBox runat="server" ID="newPass" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Confirm password</label>
+                    <asp:TextBox runat="server" ID="Confirm" CssClass="form-control"></asp:TextBox>
+                </div>
+
+                <div class="row justify-content-between ">
+                    <asp:Label ID="pass" runat="server" Visible="false"></asp:Label>
+                    <asp:Button ID="cancel" runat="server" class="col-4 btn btn-secondary " OnClick="cancel_Click" Text="Cancel"></asp:Button>
+                    <asp:Button ID="saveCanghes" runat="server" class=" col-6 btn btn-green " OnClick="saveCanghes_Click" Text="Update Password"></asp:Button>
+                </div>
             </div>
         </div>
     </form>
-
 </body>
 </html>
