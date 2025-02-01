@@ -82,9 +82,11 @@
     <Content Include="sally\imgs\Lumina__1_-removebg-preview.png" />
     <Content Include="sally\imgs\privateRoom1.jpg" />
     <Content Include="sally\imgs\persRoom1.jpeg" />
+    <Content Include="sally\reset password.aspx" />
     <Content Include="sally\RoomAdmin.aspx" />
     <Content Include="sally\rooms.txt" />
     <Content Include="sally\edit.aspx" />
+    <Content Include="sally\users.txt" />
     <Content Include="suleiman\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -138,6 +140,13 @@
     </Compile>
     <Compile Include="sally\add.aspx.designer.cs">
       <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sally\reset password.aspx.cs">
+      <DependentUpon>reset password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sally\reset password.aspx.designer.cs">
+      <DependentUpon>reset password.aspx</DependentUpon>
     </Compile>
     <Compile Include="sally\RoomAdmin.aspx.cs">
       <DependentUpon>RoomAdmin.aspx</DependentUpon>
