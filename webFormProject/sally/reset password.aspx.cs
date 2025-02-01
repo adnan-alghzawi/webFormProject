@@ -32,6 +32,7 @@ namespace webFormProject.sally
             }
             EmailLabel.Text = "user not found ";
             EmailLabel.Visible = true;
+            resetForm.Visible = false;
         }
 
         protected void cancel_Click(object sender, EventArgs e)
@@ -61,7 +62,8 @@ namespace webFormProject.sally
                             content[i] = $"{user[0]},{user[1]}";
 
                             Response.Write("<script>alert('information changed!');</script>");
-
+                            resetForm.Visible = false;
+                            Email.Text = "";
                             break;
                         }
                     }
@@ -76,6 +78,46 @@ namespace webFormProject.sally
                 pass.Visible = true;
 
             }
+        }
+
+        protected void oldpass_TextChanged(object sender, EventArgs e)
+        {
+            string filePath = Server.MapPath("users.txt");
+            if (File.Exists(filePath))
+            {
+                string[] content = File.ReadAllLines(filePath);
+                string userEmail = Email.Text;
+
+                foreach (string line in content)
+                {
+                    string[] user = line.Split(',');
+
+                    if (user[0] == userEmail)
+                    {
+                        if (user[1] == oldpass.Text)
+                        {
+                            oldPassLabel.Visible = true;
+                            oldPassLabel.Text = "Old password is correct.";
+                            oldPassLabel.CssClass = "text-success";
+                        }
+                        else
+                        {
+                            oldPassLabel.Visible = true;
+                            oldPassLabel.Text = "Old password is incorrect.";
+                            oldPassLabel.CssClass = "text-danger";
+                        }
+                        return;
+                    }
+                }
+
+                oldPassLabel.Text = "User not found.";
+                oldPassLabel.Visible = true;
+            }
+        }
+
+        protected void back_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

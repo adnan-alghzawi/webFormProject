@@ -87,6 +87,15 @@ namespace webFormProject.sally
         protected global::System.Web.UI.WebControls.Button rigester;
 
         /// <summary>
+        /// back control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button back;
+
+        /// <summary>
         /// Email control.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,24 @@ namespace webFormProject.sally
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl resetForm;
+
+        /// <summary>
+        /// oldpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox oldpass;
+
+        /// <summary>
+        /// oldPassLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label oldPassLabel;
 
         /// <summary>
         /// newPass control.
