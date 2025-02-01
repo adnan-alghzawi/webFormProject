@@ -1,0 +1,3 @@
+1|math|Basic Mathematics|7 class|~/Images/Books/math.jpg|A comprehensive book covering fundamental mathematical concepts such as algebra, geometry, trigonometry, and calculus.|Available
+1|math|Basic Mathematics|7 class|~/Images/Books/math.jpg|A comprehensive book covering fundamental mathematical concepts such as algebra, geometry, trigonometry, and calculus.|Available
+1|math|Basic Mathematics|7 class|~/Images/Books/math.jpg|A comprehensive book covering fundamental mathematical concepts such as algebra, geometry, trigonometry, and calculus.|Available

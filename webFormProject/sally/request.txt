@@ -1,0 +1,2 @@
+1, LUMINA 1 ,Private room , 1 ,privateRoom1.jpg,Private room for one person ,true 
+3, LUMINA 3 ,Private room , 1 ,privateRoom1.jpg,Private room for one person ,true 
