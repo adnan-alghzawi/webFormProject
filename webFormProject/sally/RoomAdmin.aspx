@@ -12,8 +12,15 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <style>
+        *{
+            margin:0;
+            padding:0;
+        }
         .bg-umber {
             background-color: #22333B;
+        }
+        form{
+            height : 95vh;
         }
 
         body {
@@ -64,7 +71,6 @@
         }
 
         .card {
-            
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
         }
 
@@ -75,7 +81,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" class="" runat="server">
         <div>
             <!-- navbar -->
             <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
@@ -106,7 +112,15 @@
             <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
             </div>
         </div>
-    </form>
 
+    </form>
+    <footer class="bg-umber text-center text-lg-start text-white">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright:
+            <span>LUMINA</span>
+        </div>
+        <!-- Copyright -->
+    </footer>
 </body>
 </html>
