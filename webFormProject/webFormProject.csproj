@@ -85,6 +85,9 @@
     <Content Include="adnan\Images\Books\math2.jpg" />
     <Content Include="adnan\ShowBooks.aspx" />
     <Content Include="hazem\WebForm1.aspx" />
+    <Content Include="jana\MeetingRoom3.jpg" />
+    <Content Include="jana\ReservationForm.aspx" />
+    <Content Include="jana\ViewRooms.aspx" />
     <Content Include="jana\WebForm1.aspx" />
     <Content Include="nada\WebForm1.aspx" />
     <Content Include="sally\add.aspx" />
@@ -182,6 +185,20 @@
     </Compile>
     <Compile Include="hazem\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jana\ReservationForm.aspx.cs">
+      <DependentUpon>ReservationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\ReservationForm.aspx.designer.cs">
+      <DependentUpon>ReservationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jana\ViewRooms.aspx.cs">
+      <DependentUpon>ViewRooms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\ViewRooms.aspx.designer.cs">
+      <DependentUpon>ViewRooms.aspx</DependentUpon>
     </Compile>
     <Compile Include="jana\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
