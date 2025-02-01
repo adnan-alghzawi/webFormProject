@@ -85,6 +85,13 @@
     <Content Include="sally\RoomAdmin.aspx" />
     <Content Include="sally\rooms.txt" />
     <Content Include="sally\edit.aspx" />
+    <Content Include="suleiman\feedbackAdmin.aspx" />
+    <Content Include="suleiman\feedback.txt" />
+    <Content Include="suleiman\imgs\Lumina-removebg-preview.png" />
+    <Content Include="suleiman\imgs\Lumina__1_-removebg-preview.png" />
+    <Content Include="suleiman\imgs\meetingRoom1.jpg" />
+    <Content Include="suleiman\imgs\persRoom1.jpeg" />
+    <Content Include="suleiman\imgs\privateRoom1.jpg" />
     <Content Include="suleiman\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -152,6 +159,13 @@
     </Compile>
     <Compile Include="sally\edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suleiman\feedbackAdmin.aspx.cs">
+      <DependentUpon>feedbackAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suleiman\feedbackAdmin.aspx.designer.cs">
+      <DependentUpon>feedbackAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="suleiman\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
