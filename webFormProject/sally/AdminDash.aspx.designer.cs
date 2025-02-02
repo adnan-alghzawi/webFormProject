@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webFormProject.jana
+namespace webFormProject.sally
 {
 
 
-    public partial class ViewRooms
+    public partial class AdminDash
     {
 
         /// <summary>
@@ -24,93 +24,102 @@ namespace webFormProject.jana
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// homeTab control.
+        /// editB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton homeTab;
+        protected global::System.Web.UI.WebControls.Button editB;
 
         /// <summary>
-        /// aboutTab control.
+        /// editR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton aboutTab;
+        protected global::System.Web.UI.WebControls.Button editR;
 
         /// <summary>
-        /// contactTab control.
+        /// Reservations control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton contactTab;
+        protected global::System.Web.UI.WebControls.Button Reservations;
 
         /// <summary>
-        /// books control.
+        /// Borrow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton books;
+        protected global::System.Web.UI.WebControls.Button Borrow;
 
         /// <summary>
-        /// rooms control.
+        /// usersNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton rooms;
+        protected global::System.Web.UI.WebControls.Label usersNum;
 
         /// <summary>
-        /// login control.
+        /// booksNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button login;
+        protected global::System.Web.UI.WebControls.Label booksNum;
 
         /// <summary>
-        /// rigester control.
+        /// RoomsNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rigester;
+        protected global::System.Web.UI.WebControls.Label RoomsNum;
 
         /// <summary>
-        /// search control.
+        /// avaRoom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search;
+        protected global::System.Web.UI.WebControls.Label avaRoom;
 
         /// <summary>
-        /// SearchRoom control.
+        /// unavaroom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchRoom;
+        protected global::System.Web.UI.WebControls.Label unavaroom;
 
         /// <summary>
-        /// Cards control.
+        /// avaBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cards;
+        protected global::System.Web.UI.WebControls.Label avaBooks;
+
+        /// <summary>
+        /// Borrow1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Borrow1;
     }
 }

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webFormProject.jana
+namespace webFormProject.nada
 {
 
 
-    public partial class ViewRooms
+    public partial class show_books
     {
 
         /// <summary>
@@ -87,30 +87,39 @@ namespace webFormProject.jana
         protected global::System.Web.UI.WebControls.Button rigester;
 
         /// <summary>
-        /// search control.
+        /// searchTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search;
+        protected global::System.Web.UI.WebControls.TextBox searchTextBox;
 
         /// <summary>
-        /// SearchRoom control.
+        /// searchButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchRoom;
+        protected global::System.Web.UI.WebControls.Button searchButton;
 
         /// <summary>
-        /// Cards control.
+        /// filterOptions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cards;
+        protected global::System.Web.UI.WebControls.DropDownList filterOptions;
+
+        /// <summary>
+        /// booksContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl booksContainer;
     }
 }

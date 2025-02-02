@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -87,12 +90,27 @@
     <Content Include="adnan\Images\Books\math2.jpg" />
     <Content Include="adnan\ShowBooks.aspx" />
     <Content Include="hazem\WebForm1.aspx" />
+    <Content Include="jana\CancelReservation.aspx" />
+    <Content Include="jana\FormPhoto.jpg" />
     <Content Include="jana\MeetingRoom3.jpg" />
     <Content Include="jana\ReservationForm.aspx" />
+    <Content Include="jana\ViewAndCancelReservation.aspx" />
     <Content Include="jana\ViewRooms.aspx" />
     <Content Include="jana\WebForm1.aspx" />
+    <Content Include="nada\bookDetails.txt" />
+    <Content Include="nada\books.txt" />
+    <Content Include="nada\book_details.aspx" />
+    <Content Include="nada\borrow_book.aspx" />
+    <Content Include="nada\borrow_book_request.txt" />
+    <Content Include="nada\imgs\book1.jpg" />
+    <Content Include="nada\imgs\Lumina-removebg-preview.png" />
+    <Content Include="nada\imgs\svgviewer-png-output.png" />
+    <Content Include="nada\logged.txt" />
+    <Content Include="nada\show_books.aspx" />
+    <Content Include="nada\StyleSheet1.css" />
     <Content Include="nada\WebForm1.aspx" />
     <Content Include="sally\add.aspx" />
+    <Content Include="sally\AdminDash.aspx" />
     <Content Include="sally\ConfirmReservation.aspx" />
     <Content Include="sally\imgs\meetingRoom1.jpg" />
     <Content Include="sally\imgs\Lumina-removebg-preview.png" />
@@ -195,12 +213,26 @@
     <Compile Include="hazem\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jana\CancelReservation.aspx.cs">
+      <DependentUpon>CancelReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\CancelReservation.aspx.designer.cs">
+      <DependentUpon>CancelReservation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="jana\ReservationForm.aspx.cs">
       <DependentUpon>ReservationForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="jana\ReservationForm.aspx.designer.cs">
       <DependentUpon>ReservationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jana\ViewAndCancelReservation.aspx.cs">
+      <DependentUpon>ViewAndCancelReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\ViewAndCancelReservation.aspx.designer.cs">
+      <DependentUpon>ViewAndCancelReservation.aspx</DependentUpon>
     </Compile>
     <Compile Include="jana\ViewRooms.aspx.cs">
       <DependentUpon>ViewRooms.aspx</DependentUpon>
@@ -216,6 +248,27 @@
     <Compile Include="jana\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="nada\book_details.aspx.cs">
+      <DependentUpon>book_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\book_details.aspx.designer.cs">
+      <DependentUpon>book_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nada\borrow_book.aspx.cs">
+      <DependentUpon>borrow_book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\borrow_book.aspx.designer.cs">
+      <DependentUpon>borrow_book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nada\show_books.aspx.cs">
+      <DependentUpon>show_books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\show_books.aspx.designer.cs">
+      <DependentUpon>show_books.aspx</DependentUpon>
+    </Compile>
     <Compile Include="nada\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,6 +283,13 @@
     </Compile>
     <Compile Include="sally\add.aspx.designer.cs">
       <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sally\AdminDash.aspx.cs">
+      <DependentUpon>AdminDash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sally\AdminDash.aspx.designer.cs">
+      <DependentUpon>AdminDash.aspx</DependentUpon>
     </Compile>
     <Compile Include="sally\ConfirmReservation.aspx.cs">
       <DependentUpon>ConfirmReservation.aspx</DependentUpon>
