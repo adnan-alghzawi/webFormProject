@@ -169,7 +169,7 @@
 }
 
 .card-title{
-    font-size:14px;
+    font-size:20px;
 }
 
 .availability-badge {
@@ -265,4 +265,10 @@
     background-color: #22333B;
     border:none;
     margin: 30px 0px;
+}
+
+#msg{
+    color:red;
+    font-weight:400;
+
 }
