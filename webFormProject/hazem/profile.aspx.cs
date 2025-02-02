@@ -102,6 +102,14 @@ namespace task1_webForm_27_1_2025
                 File.WriteAllText(filePath2, email2.Text);
                 Response.Write("<script>alert('Profile updated successfully!');</script>");
             }
+          
         }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editProfile2.aspx");
+
+        }
+
     }
 }

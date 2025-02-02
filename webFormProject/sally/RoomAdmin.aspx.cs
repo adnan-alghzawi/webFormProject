@@ -32,7 +32,7 @@ namespace webFormProject.sally
 
                 foreach (var line in fileContent)
                 {
-                    string[] columns = line.Split(',');
+                    string[] columns = line.Split('|');
                     string imgPath = "imgs/" + columns[4];
 
                     if (columns.Length >= 7)
@@ -78,25 +78,11 @@ namespace webFormProject.sally
             }
         }
 
-        protected void homeTab_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void EditRoom_Click(object sender, EventArgs e)
         {
 
             Response.Redirect("edit.aspx");
-        }
-
-        protected void aboutTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void contactTab_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void SearchRoom_Click(object sender, EventArgs e)
@@ -171,7 +157,7 @@ namespace webFormProject.sally
 
             foreach (string line in lines)
             {
-                string[] details = line.Split(',');
+                string[] details = line.Split('|');
                 if (details.Length < 7) continue;
 
                 html += "<tr>";
@@ -195,27 +181,27 @@ namespace webFormProject.sally
 
         protected void backtodash_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("AdminDash.aspx");
         }
 
         protected void editB_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/adnan/EditBook.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("edit.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ConfirmReservation.aspx");
         }
 
         protected void Borrow_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/adnan/ConfirmBorrow.aspx");
         }
     }
 }
