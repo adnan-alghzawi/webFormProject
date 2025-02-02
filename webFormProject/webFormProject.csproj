@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adnan\UserHistory.aspx" />
     <Content Include="adnan\App_Data\UserHistory.txt" />
     <Content Include="adnan\WebForm1.aspx" />
     <Content Include="hazem\data\Hazem.txt" />
@@ -106,7 +107,6 @@
     <Content Include="nada\imgs\book1.jpg" />
     <Content Include="nada\imgs\Lumina-removebg-preview.png" />
     <Content Include="nada\imgs\svgviewer-png-output.png" />
-    <Content Include="nada\logged.txt" />
     <Content Include="nada\show_books.aspx" />
     <Content Include="nada\StyleSheet1.css" />
     <Content Include="nada\WebForm1.aspx" />
@@ -132,7 +132,6 @@
     <Content Include="suleiman\imgs\meetingRoom1.jpg" />
     <Content Include="suleiman\imgs\persRoom1.jpeg" />
     <Content Include="suleiman\imgs\privateRoom1.jpg" />
-    <Content Include="sally\users.txt" />
     <Content Include="suleiman\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -143,6 +142,13 @@
     </Compile>
     <Compile Include="adnan\AddBook.aspx.designer.cs">
       <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adnan\UserHistory.aspx.cs">
+      <DependentUpon>UserHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adnan\UserHistory.aspx.designer.cs">
+      <DependentUpon>UserHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="adnan\BorrowBook.aspx.cs">
       <DependentUpon>BorrowBook.aspx</DependentUpon>
