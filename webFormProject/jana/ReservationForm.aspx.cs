@@ -29,38 +29,93 @@ namespace webFormProject.jana
 
         protected void btnReserve_Click(object sender, EventArgs e)
         {
-            // Get data from form
-            string roomId = roomID.Text;
-            string RoomType = roomType.Text;
-            string FullName = fullName.Text;
-            string Email = email.Text;
-            string PhoneNumber = phoneNumber.Text;
-            string Date = reservationDate.Text;
-            string StartTime = startTime.Text;
-
-            // Calculate end time (2 hours later)
-            DateTime startDateTime = DateTime.Parse(StartTime);
-            string endTime = startDateTime.AddHours(2).ToString("HH:mm");
-
-            // Save to reservations.txt
             string filePath = Server.MapPath("reservations.txt");
-            if (!File.Exists(filePath))
+            string roomId = roomID.Text.Trim();
+            string roomTypeText = roomType.Text.Trim();
+            string fullNameText = fullName.Text.Trim();
+            string emailText = email.Text.Trim();
+            string phoneNumberText = phoneNumber.Text.Trim();
+            string reservationDateText = reservationDate.Text.Trim();
+            string startTimeText = startTime.Text.Trim();
+            string endTimeText = endTime.Text.Trim();
+
+            if (string.IsNullOrEmpty(roomId) || string.IsNullOrEmpty(roomTypeText) ||
+                string.IsNullOrEmpty(fullNameText) || string.IsNullOrEmpty(emailText) ||
+                string.IsNullOrEmpty(phoneNumberText) || string.IsNullOrEmpty(reservationDateText) ||
+                string.IsNullOrEmpty(startTimeText) || string.IsNullOrEmpty(endTimeText))
             {
-                using (File.Create(filePath)) { }
+                ShowAlert("Please fill in all fields!");
+                return;
             }
-            string reservationData = $"{roomId}|{RoomType}|{FullName}|{Email}|{PhoneNumber}|{Date}|{StartTime}|{endTime}|Pending";
-            
-                File.AppendAllText(filePath, reservationData + Environment.NewLine);
 
-                // Mark room as "Not Available"
-                UpdateRoomAvailability(roomId, false);
+            bool isAvailable = true;
 
-                // Show confirmation message
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Reservation request sent. Waiting for admin approval.');", true);
-            Response.Redirect("ViewRooms.aspx");
+            if (File.Exists(filePath))
+            {
+                string[] reservations = File.ReadAllLines(filePath);
+                foreach (var reservation in reservations)
+                {
+                    string[] details = reservation.Split(',');
+
+                    if (details.Length >= 8)
+                    {
+                        string existingRoomId = details[0].Trim();
+                        string existingDate = details[5].Trim();
+                        string existingStartTime = details[6].Trim();
+                        string existingEndTime = details[7].Trim();
+
+                        if (existingRoomId == roomId && existingDate == reservationDateText)
+                        {
+                            TimeSpan newStart = TimeSpan.Parse(startTimeText);
+                            TimeSpan newEnd = TimeSpan.Parse(endTimeText);
+                            TimeSpan existingStart = TimeSpan.Parse(existingStartTime);
+                            TimeSpan existingEnd = TimeSpan.Parse(existingEndTime);
+
+                            if ((newStart >= existingStart && newStart < existingEnd) ||
+                                (newEnd > existingStart && newEnd <= existingEnd) ||
+                                (newStart <= existingStart && newEnd >= existingEnd))
+                            {
+                                isAvailable = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (isAvailable)
+            {
+                string newReservation = $"{roomId},{roomTypeText},{fullNameText},{emailText},{phoneNumberText},{reservationDateText},{startTimeText},{endTimeText},Pending";
+                File.AppendAllText(filePath, newReservation + Environment.NewLine);
+
+                ShowAlert("Reservation successful!", true);
+            }
+            else
+            {
+                ShowAlert("The selected time is already booked. Please choose another time.");
+            }
+            //Response.Redirect("ViewRooms.aspx");
             
         }
 
+        private void ShowAlert(string message, bool isSuccess = false)
+        {
+            string script = $@"
+        Swal.fire({{
+            title: '{(isSuccess ? "Success!" : "Error!")}',
+            text: '{message}',
+            icon: '{(isSuccess ? "success" : "error")}',
+            confirmButtonText: 'OK'
+        }});
+    ";
+
+            if (isSuccess)
+            {
+                script += "setTimeout(function(){ window.location.href=window.location.href; }, 2000);"; // Reload page after 2 seconds
+            }
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", script, true);
+        }
         private void UpdateRoomAvailability(string roomId, bool isAvailable)
         {
             string filePath = Server.MapPath("../sally/rooms.txt");

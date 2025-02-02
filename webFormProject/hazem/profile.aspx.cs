@@ -11,8 +11,8 @@ namespace task1_webForm_27_1_2025
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            filePath = Server.MapPath("~/data/Hazem.txt");
-            filePath2 = Server.MapPath("~/data/logged.txt");
+            filePath = Server.MapPath("~/hazem/data/Hazem.txt");
+            filePath2 = Server.MapPath("~/hazem/data/logged.txt");
 
             if (!IsPostBack)
             {
@@ -39,7 +39,7 @@ namespace task1_webForm_27_1_2025
 
             foreach (string line in userData)
             {
-                string[] user = line.Split(',');
+                string[] user = line.Split(' ');
                 if (user.Length >= 6 && user[1].Trim() == email1)
                 {
                     name.Text = user[0];

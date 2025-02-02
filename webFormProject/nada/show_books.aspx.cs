@@ -21,6 +21,7 @@ namespace webFormProject.nada
         private void LoadBooks(string searchQuery, string filterOption)
         {
             string file = Server.MapPath("books.txt");
+            booksContainer.InnerHtml = "";
             if (File.Exists(file))
             {
                 string[] books = File.ReadAllLines(file);
