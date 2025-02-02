@@ -102,7 +102,6 @@ namespace webFormProject.nada
                             "        window.location = 'show_books.aspx'; " +  
                             "    } " +
                             "});", true);
-                            
                         }
                         else
                         {

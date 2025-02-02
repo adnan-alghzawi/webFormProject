@@ -105,7 +105,6 @@
     <Content Include="nada\imgs\book1.jpg" />
     <Content Include="nada\imgs\Lumina-removebg-preview.png" />
     <Content Include="nada\imgs\svgviewer-png-output.png" />
-    <Content Include="nada\logged.txt" />
     <Content Include="nada\show_books.aspx" />
     <Content Include="nada\StyleSheet1.css" />
     <Content Include="nada\WebForm1.aspx" />
