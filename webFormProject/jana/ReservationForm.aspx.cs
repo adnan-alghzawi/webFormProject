@@ -48,7 +48,7 @@ namespace webFormProject.jana
             {
                 using (File.Create(filePath)) { }
             }
-            string reservationData = $"{roomId},{RoomType},{FullName},{Email},{PhoneNumber},{Date},{StartTime},{endTime},Pending";
+            string reservationData = $"{roomId}|{RoomType}|{FullName}|{Email}|{PhoneNumber}|{Date}|{StartTime}|{endTime}|Pending";
             
                 File.AppendAllText(filePath, reservationData + Environment.NewLine);
 
@@ -57,7 +57,7 @@ namespace webFormProject.jana
 
                 // Show confirmation message
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Reservation request sent. Waiting for admin approval.');", true);
-
+            Response.Redirect("ViewRooms.aspx");
             
         }
 

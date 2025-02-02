@@ -85,8 +85,11 @@
     <Content Include="adnan\Images\Books\math2.jpg" />
     <Content Include="adnan\ShowBooks.aspx" />
     <Content Include="hazem\WebForm1.aspx" />
+    <Content Include="jana\CancelReservation.aspx" />
+    <Content Include="jana\FormPhoto.jpg" />
     <Content Include="jana\MeetingRoom3.jpg" />
     <Content Include="jana\ReservationForm.aspx" />
+    <Content Include="jana\ViewAndCancelReservation.aspx" />
     <Content Include="jana\ViewRooms.aspx" />
     <Content Include="jana\WebForm1.aspx" />
     <Content Include="nada\WebForm1.aspx" />
@@ -184,12 +187,26 @@
     <Compile Include="hazem\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jana\CancelReservation.aspx.cs">
+      <DependentUpon>CancelReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\CancelReservation.aspx.designer.cs">
+      <DependentUpon>CancelReservation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="jana\ReservationForm.aspx.cs">
       <DependentUpon>ReservationForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="jana\ReservationForm.aspx.designer.cs">
       <DependentUpon>ReservationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jana\ViewAndCancelReservation.aspx.cs">
+      <DependentUpon>ViewAndCancelReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\ViewAndCancelReservation.aspx.designer.cs">
+      <DependentUpon>ViewAndCancelReservation.aspx</DependentUpon>
     </Compile>
     <Compile Include="jana\ViewRooms.aspx.cs">
       <DependentUpon>ViewRooms.aspx</DependentUpon>
