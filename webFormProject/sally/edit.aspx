@@ -12,6 +12,39 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <style>
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #22333B;
+            color: white;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .abtn {
+            display: block;
+            color: white;
+            background-color: #22333B;
+            padding: 10px;
+            text-decoration: none;
+            margin: 10px 0;
+            border: none !important;
+            width: 100%;
+            text-align: left;
+        }
+
+            .abtn:hover {
+                background-color: #34495e;
+            }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
         .bg-umber {
             background-color: #22333B;
         }
@@ -85,99 +118,76 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <!-- navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
-                <a class="navbar-brand ps-3 text-white" href="#">
-                    <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" /></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item ">
-
-                            <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="contactTab_Click" Text="Books"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="contactTab_Click" Text="Meeting Rooms"></asp:LinkButton>
-                        </li>
-                    </ul>
-                    <div>
-                        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0"></asp:Button>
-                        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0"></asp:Button>
-                    </div>
-                </div>
-            </nav>
-
-            <div class="container my-5">
-                <div class="row d-flex w-100">
-                    <label>Search by ID:</label>
-                    <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server"></asp:TextBox>
-                    <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>
-
-                    <asp:Button ID="back" runat="server" Text="bcak" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="Back_Click"></asp:Button>
-                </div>
-                <asp:Label ID="lblMessage2" runat="server" CssClass="text-success mt-3"></asp:Label>
+            <div class="sidebar animate hidden">
+                <img src="imgs/Lumina__1_-removebg-preview.png" class="imglogo" />
+                <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
+                <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
+                <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
+                <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
             </div>
 
+            <div class="content">
+                <div class="container my-5">
+                    <div class="row d-flex w-100">
+                        <label>Search by ID:</label>
+                        <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server"></asp:TextBox>
+                        <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>
 
-            <div class="container bg-umber d-flex flex-column align-items-start text-white justify-content-center w-50 mt-5 p-5">
-                <img id="image" runat="server" class="w-100" />
-                <br />
-                <br />
-                <div class="row w-100">
-                    <div class="col-md-6">
-                        <label class="form-label">Room name:</label>
-                        <asp:TextBox ID="roomName" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:Button ID="back" runat="server" Text="bcak" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="Back_Click"></asp:Button>
                     </div>
-                    <div class="col-md-6">
-                        <label for="type" class="form-label">Type:</label>
-                        <asp:DropDownList ID="type" runat="server" CssClass="form-control">
-                            <asp:ListItem Value="Private room">Private room</asp:ListItem>
-                            <asp:ListItem Value="Meeting room">Meeting room</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
+                    <asp:Label ID="lblMessage2" runat="server" CssClass="text-success mt-3"></asp:Label>
                 </div>
-                <br />
-                <br />
 
-                <div class="row w-100">
-                    <div class="col-md-6">
-                        <label class="form-label">Capacity:</label>
-                        <asp:TextBox ID="Capacity" runat="server" CssClass="form-control"></asp:TextBox>
+
+                <div class="container bg-umber d-flex flex-column align-items-start text-white justify-content-center w-50 mt-5 p-5">
+                    <img id="image" runat="server" class="w-100" />
+                    <br />
+                    <br />
+                    <div class="row w-100">
+                        <div class="col-md-6">
+                            <label class="form-label">Room name:</label>
+                            <asp:TextBox ID="roomName" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="type" class="form-label">Type:</label>
+                            <asp:DropDownList ID="type" runat="server" CssClass="form-control">
+                                <asp:ListItem Value="Private room">Private room</asp:ListItem>
+                                <asp:ListItem Value="Meeting room">Meeting room</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
                     </div>
-                    <div class="col-md-6">
+                    <br />
+                    <br />
 
-                        <label for="Available" class="form-label">Available:</label>
-                        <asp:DropDownList ID="Available" runat="server" CssClass="form-control">
-                            <asp:ListItem Value="true">Available</asp:ListItem>
-                            <asp:ListItem Value="false">Not Available</asp:ListItem>
-                        </asp:DropDownList>
+                    <div class="row w-100">
+                        <div class="col-md-6">
+                            <label class="form-label">Capacity:</label>
+                            <asp:TextBox ID="Capacity" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-md-6">
+
+                            <label for="Available" class="form-label">Available:</label>
+                            <asp:DropDownList ID="Available" runat="server" CssClass="form-control">
+                                <asp:ListItem Value="true">Available</asp:ListItem>
+                                <asp:ListItem Value="false">Not Available</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
                     </div>
-                </div>
-                <br />
-                <br />
-                <label>description:</label>
-                <asp:TextBox ID="description" runat="server" CssClass="form-control"></asp:TextBox>
+                    <br />
+                    <br />
+                    <label>description:</label>
+                    <asp:TextBox ID="description" runat="server" CssClass="form-control"></asp:TextBox>
 
 
-                <br />
-                <br />
-                <div class="row">
-                    <asp:Button CssClass="btn btn-light" ID="Button1" runat="server" Text="edit room" OnClick="edit_Click" />
-                    <asp:Button CssClass="btn btn-red" ID="delete" runat="server" Text="delete room" OnClientClick="return confirmDelete();" OnClick="delete_Click" />
+                    <br />
+                    <br />
+                    <div class="row">
+                        <asp:Button CssClass="btn btn-light" ID="Button1" runat="server" Text="edit room" OnClick="edit_Click" />
+                        <asp:Button CssClass="btn btn-red" ID="delete" runat="server" Text="delete room" OnClientClick="return confirmDelete();" OnClick="delete_Click" />
+                    </div>
+                    <asp:Label ID="res" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3"></asp:Label>
                 </div>
-                <asp:Label ID="res" runat="server" Visible="false"></asp:Label>
-                <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3"></asp:Label>
             </div>
         </div>
     </form>
