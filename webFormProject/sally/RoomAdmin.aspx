@@ -12,15 +12,46 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <style>
-        *{
-            margin:0;
-            padding:0;
+        * {
+            margin: 0;
+            padding: 0;
         }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #22333B;
+            color: white;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .abtn {
+            display: block;
+            color: white;
+            background-color: #22333B;
+            padding: 10px;
+            text-decoration: none;
+            margin: 10px 0;
+            border: none !important;
+            width: 100%;
+            text-align: left;
+        }
+
+            .abtn:hover {
+                background-color: #34495e;
+            }
+
+
         .bg-umber {
             background-color: #22333B;
         }
-        form{
-            height : 95vh;
+
+        form {
+            height: 95vh;
         }
 
         body {
@@ -28,8 +59,14 @@
         }
 
         .imglogo {
-            width: 20%;
+            width: 40%;
         }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
 
         .btn-green {
             --bs-btn-color: #22333B !important;
@@ -83,44 +120,46 @@
 <body>
     <form id="form1" class="" runat="server">
         <div>
-            <!-- navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
-                <a class="navbar-brand ps-3 text-white" href="#">
-                    <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" />
+            <div class="sidebar animate hidden">
+                <img src="imgs/Lumina__1_-removebg-preview.png" class="imglogo" />
+                <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
+                <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
+                <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
+                <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
+            </div>
+            <div class="content">
+                <div class="container my-5 ">
+                    <div class="row d-flex w-100">
+                        <asp:Button ID="backtodash" runat="server" Text="Back" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="backtodash_Click"></asp:Button>
+                        <asp:Button ID="EditRooms" runat="server" Text="Edit Rooms" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="EditRoom_Click"></asp:Button>
+                        <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="AddRooms_Click"></asp:Button>
+                        <asp:Button ID="ReservationConfirm" runat="server" Text="Reservations" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="ReservationConfirm_Click"></asp:Button>
+                        <asp:Button ID="Export" runat="server" Text="Export Report" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="Export_Click"></asp:Button>
+                        <asp:DropDownList CssClass="form-select w-25 me-1" ID="ddlSearchRoom" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SearchRoom_Click">
+                            <asp:ListItem Text="Select Room" Value="" />
+                            <asp:ListItem Text="Private Room" Value="Private room" />
+                            <asp:ListItem Text="Meeting Room" Value="Meeting room" />
+                            <asp:ListItem Text="Available" Value="true" />
+                            <asp:ListItem Text="not Available" Value="false" />
+                        </asp:DropDownList>
 
-                </a>
-
-            </nav>
-            <div class="container my-5">
-                <div class="row d-flex w-100">
-                    <asp:Button ID="backtodash" runat="server" Text="Back" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="backtodash_Click"></asp:Button>
-                    <asp:Button ID="EditRooms" runat="server" Text="Edit Rooms" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="EditRoom_Click"></asp:Button>
-                    <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="AddRooms_Click"></asp:Button>
-                    <asp:Button ID="ReservationConfirm" runat="server" Text="Reservations" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="ReservationConfirm_Click"></asp:Button>
-                    <asp:Button ID="Export" runat="server" Text="Export Report" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="Export_Click"></asp:Button>
-                    <asp:DropDownList CssClass="form-select w-25 me-1" ID="ddlSearchRoom" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SearchRoom_Click">
-                        <asp:ListItem Text="Select Room" Value="" />
-                        <asp:ListItem Text="Private Room" Value="Private room" />
-                        <asp:ListItem Text="Meeting Room" Value="Meeting room" />
-                        <asp:ListItem Text="Available" Value="true" />
-                        <asp:ListItem Text="not Available" Value="false" />
-                    </asp:DropDownList>
-
-                    <%--<asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>--%>
+                        <%--<asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>--%>
+                    </div>
+                </div>
+                <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
                 </div>
             </div>
-            <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
-            </div>
         </div>
 
+        <footer class="bg-umber text-center text-lg-start text-white">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2020 Copyright:
+        <span>LUMINA</span>
+            </div>
+            <!-- Copyright -->
+        </footer>
     </form>
-    <footer class="bg-umber text-center text-lg-start text-white">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2020 Copyright:
-            <span>LUMINA</span>
-        </div>
-        <!-- Copyright -->
-    </footer>
+
 </body>
 </html>

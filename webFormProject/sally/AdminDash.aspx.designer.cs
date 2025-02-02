@@ -11,7 +11,7 @@ namespace webFormProject.sally
 {
 
 
-    public partial class RoomAdmin
+    public partial class AdminDash
     {
 
         /// <summary>
@@ -60,66 +60,66 @@ namespace webFormProject.sally
         protected global::System.Web.UI.WebControls.Button Borrow;
 
         /// <summary>
-        /// backtodash control.
+        /// usersNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button backtodash;
+        protected global::System.Web.UI.WebControls.Label usersNum;
 
         /// <summary>
-        /// EditRooms control.
+        /// booksNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditRooms;
+        protected global::System.Web.UI.WebControls.Label booksNum;
 
         /// <summary>
-        /// AddRooms control.
+        /// RoomsNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddRooms;
+        protected global::System.Web.UI.WebControls.Label RoomsNum;
 
         /// <summary>
-        /// ReservationConfirm control.
+        /// avaRoom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ReservationConfirm;
+        protected global::System.Web.UI.WebControls.Label avaRoom;
 
         /// <summary>
-        /// Export control.
+        /// unavaroom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Export;
+        protected global::System.Web.UI.WebControls.Label unavaroom;
 
         /// <summary>
-        /// ddlSearchRoom control.
+        /// avaBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSearchRoom;
+        protected global::System.Web.UI.WebControls.Label avaBooks;
 
         /// <summary>
-        /// Cards control.
+        /// Borrow1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cards;
+        protected global::System.Web.UI.WebControls.Label Borrow1;
     }
 }
