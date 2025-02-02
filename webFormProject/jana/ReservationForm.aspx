@@ -9,6 +9,18 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
      
+    <style>
+        body {
+            background-image: url('FormPhoto.jpg'); /* Path to your image */
+            background-size: cover; /* Make the image cover the entire page */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent repeating */
+            background-attachment: fixed;
+            
+        }
+    </style>
+
+
 </head>
 <body>
     <form id="form1" runat="server">

@@ -13,7 +13,9 @@
         }
         .search{
             display:flex;
-            margin-left:107px;
+            justify-content:center;
+            align-items:center;
+           
             margin-top:30px;
             
         }
@@ -95,6 +97,33 @@
     height: 100%;
     
 }
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+    padding: 140px 0 60px 0;
+    min-height: 30vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .breadcrumbs:before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    inset: 0;
+  }
+  
+  .breadcrumbs h2 {
+    font-size: 56px;
+    font-weight: 500;
+    color: #fff;
+    font-family: var(--font-secondary);
+  }
+  
+
     </style>
 </head>
 <body>
@@ -133,24 +162,20 @@
         </div>
     </div>
 </nav>
-            <div class="header-image">
-            <img src="MeetingRoom3.jpg" alt="Rooms" />
-                  </div>
+             <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('MeetingRoom3.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>Rooms</h2>
+        
+      </div>
+    </div><!-- End Breadcrumbs -->
              
              <div class="search">
                
                  <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server" placeholder="Search about room "></asp:TextBox>
                     <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 "  OnClick="SearchRoom_Click"></asp:Button>
-                      <div class="filter-container"> 
-                          <asp:Literal ID="resultContainer" runat="server"></asp:Literal>
-                     <asp:DropDownList ID="ddlFilter" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlFilter_SelectedIndexChanged" >
-                        <asp:ListItem Value="AllRoom">All Rooms</asp:ListItem>
-                         <asp:ListItem Value="PrivateRoom">Private Rooms</asp:ListItem>
-                         <asp:ListItem Value="GroupRoom">Meeting Rooms</asp:ListItem>
-                         <asp:ListItem Value="Available">Available Rooms</asp:ListItem>
-                          
-                           </asp:DropDownList>
-                          </div>
+                     
                 </div>
             <br />             
             <br />

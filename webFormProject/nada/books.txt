@@ -1,0 +1,11 @@
+﻿1|The Selfish Gene|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|true
+2|The Selfish Gene|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|true
+3|The Selfish Gene|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|true
+4|The Selfish Gene|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|true
+5|The Selfish Gene|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|true
+6|The Selfish Gene|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|true
+7|b|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|true
+8|a|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|false
+9|c|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|false
+10|d|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|false
+11|ggg|Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|false

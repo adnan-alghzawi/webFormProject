@@ -6,8 +6,14 @@ namespace task1_webForm_27_1_2025
 {
     public partial class profile : Page
     {
+        private string filePath;
+        private string filePath2;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            filePath = Server.MapPath("~/data/Hazem.txt");
+            filePath2 = Server.MapPath("~/data/logged.txt");
+
             if (!IsPostBack)
             {
                 LoadProfile();
@@ -16,104 +22,86 @@ namespace task1_webForm_27_1_2025
 
         private void LoadProfile()
         {
-            string filePath = Server.MapPath("~/data/Hazem.txt");
-            string filePath2 = Server.MapPath("~/data/logged.txt");
-
-            // التأكد من وجود الملفات
             if (!File.Exists(filePath) || !File.Exists(filePath2))
             {
                 Response.Write("<script>alert('One or both of the files do not exist.');</script>");
-                ResetFields();
                 return;
             }
 
-            // قراءة البيانات من الملفات
+            string email1 = File.ReadAllText(filePath2).Trim();
             string[] userData = File.ReadAllLines(filePath);
-            string email1 = File.ReadAllText(filePath2);
 
-            // التأكد من وجود بيانات في الملف النصي
-            if (userData.Length == 0 || string.IsNullOrWhiteSpace(email1))
+            if (string.IsNullOrWhiteSpace(email1))
             {
-                Response.Write("<script>alert('The files are empty or have no valid data.');</script>");
-                ResetFields();
+                Response.Write("<script>alert('No valid email found in logged.txt.');</script>");
                 return;
             }
 
             foreach (string line in userData)
             {
                 string[] user = line.Split(',');
-                if (user.Length >= 6 && user[1].Trim() == email1.Trim())
+                if (user.Length >= 6 && user[1].Trim() == email1)
                 {
                     name.Text = user[0];
                     email2.Text = user[1];
                     name2.Text = user[0];
-
-                    // تحديد الجنس بناءً على القيمة المخزنة
-                    if (user[4] == "Male")
-                    {
-                        Male.Checked = true;
-                    }
-                    else if (user[4] == "Female")
-                    {
-                        Female.Checked = true;
-                    }
-
                     dob2.Text = user[5];
+                    Male.Checked = user[4] == "Male";
+                    Female.Checked = user[4] == "Female";
                     return;
                 }
             }
 
-            // إذا لم يتم العثور على المستخدم
-            Response.Write("<script>alert('No matching user found in the data file.');</script>");
-            ResetFields();
+            // إذا لم يتم العثور على المستخدم، قم بإنشاء سجل جديد له
+            Response.Write("<script>alert('User not found, creating new profile.');</script>");
+            SaveNewUser(email1);
         }
 
-        private void ResetFields()
+        private void SaveNewUser(string email)
         {
-            name.Text = "";
-            Male.Checked = false;
-            Female.Checked = false;
-            name2.Text = "";
-            email2.Text = "";
-            dob2.Text = "";
+            string defaultUser = $"New User,{email},,,,,";
+            File.AppendAllText(filePath, defaultUser + Environment.NewLine);
+            LoadProfile();
         }
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            string filePath = Server.MapPath("~/data/Hazem.txt");
+            if (!File.Exists(filePath) || !File.Exists(filePath2))
+            {
+                Response.Write("<script>alert('One or both of the files do not exist.');</script>");
+                return;
+            }
+
+            string email1 = File.ReadAllText(filePath2).Trim();
             string[] userData = File.ReadAllLines(filePath);
-            string filePath2 = Server.MapPath("~/data/logged.txt");
-            string email1 = File.ReadAllText(filePath2);
+            bool userFound = false;
 
             for (int i = 0; i < userData.Length; i++)
             {
                 string[] user = userData[i].Split(',');
-
-                if (user.Length >= 6 && user[1].Trim() == email1.Trim())
+                if (user.Length >= 6 && user[1].Trim() == email1)
                 {
                     user[0] = name.Text;
                     user[1] = email2.Text;
-                    email1 = email2.Text;
-
-                    // تحديث قيمة الجنس بناءً على الزر المحدد
-                    if (Male.Checked)
-                    {
-                        user[4] = "Male";
-                    }
-                    else if (Female.Checked)
-                    {
-                        user[4] = "Female";
-                    }
-
+                    user[4] = Male.Checked ? "Male" : "Female";
                     user[5] = dob2.Text;
-                    userData[i] = $"{user[0]},{user[1]},{user[2]},{user[3]},{user[4]},{user[5]}";
-                    File.WriteAllLines(filePath, userData);
-                    File.WriteAllText(filePath2, email1);
+                    userData[i] = string.Join(",", user);
+                    userFound = true;
                     break;
                 }
             }
 
-            Response.Write("<script>alert('Profile updated successfully!');</script>");
+            if (!userFound)
+            {
+                Response.Write("<script>alert('User not found, creating new profile.');</script>");
+                SaveNewUser(email1);
+            }
+            else
+            {
+                File.WriteAllLines(filePath, userData);
+                File.WriteAllText(filePath2, email2.Text);
+                Response.Write("<script>alert('Profile updated successfully!');</script>");
+            }
         }
     }
 }

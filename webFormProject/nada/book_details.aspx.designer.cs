@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webFormProject.jana
+namespace webFormProject.nada
 {
 
 
-    public partial class ViewRooms
+    public partial class book_details
     {
 
         /// <summary>
@@ -87,30 +87,12 @@ namespace webFormProject.jana
         protected global::System.Web.UI.WebControls.Button rigester;
 
         /// <summary>
-        /// search control.
+        /// div_book_details control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search;
-
-        /// <summary>
-        /// SearchRoom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchRoom;
-
-        /// <summary>
-        /// Cards control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cards;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_book_details;
     }
 }
