@@ -32,7 +32,7 @@ namespace webFormProject.sally
 
                 foreach (var line in fileContent)
                 {
-                    string[] columns = line.Split(',');
+                    string[] columns = line.Split('|');
                     string imgPath = "imgs/" + columns[4];
 
                     if (columns.Length >= 7)
@@ -171,7 +171,7 @@ namespace webFormProject.sally
 
             foreach (string line in lines)
             {
-                string[] details = line.Split(',');
+                string[] details = line.Split('|');
                 if (details.Length < 7) continue;
 
                 html += "<tr>";
