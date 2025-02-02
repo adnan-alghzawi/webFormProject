@@ -110,6 +110,95 @@
             opacity: 1;
             transform: translatex(0);
         }
+
+        .bg-umber {
+            background-color: #22333B;
+        }
+        /* From Uiverse.io by SouravBandyopadhyay */
+        .card1-title {
+            color: #262626;
+            font-size: 1.5em;
+            line-height: normal;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+
+        .small-desc {
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.5em;
+            color: #452c2c;
+        }
+
+        .small-desc {
+            font-size: 1em;
+        }
+
+        .go-corner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 2em;
+            height: 2em;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #22333B, #22333B);
+            border-radius: 0 4px 0 32px;
+        }
+
+        .go-arrow {
+            margin-top: -4px;
+            margin-right: -4px;
+            color: white;
+            font-family: courier, sans;
+        }
+
+        .card1 {
+            display: block;
+            position: relative;
+            max-width: 300px;
+            max-height: 320px;
+            background-color: #22333B;
+            border-radius: 10px;
+            padding: 2em 1.2em;
+            margin: 12px;
+            text-decoration: none;
+            z-index: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #fff, #fff);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+            .card1:before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: -16px;
+                right: -16px;
+                background: linear-gradient(135deg, #364a60, #22333B);
+                height: 32px;
+                width: 32px;
+                border-radius: 32px;
+                transform: scale(1);
+                transform-origin: 50% 50%;
+                transition: transform 0.35s ease-out;
+            }
+
+            .card1:hover:before {
+                transform: scale(28);
+            }
+
+            .card1:hover .small-desc {
+                transition: all 0.5s ease-out;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .card1:hover .card1-title {
+                transition: all 0.5s ease-out;
+                color: #ffffff;
+            }
     </style>
 </head>
 <body>
@@ -122,12 +211,12 @@
             <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
         </div>
 
-        <div class="content animate2 hidden2">
-            <div class="header">
+        <div class="content animate2 hidden2 vh-100">
+            <div class="header animate hidden">
                 <h2>Welcome To LUMINA DashBoard</h2>
             </div>
 
-            <div class="row ">
+            <div class="row justify-content-center animate hidden">
                 <div class="card-container">
                     <div class="card">
                         <h3>Users</h3>
@@ -148,18 +237,59 @@
                 </div>
             </div>
 
-            <div class="row w-100 mt-5 ">
+            <div class="row w-100 mt-5 justify-content-center animate hidden">
                 <div class="bg-white rounded text-center p-2">
-                    <p runat="server"><span class="me-5"><b>Avilable rooms:</b><asp:Label ID="avaRoom" runat="server"></asp:Label></span>
-                       <span class="me-5"><b>Unavailable rooms:</b><asp:Label ID="unavaroom" runat="server"></asp:Label></span>
+                    <p runat="server">
+                        <span class="me-5"><b>Avilable rooms:</b><asp:Label ID="avaRoom" runat="server"></asp:Label></span>
+                        <span class="me-5"><b>Unavailable rooms:</b><asp:Label ID="unavaroom" runat="server"></asp:Label></span>
 
                         <span class="me-5"><b>Available Books:</b><asp:Label ID="avaBooks" runat="server"></asp:Label></span>
-                        <span class="me-5"><b> Borrowed Books:</b><asp:Label ID="Borrow1" runat="server"></asp:Label></span>
+                        <span class="me-5"><b>Borrowed Books:</b><asp:Label ID="Borrow1" runat="server"></asp:Label></span>
 
                     </p>
                 </div>
             </div>
+
+            <div class="row w-100 mt-5 justify-content-center animate hidden">
+                <!-- From Uiverse.io by SouravBandyopadhyay -->
+                <div class="card1 animate hidden">
+                    <p class="card1-title">Manage Rooms</p>
+                    <p class="small-desc">
+                        Edit ,Delete , handel Reservation requests
+                    </p>
+                    <asp:Button ID="goToRooms" runat="server" Text="Rooms" OnClick="goToRooms_Click" CssClass="abtn" />
+
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+
+                <div class="card1 animate hidden">
+                    <p class="card1-title">Manage Books</p>
+                    <p class="small-desc">
+                        Edit ,Delete , handel Borrow books requests
+                    </p>
+                    <asp:Button ID="goToBooks" runat="server" Text="Books" OnClick="goToBooks_Click" CssClass="abtn" />
+
+                    <div class="go-corner">
+                        <div class="go-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
+
+
+        <footer class="bg-umber text-center text-lg-start text-white animate hidden">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2020 Copyright:
+                <span>LUMINA</span>
+            </div>
+            <!-- Copyright -->
+        </footer>
     </form>
 
     <script>
