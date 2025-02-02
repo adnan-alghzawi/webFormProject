@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace task1_webForm_27_1_2025
+namespace webFormProject.hazem
 {
-    public partial class edit_profile : Page
+    public partial class editProfile2 : System.Web.UI.Page
     {
         protected void page_Load(object sender, EventArgs e)
         {
@@ -16,8 +20,8 @@ namespace task1_webForm_27_1_2025
 
         private void loadprofile()
         {
-            string filePath = Server.MapPath("~/data/Hazem.txt");
-            string filePath2 = Server.MapPath("~/data/logged.txt");
+            string filePath = Server.MapPath("~/hazem/data/Hazem.txt");
+            string filePath2 = Server.MapPath("~/hazem/data/logged.txt");
 
             // التحقق من وجود الملفات
             if (!File.Exists(filePath) || !File.Exists(filePath2))
@@ -32,13 +36,13 @@ namespace task1_webForm_27_1_2025
             foreach (string line in userData)
             {
                 string[] user = line.Split(' ');
-                if (user.Length >= 7 && user[1].Trim() == email1.Trim())
+                if ( user[1].Trim() == email1.Trim())
                 {
                     name.Text = user[0];
                     name2.Text = user[0];
                     email2.Text = user[1];
                     dob2.Text = user[5];
-                    profileImage.ImageUrl = "~/images/" + user[6];
+                  //  profileImage.ImageUrl = "~/images/" + user[6];
                     return;
                 }
             }
@@ -84,6 +88,7 @@ namespace task1_webForm_27_1_2025
             }
 
             Response.Write("<script>alert('Profile updated successfully!');</script>");
+            Response.Redirect("profile.aspx");
         }
 
 
@@ -121,6 +126,7 @@ namespace task1_webForm_27_1_2025
 
 
         }
+
 
     }
 }

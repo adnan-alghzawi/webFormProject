@@ -75,6 +75,7 @@
     <Content Include="hazem\data\Hazem.txt" />
     <Content Include="hazem\data\logged.txt" />
     <Content Include="hazem\edit profile.aspx" />
+    <Content Include="hazem\editProfile2.aspx" />
     <Content Include="hazem\LogIn.aspx" />
     <Content Include="hazem\profile.aspx" />
     <Content Include="hazem\registration.aspx" />
@@ -105,7 +106,6 @@
     <Content Include="nada\imgs\book1.jpg" />
     <Content Include="nada\imgs\Lumina-removebg-preview.png" />
     <Content Include="nada\imgs\svgviewer-png-output.png" />
-    <Content Include="nada\logged.txt" />
     <Content Include="nada\show_books.aspx" />
     <Content Include="nada\StyleSheet1.css" />
     <Content Include="nada\WebForm1.aspx" />
@@ -190,6 +190,13 @@
     </Compile>
     <Compile Include="hazem\edit profile.aspx.designer.cs">
       <DependentUpon>edit profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hazem\editProfile2.aspx.cs">
+      <DependentUpon>editProfile2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hazem\editProfile2.aspx.designer.cs">
+      <DependentUpon>editProfile2.aspx</DependentUpon>
     </Compile>
     <Compile Include="hazem\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>

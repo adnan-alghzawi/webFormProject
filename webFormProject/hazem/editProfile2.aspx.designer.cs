@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace task1_webForm_27_1_2025
+namespace webFormProject.hazem
 {
 
 
-    public partial class edit_profile
+    public partial class editProfile2
     {
 
         /// <summary>

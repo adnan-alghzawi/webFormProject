@@ -73,7 +73,12 @@
                         </div>
                         <div class="card-body text-center">
                             <asp:Button runat="server" OnClick="Save_Click" Text="Save" CssClass="btn btn-primary btn-custom" />
+                            <br />
+                            <br />
+                              <asp:Button runat="server" OnClick="btnEdit_Click" Text="Edit" CssClass="btn btn-warning btn-custom" />
                         </div>
+                          
+
                     </div>
                 </div>
 
@@ -85,17 +90,17 @@
 
                             <div class="mb-3">
                                 <label class="form-label">Full Name</label>
-                                <asp:TextBox ID="name2" runat="server" CssClass="form-control" placeholder="Enter Full Name"></asp:TextBox>
+                                <asp:TextBox ID="name2" runat="server" CssClass="form-control" placeholder="Enter Full Name" ReadOnly></asp:TextBox>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <asp:TextBox ID="email2" runat="server" CssClass="form-control" placeholder="Enter Email"></asp:TextBox>
+                                <asp:TextBox ID="email2" runat="server" CssClass="form-control" placeholder="Enter Email" ReadOnly></asp:TextBox>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Date of Birth</label>
-                                <asp:TextBox ID="dob2" runat="server" CssClass="form-control" placeholder="Enter Date of Birth"></asp:TextBox>
+                                <asp:TextBox ID="dob2" runat="server" CssClass="form-control" placeholder="Enter Date of Birth" ReadOnly></asp:TextBox>
                             </div>
 
                         </div>
