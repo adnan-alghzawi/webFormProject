@@ -22,7 +22,7 @@ namespace webFormProject.jana
 
                 foreach (var line in fileContent)
                 {
-                    string[] columns = line.Split(',');
+                    string[] columns = line.Split('|');
                     string imgPath = "../sally/imgs/" + columns[4];
                     bool isAvailable = false;
 
@@ -71,7 +71,7 @@ namespace webFormProject.jana
 
                 foreach (var line in lines)
                 {
-                    string[] columns = line.Split(',');
+                    string[] columns = line.Split('|');
                     if (columns.Length >= 7) // Ensure valid data
                     {
                         string roomType = columns[2].Trim().ToLower();
