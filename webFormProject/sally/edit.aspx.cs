@@ -63,7 +63,7 @@ namespace webFormProject.sally
             foreach (string room in rooms)
             {
 
-                string[] details = room.Split(',');
+                string[] details = room.Split('|');
                 if (search.Text == details[0])
                 {
                     image.Src = "imgs/" + details[4];
@@ -105,7 +105,7 @@ namespace webFormProject.sally
 
                 for (int i = 0; i < content.Length; i++)
                 {
-                    string[] room = content[i].Split(',');
+                    string[] room = content[i].Split('|');
                     if (room[0] == search.Text)
                     {
                         room[1] = roomName.Text;
@@ -114,7 +114,7 @@ namespace webFormProject.sally
                         room[5] = description.Text;
                         room[6] = Available.SelectedValue;
 
-                        content[i] = $"{room[0]},{room[1]},{room[2]},{room[3]},{room[4]},{room[5]},{room[6]}";
+                        content[i] = $"{room[0]}|{room[1]}|{room[2]}|{room[3]}|{room[4]}|{room[5]}|{room[6]}";
 
                         Response.Write("<script>alert('information changed!');</script>");
 
@@ -136,7 +136,7 @@ namespace webFormProject.sally
                
                 for (int i = 0; i < rooms.Length; i++)
                 { 
-                    string[] room = rooms[i].Split(',');
+                    string[] room = rooms[i].Split('|');
                     if (room[0].Trim() == search.Text.Trim())
                     {
                         continue;
@@ -159,6 +159,26 @@ namespace webFormProject.sally
                 Available.SelectedIndex = 0;
                 // تحديث الصفحة بعد الحذف
             }
+
+        }
+
+        protected void editB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void editR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Reservations_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Borrow_Click(object sender, EventArgs e)
+        {
 
         }
     }

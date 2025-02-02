@@ -34,19 +34,14 @@ namespace webFormProject.jana
                         card.Append("<div class='card-body'>");
                         card.AppendFormat("<h5 class='card-title'>{0} &nbsp;&nbsp;&nbsp;&nbsp; {1} person</h5>", columns[1].Trim(), columns[3].Trim());
                         card.AppendFormat("<p class='card-text'><b>Type:</b> {0}<br/>" +
-                            "<b>Description:</b> {1}<br/>" +
-                            "<b>Available:</b> {2}</p>", columns[2].Trim(), columns[5].Trim(), columns[6].Trim().ToLower() == "true" ? "Yes" : "No");
+                            "<b>Description:</b> {1} </br></br> " 
+                           , columns[2].Trim(), columns[5].Trim());
 
-                        if (isAvailable)
-                        {
+                       
                             // Button is enabled and links to reservation form
-                            card.AppendFormat("<a href='ReservationForm.aspx?roomID={0}&roomType={1}' class='btn' style='background-color: #22333B; color: white;'>Reserve</a>", columns[0].Trim(), columns[2].Trim(), isAvailable ? "Yes" : "No");
-                        }
-                        else
-                        {
-                            // Button is disabled and shows "Not Available"
-                            card.Append("<button class='btn' style='background-color: #ccc; color: white;' disabled>Reserve</button>");
-                        }
+                            card.AppendFormat("<a href='ReservationForm.aspx?roomID={0}&roomType={1}' class='btn' style='background-color: #22333B; color: white;'>Reserve</a>", columns[0].Trim(), columns[2].Trim());
+                        
+                        
 
                         card.Append("</div>");
                         card.Append("</div>"); // Ends the card
@@ -96,20 +91,14 @@ namespace webFormProject.jana
                             card.Append("<div class='card-body'>");
                             card.AppendFormat("<h5 class='card-title'>{0} &nbsp;&nbsp;&nbsp;&nbsp; {1} person</h5>", columns[1].Trim(), columns[3].Trim());
                             card.AppendFormat("<p class='card-text'><b>Type:</b> {0}<br/>" +
-                                "<b>Description:</b> {1}<br/>" +
-                                "<b>Available:</b> {2}</p>", columns[2].Trim(), columns[5].Trim(), isAvailable ? "Yes" : "No");
+                             "<b>Description:</b> {1} </br></br> "
+                            , columns[2].Trim(), columns[5].Trim());
 
-                            if (isAvailable)
-                            {
-                                // ✅ Button is enabled if available
-                                card.AppendFormat("<a href='ReservationForm.aspx?roomID={0}&roomType={1}' class='btn' style='background-color: #22333B; color: white;'>Reserve</a>",
-                                    columns[0].Trim(), columns[2].Trim());
-                            }
-                            else
-                            {
-                                // ❌ Button is disabled if unavailable
-                                card.Append("<button class='btn' style='background-color: #ccc; color: white;' disabled>Not Available</button>");
-                            }
+
+                            // Button is enabled and links to reservation form
+                            card.AppendFormat("<a href='ReservationForm.aspx?roomID={0}&roomType={1}' class='btn' style='background-color: #22333B; color: white;'>Reserve</a>", columns[0].Trim(), columns[2].Trim());
+
+
 
                             card.Append("</div>");
                             card.Append("</div>"); // Ends the card
