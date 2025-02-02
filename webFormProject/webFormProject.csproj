@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adnan\UserHistory.aspx" />
     <Content Include="adnan\App_Data\UserHistory.txt" />
     <Content Include="adnan\WebForm1.aspx" />
     <Content Include="hazem\data\Hazem.txt" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="adnan\AddBook.aspx.designer.cs">
       <DependentUpon>AddBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adnan\UserHistory.aspx.cs">
+      <DependentUpon>UserHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adnan\UserHistory.aspx.designer.cs">
+      <DependentUpon>UserHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="adnan\BorrowBook.aspx.cs">
       <DependentUpon>BorrowBook.aspx</DependentUpon>
