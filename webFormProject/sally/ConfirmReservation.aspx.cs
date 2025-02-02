@@ -15,7 +15,7 @@ namespace webFormProject.sally
         private string roomFilePath;
         protected void Page_Load(object sender, EventArgs e)
         {
-            requestsFilePath = Server.MapPath("~/sally/reservations.txt");
+            requestsFilePath = Server.MapPath("~/jana/reservations.txt");
             notificationsFilePath = Server.MapPath("~/adnan/App_Data/UserNotifications.txt");
             roomFilePath = Server.MapPath("rooms.txt");
             
