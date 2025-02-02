@@ -91,6 +91,17 @@
     <Content Include="jana\ReservationForm.aspx" />
     <Content Include="jana\ViewRooms.aspx" />
     <Content Include="jana\WebForm1.aspx" />
+    <Content Include="nada\bookDetails.txt" />
+    <Content Include="nada\books.txt" />
+    <Content Include="nada\book_details.aspx" />
+    <Content Include="nada\borrow_book.aspx" />
+    <Content Include="nada\borrow_book_request.txt" />
+    <Content Include="nada\imgs\book1.jpg" />
+    <Content Include="nada\imgs\Lumina-removebg-preview.png" />
+    <Content Include="nada\imgs\svgviewer-png-output.png" />
+    <Content Include="nada\logged.txt" />
+    <Content Include="nada\show_books.aspx" />
+    <Content Include="nada\StyleSheet1.css" />
     <Content Include="nada\WebForm1.aspx" />
     <Content Include="sally\add.aspx" />
     <Content Include="sally\ConfirmReservation.aspx" />
@@ -215,6 +226,27 @@
     </Compile>
     <Compile Include="jana\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nada\book_details.aspx.cs">
+      <DependentUpon>book_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\book_details.aspx.designer.cs">
+      <DependentUpon>book_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nada\borrow_book.aspx.cs">
+      <DependentUpon>borrow_book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\borrow_book.aspx.designer.cs">
+      <DependentUpon>borrow_book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nada\show_books.aspx.cs">
+      <DependentUpon>show_books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\show_books.aspx.designer.cs">
+      <DependentUpon>show_books.aspx</DependentUpon>
     </Compile>
     <Compile Include="nada\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

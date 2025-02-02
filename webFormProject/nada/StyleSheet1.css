@@ -1,0 +1,268 @@
+﻿body {
+    background-color: #EAE0D6;
+}
+
+.bg-umber {
+    background-color: #22333B;
+}
+
+.imglogo {
+    width: 20%;
+}
+
+.btn-green {
+    --bs-btn-color: #22333B !important;
+    --bs-btn-bg: #EAE0D6 !important;
+    --bs-btn-border-color: #EAE0D6;
+    --bs-btn-hover-color: #22333B;
+    --bs-btn-hover-bg: #C6AD8F;
+    --bs-btn-hover-border-color: #C6AD8F !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #22333B;
+    --bs-btn-active-bg: #EAE0D6;
+    --bs-btn-active-border-color: #EAE0D6;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #22333B;
+    --bs-btn-disabled-bg: #EAE0D6;
+    --bs-btn-disabled-border-color: #EAE0D6;
+    border-radius: 20px !important;
+    margin-right: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),inset 3px 3px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+.btn-green1 {
+    --bs-btn-color: #EAE0D6 !important;
+    --bs-btn-bg: #22333B !important;
+    --bs-btn-border-color: #22333B;
+    --bs-btn-hover-color: #22333B;
+    --bs-btn-hover-bg: #EAE0D6;
+    --bs-btn-hover-border-color: #22333B !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #EAE0D6;
+    --bs-btn-active-bg: #22333B;
+    --bs-btn-active-border-color: #22333B;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #EAE0D6;
+    --bs-btn-disabled-bg: #22333B;
+    --bs-btn-disabled-border-color: #22333B;
+    border-radius: 170px !important;
+    margin-right: 5px;
+    width: 10% !important;
+}
+
+.section2 .row {
+    justify-content: center;
+    gap: 50px;
+}
+
+.search-container {
+    margin: 40px 0px 30px 0px;
+    display: flex;
+    align-items: center;
+    width: 1100px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+}
+
+    .search-container .search-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #555;
+    }
+
+        .search-container .search-input::placeholder {
+            color: #bbb;
+        }
+
+    .search-container .search-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+/*        .search-container .search-button svg {
+            width: 20px;
+            height: 20px;
+            fill: #22333B;
+        }*/
+
+#searchButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgICA8cGF0aCBkPSJNMTAgMmE4IDggMCAwIDEgOCA4YzAgMS44NS0uNjMgMy41NC0xLjY5IDQuOWw1LjM4IDUuMzgtMS40MSAxLjQxLTUuMzgtNS4zOEE3Ljk2IDcuOTYgMCAwIDEgMTAgMThhOCA4IDAgMSAxIDAtMTZ6bTAgMmE2IDYgMCAxIDAgMCAxMiA2IDYgMCAwIDAgMC0xMnoiIC8+Cjwvc3ZnPg==');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:20px;
+    width:20px;
+}
+
+#searchButton::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+
+.filter-container {
+    margin: 40px 0px 30px 0px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0px;
+    font-size: 16px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    width: 250px;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+    .filter-container select {
+        font-size: 14px;
+        padding: 6px 10px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        background-color: #fff;
+        color: #555;
+        cursor: pointer;
+        transition: border 0.3s ease;
+        width: 100%;
+        height: 100%;
+        margin-right: 5px;
+    }
+
+        .filter-container select:focus {
+            border-color: #007bff; 
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+        }
+
+
+.cards-book {
+    margin: 0px 65px;
+}
+
+    .cards-book .row {
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --bs-card-spacer-x: 0.5rem;
+    margin-bottom:0px !important;
+}
+
+.card img{
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card-title{
+    font-size:14px;
+}
+
+.availability-badge {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.available {
+    color: #155724;
+}
+
+.not-available {
+    color: #721c24;
+}
+
+
+
+/*********************************borrow_book********************************/
+.book {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    margin:70px auto;
+    padding:20px;
+}
+
+    .book img {
+        min-width: 350px;
+        height: auto;
+    }
+
+.book-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+    .book-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+
+    .book-content p {
+        margin-bottom: 15px;
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .book-content .details {
+        font-size: 0.8rem;
+        color: #777;
+        margin-bottom: 20px;
+    }
+
+    .book-content .buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+        .book-content .buttons a {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+            text-decoration:none;
+        }
+
+        .book-content .buttons a {
+            background-color: #C6AD8F;
+
+            color: #fff;
+        }
+
+            .book-content .buttons a:hover {
+                background-color: #C6AD8F;
+            }
+
+
+#submitButton {
+    max-width: 180px;
+    background-color: #22333B;
+    border:none;
+    margin: 30px 0px;
+}

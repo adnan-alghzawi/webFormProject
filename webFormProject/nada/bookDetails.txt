@@ -1,0 +1,1 @@
+1|ggg#Biology|1|.\imgs\book1.jpg|Explores how genes drive evolution and survival introducing the concept of the "selfish gene."|false
