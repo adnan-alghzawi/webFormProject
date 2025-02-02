@@ -131,7 +131,6 @@
     <Content Include="suleiman\imgs\meetingRoom1.jpg" />
     <Content Include="suleiman\imgs\persRoom1.jpeg" />
     <Content Include="suleiman\imgs\privateRoom1.jpg" />
-    <Content Include="sally\users.txt" />
     <Content Include="suleiman\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

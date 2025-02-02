@@ -12,10 +12,13 @@ namespace webFormProject.sally
     {
         private string requestsFilePath;
         private string notificationsFilePath;
+        private string roomFilePath;
         protected void Page_Load(object sender, EventArgs e)
         {
             requestsFilePath = Server.MapPath("~/sally/reservations.txt");
             notificationsFilePath = Server.MapPath("~/adnan/App_Data/UserNotifications.txt");
+            roomFilePath = Server.MapPath("rooms.txt");
+            
 
             if (!IsPostBack)
             {
@@ -59,7 +62,15 @@ namespace webFormProject.sally
 
             UpdateRequestStatus(email, RoomID, "Approved");
             SendNotification(email, "✅ Your borrow request has been approved!");
+            string[] rooms = File.ReadAllLines(roomFilePath);
+            for (int i = 0; i < rooms.Length; i++)
+            {
+                string[] room = rooms[i].Split('|');
+                room[6] = "false";
+                rooms[i] = $"{room[0]}|{room[1]}|{room[2]}|{room[3]}|{room[4]}|{room[5]}|{room[6]}";
 
+            }
+            File.WriteAllLines(roomFilePath, rooms);
             LoadRequests();
         }
 
@@ -84,7 +95,7 @@ namespace webFormProject.sally
 
             foreach (string line in lines)
             {
-                string[] details = line.Split(',');
+                string[] details = line.Split('|');
                 if (details.Length < 8) continue;
 
                 if (details[3] == email && details[0] == RoomID)
@@ -92,7 +103,7 @@ namespace webFormProject.sally
                     details[8] = status;
                 }
 
-                updatedLines.Add(string.Join(",", details));
+                updatedLines.Add(string.Join("|", details));
             }
 
             File.WriteAllLines(requestsFilePath, updatedLines);
@@ -110,22 +121,22 @@ namespace webFormProject.sally
 
         protected void editB_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/adnan/EditBook.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("edit.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ConfirmReservation.aspx");
         }
 
         protected void Borrow_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/adnan/ConfirmBorrow.aspx");
         }
     }
 }

@@ -115,24 +115,24 @@ namespace webFormProject.sally
 
                 foreach (string line in rooms)
                 {
-                    string[] room = line.Split(',');
+                    string[] room = line.Split('|');
 
                     if (selectedValue == room[6] || selectedValue == room[6].Trim().ToLower())
                     {
-                        string content = $"{room[0]},{room[1]},{room[2]},{room[3]},{room[4]},{room[5]},{room[6]}";
+                        string content = $"{room[0]}|{room[1]}|{room[2]}|{room[3]}|{room[4]}|{room[5]}|{room[6]}";
                         File.AppendAllText(filePath2, content + "\n");
                     }
 
                     if (selectedValue == room[2].Substring(0, room[2].IndexOf(" ")).ToLower()|| selectedValue == room[2].Trim())
                     {
                         
-                        string content = $"{room[0]},{room[1]},{room[2]},{room[3]},{room[4]},{room[5]},{room[6]}";
+                        string content = $"{room[0]}|{room[1]}|{room[2]}|{room[3]}|{room[4]}|{room[5]}|{room[6]}";
                         File.AppendAllText(filePath2, content + "\n");
 
                     }
                     if(selectedValue== "")
                     {
-                        string content = $"{room[0]},{room[1]},{room[2]},{room[3]},{room[4]},{room[5]},{room[6]}";
+                        string content = $"{room[0]}|{room[1]}|{room[2]}|{room[3]}|{room[4]}|{room[5]}|{room[6]}";
                         File.AppendAllText(filePath2, content + "\n");
                     }
                 }
