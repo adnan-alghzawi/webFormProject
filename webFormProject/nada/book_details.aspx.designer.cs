@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace task1_webForm_27_1_2025
+namespace webFormProject.nada
 {
 
 
-    public partial class profile
+    public partial class book_details
     {
 
         /// <summary>
@@ -24,75 +24,75 @@ namespace task1_webForm_27_1_2025
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// profileImageUpload control.
+        /// homeTab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload profileImageUpload;
+        protected global::System.Web.UI.WebControls.LinkButton homeTab;
 
         /// <summary>
-        /// profileImage control.
+        /// aboutTab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image profileImage;
+        protected global::System.Web.UI.WebControls.LinkButton aboutTab;
 
         /// <summary>
-        /// name control.
+        /// contactTab control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name;
+        protected global::System.Web.UI.WebControls.LinkButton contactTab;
 
         /// <summary>
-        /// Male control.
+        /// books control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Male;
+        protected global::System.Web.UI.WebControls.LinkButton books;
 
         /// <summary>
-        /// Female control.
+        /// rooms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Female;
+        protected global::System.Web.UI.WebControls.LinkButton rooms;
 
         /// <summary>
-        /// name2 control.
+        /// login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name2;
+        protected global::System.Web.UI.WebControls.Button login;
 
         /// <summary>
-        /// email2 control.
+        /// rigester control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email2;
+        protected global::System.Web.UI.WebControls.Button rigester;
 
         /// <summary>
-        /// dob2 control.
+        /// div_book_details control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dob2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_book_details;
     }
 }

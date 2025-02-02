@@ -67,9 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adnan\App_Data\UserHistory.txt" />
     <Content Include="adnan\WebForm1.aspx" />
     <Content Include="hazem\data\Hazem.txt" />
     <Content Include="hazem\data\logged.txt" />
+    <Content Include="hazem\edit profile.aspx" />
     <Content Include="hazem\LogIn.aspx" />
     <Content Include="hazem\profile.aspx" />
     <Content Include="hazem\registration.aspx" />
@@ -92,13 +94,26 @@
     <Content Include="jana\ViewAndCancelReservation.aspx" />
     <Content Include="jana\ViewRooms.aspx" />
     <Content Include="jana\WebForm1.aspx" />
+    <Content Include="nada\bookDetails.txt" />
+    <Content Include="nada\books.txt" />
+    <Content Include="nada\book_details.aspx" />
+    <Content Include="nada\borrow_book.aspx" />
+    <Content Include="nada\borrow_book_request.txt" />
+    <Content Include="nada\imgs\book1.jpg" />
+    <Content Include="nada\imgs\Lumina-removebg-preview.png" />
+    <Content Include="nada\imgs\svgviewer-png-output.png" />
+    <Content Include="nada\logged.txt" />
+    <Content Include="nada\show_books.aspx" />
+    <Content Include="nada\StyleSheet1.css" />
     <Content Include="nada\WebForm1.aspx" />
     <Content Include="sally\add.aspx" />
+    <Content Include="sally\ConfirmReservation.aspx" />
     <Content Include="sally\imgs\meetingRoom1.jpg" />
     <Content Include="sally\imgs\Lumina-removebg-preview.png" />
     <Content Include="sally\imgs\Lumina__1_-removebg-preview.png" />
     <Content Include="sally\imgs\privateRoom1.jpg" />
     <Content Include="sally\imgs\persRoom1.jpeg" />
+    <Content Include="sally\reservations.txt" />
     <Content Include="sally\reset password.aspx" />
     <Content Include="sally\RoomAdmin.aspx" />
     <Content Include="sally\rooms.txt" />
@@ -158,6 +173,13 @@
     </Compile>
     <Compile Include="adnan\ShowBooks.aspx.designer.cs">
       <DependentUpon>ShowBooks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hazem\edit profile.aspx.cs">
+      <DependentUpon>edit profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hazem\edit profile.aspx.designer.cs">
+      <DependentUpon>edit profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="hazem\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
@@ -222,6 +244,27 @@
     <Compile Include="jana\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="nada\book_details.aspx.cs">
+      <DependentUpon>book_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\book_details.aspx.designer.cs">
+      <DependentUpon>book_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nada\borrow_book.aspx.cs">
+      <DependentUpon>borrow_book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\borrow_book.aspx.designer.cs">
+      <DependentUpon>borrow_book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nada\show_books.aspx.cs">
+      <DependentUpon>show_books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nada\show_books.aspx.designer.cs">
+      <DependentUpon>show_books.aspx</DependentUpon>
+    </Compile>
     <Compile Include="nada\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -236,6 +279,13 @@
     </Compile>
     <Compile Include="sally\add.aspx.designer.cs">
       <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sally\ConfirmReservation.aspx.cs">
+      <DependentUpon>ConfirmReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sally\ConfirmReservation.aspx.designer.cs">
+      <DependentUpon>ConfirmReservation.aspx</DependentUpon>
     </Compile>
     <Compile Include="sally\reset password.aspx.cs">
       <DependentUpon>reset password.aspx</DependentUpon>
@@ -296,7 +346,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="hazem\images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,30 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
-namespace webFormProject.adnan
+namespace webFormProject.sally
 {
-    public partial class ConfirmBorrow : System.Web.UI.Page
+    public partial class ConfirmReservation : System.Web.UI.Page
     {
         private string requestsFilePath;
         private string notificationsFilePath;
-        private string historyFilePath;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            requestsFilePath = Server.MapPath("~/adnan/App_Data/BorrowRequests.txt");
+            requestsFilePath = Server.MapPath("~/sally/reservations.txt");
             notificationsFilePath = Server.MapPath("~/adnan/App_Data/UserNotifications.txt");
-            historyFilePath = Server.MapPath("~/adnan/App_Data/UserHistory.txt");
 
             if (!IsPostBack)
             {
                 LoadRequests();
             }
         }
-
         private void LoadRequests()
         {
             if (!File.Exists(requestsFilePath)) return;
@@ -34,18 +31,18 @@ namespace webFormProject.adnan
 
             foreach (string line in lines)
             {
-                string[] details = line.Split('|');
-                if (details.Length < 7) continue;
+                string[] details = line.Split(',');
+                if (details.Length < 8) continue;
 
                 requests.Add(new
                 {
-                    Email = details[0],
-                    UserName = details[1],
-                    BookID = details[2],
-                    BookName = details[3],
-                    BorrowDate = details[4],
-                    Duration = details[5],
-                    Status = details[6]  // Pending, Approved, Rejected
+                    Email = details[3],
+                    UserName = details[2],
+                    RoomID = details[0],
+                    RoomType = details[1],
+                    BorrowDate = details[5]+" "+ details[6],
+                    Duration = details[7],
+                    Status = details[8]  // Pending, Approved, Rejected
                 });
             }
 
@@ -55,33 +52,30 @@ namespace webFormProject.adnan
 
         protected void btnApprove_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            string[] args = btn.CommandArgument.Split('|');
+            Button btnApprove = (Button)sender;
+            string[] args = btnApprove.CommandArgument.Split('|');
             string email = args[0];
-            string bookID = args[1];
+            string RoomID = args[1];
 
-            UpdateRequestStatus(email, bookID, "Approved");
+            UpdateRequestStatus(email, RoomID, "Approved");
             SendNotification(email, "✅ Your borrow request has been approved!");
-            LogHistory(email, bookID, "Approved");
 
             LoadRequests();
         }
 
         protected void btnReject_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            string[] args = btn.CommandArgument.Split('|');
+            Button btnReject = (Button)sender;
+            string[] args = btnReject.CommandArgument.Split('|');
             string email = args[0];
-            string bookID = args[1];
+            string RoomID = args[1];
 
-            UpdateRequestStatus(email, bookID, "Rejected");
+            UpdateRequestStatus(email, RoomID, "Rejected");
             SendNotification(email, "❌ Your borrow request has been rejected.");
-            LogHistory(email, bookID, "Rejected");
 
             LoadRequests();
         }
-
-        private void UpdateRequestStatus(string email, string bookID, string status)
+        private void UpdateRequestStatus(string email, string RoomID, string status)
         {
             if (!File.Exists(requestsFilePath)) return;
 
@@ -90,30 +84,28 @@ namespace webFormProject.adnan
 
             foreach (string line in lines)
             {
-                string[] details = line.Split('|');
-                if (details.Length < 7) continue;
+                string[] details = line.Split(',');
+                if (details.Length < 8) continue;
 
-                if (details[0] == email && details[2] == bookID)
+                if (details[3] == email && details[0] == RoomID)
                 {
-                    details[6] = status;
+                    details[8] = status;
                 }
 
-                updatedLines.Add(string.Join("|", details));
+                updatedLines.Add(string.Join(",", details));
             }
 
             File.WriteAllLines(requestsFilePath, updatedLines);
         }
-
         private void SendNotification(string email, string message)
         {
             string notification = email + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
         }
 
-        private void LogHistory(string email, string bookID, string status)
+        protected void back_Click(object sender, EventArgs e)
         {
-            string message = $"{DateTime.Now}: {status} | Email: {email} | Book ID: {bookID}";
-            File.AppendAllText(historyFilePath, message + Environment.NewLine);
+            Response.Redirect("RoomAdmin.aspx");
         }
     }
 }

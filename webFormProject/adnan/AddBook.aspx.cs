@@ -107,5 +107,10 @@ namespace webFormProject.adnan
             txtDescription.Text = "";
             ddlAvailability.SelectedIndex = 0;
         }
+
+        //protected void btnShowBooks_Click(object sender, EventArgs e)
+        //{
+        //    Response.Redirect("ShowBooks");
+        //}
     }
 }
