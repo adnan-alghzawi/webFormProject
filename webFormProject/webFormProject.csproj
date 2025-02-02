@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -107,6 +110,7 @@
     <Content Include="nada\StyleSheet1.css" />
     <Content Include="nada\WebForm1.aspx" />
     <Content Include="sally\add.aspx" />
+    <Content Include="sally\AdminDash.aspx" />
     <Content Include="sally\ConfirmReservation.aspx" />
     <Content Include="sally\imgs\meetingRoom1.jpg" />
     <Content Include="sally\imgs\Lumina-removebg-preview.png" />
@@ -279,6 +283,13 @@
     </Compile>
     <Compile Include="sally\add.aspx.designer.cs">
       <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sally\AdminDash.aspx.cs">
+      <DependentUpon>AdminDash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sally\AdminDash.aspx.designer.cs">
+      <DependentUpon>AdminDash.aspx</DependentUpon>
     </Compile>
     <Compile Include="sally\ConfirmReservation.aspx.cs">
       <DependentUpon>ConfirmReservation.aspx</DependentUpon>

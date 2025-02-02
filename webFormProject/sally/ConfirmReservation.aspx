@@ -13,6 +13,39 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <style>
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #22333B;
+            color: white;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .abtn {
+            display: block;
+            color: white;
+            background-color: #22333B;
+            padding: 10px;
+            text-decoration: none;
+            margin: 10px 0;
+            border: none !important;
+            width: 100%;
+            text-align: left;
+        }
+
+            .abtn:hover {
+                background-color: #34495e;
+            }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
         .bg-umber {
             background-color: #22333B;
         }
@@ -22,7 +55,7 @@
         }
 
         .imglogo {
-            width: 20%;
+            width: 40%;
         }
 
         .btn-green {
@@ -83,38 +116,43 @@
     </style>
 </head>
 <body>
-
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
-        <a class="navbar-brand ps-3 text-white" href="#">
-            <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" />
-        </a>
-    </nav>
-    
-
-    <div class="container mt-5">
-        <h2 class="text-center">Confirm Borrow Requests</h2>
-        <form id="form1" runat="server">
-            <asp:Button ID="back" runat="server" class="btn btn-green1 mt-5 me-3" OnClick="back_Click" Text="Back"></asp:Button>
-            <asp:GridView ID="gvRequests" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered mt-3">
-                <Columns>
-                    <asp:BoundField DataField="Email" HeaderText="Email" />
-                    <asp:BoundField DataField="UserName" HeaderText="User Name" />
-                    <asp:BoundField DataField="RoomID" HeaderText="Room ID" />
-                    <asp:BoundField DataField="RoomType" HeaderText="Room type" />
-                    <asp:BoundField DataField="BorrowDate" HeaderText="Borrow Date" />
-                    <asp:BoundField DataField="Duration" HeaderText="Duration (Days)" />
-                    <asp:TemplateField HeaderText="Action">
-                        <ItemTemplate>
-                            <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-green1 btn-sm"
-                                CommandArgument='<%# Eval("Email") + "|" + Eval("RoomID") %>' OnClick="btnApprove_Click" />
-                            <asp:Button ID="btnReject" runat="server" Text="Reject" CssClass="btn btn-red btn-sm"
-                                CommandArgument='<%# Eval("Email") + "|" + Eval("RoomID") %>' OnClick="btnReject_Click" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
-        </form>
+<form id="form1" runat="server">
+    <div class="sidebar">
+        <img src="imgs/Lumina__1_-removebg-preview.png" class="imglogo" />
+        <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
+        <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
+        <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
+        <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
     </div>
+
+
+    <div class="content">
+        <div class="container mt-5">
+            <h2 class="text-center">Confirm Borrow Requests</h2>
+            
+                <asp:Button ID="back" runat="server" class="btn btn-green1 mt-5 me-3" OnClick="back_Click" Text="Back"></asp:Button>
+                <asp:GridView ID="gvRequests" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered mt-3">
+                    <Columns>
+                        <asp:BoundField DataField="Email" HeaderText="Email" />
+                        <asp:BoundField DataField="UserName" HeaderText="User Name" />
+                        <asp:BoundField DataField="RoomID" HeaderText="Room ID" />
+                        <asp:BoundField DataField="RoomType" HeaderText="Room type" />
+                        <asp:BoundField DataField="BorrowDate" HeaderText="Borrow Date" />
+                        <asp:BoundField DataField="Duration" HeaderText="Duration (Days)" />
+                        <asp:TemplateField HeaderText="Action">
+                            <ItemTemplate>
+                                <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-green1 btn-sm"
+                                    CommandArgument='<%# Eval("Email") + "|" + Eval("RoomID") %>' OnClick="btnApprove_Click" />
+                                <asp:Button ID="btnReject" runat="server" Text="Reject" CssClass="btn btn-red btn-sm"
+                                    CommandArgument='<%# Eval("Email") + "|" + Eval("RoomID") %>' OnClick="btnReject_Click" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+           
+        </div>
+    </div>
+
+</form>
 </body>
 </html>
