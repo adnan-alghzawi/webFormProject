@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
 
 namespace webFormProject.adnan
 {
@@ -12,16 +11,20 @@ namespace webFormProject.adnan
     {
         private string requestsFilePath;
         private string notificationsFilePath;
+        private string historyFilePath;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             requestsFilePath = Server.MapPath("~/adnan/App_Data/BorrowRequests.txt");
             notificationsFilePath = Server.MapPath("~/adnan/App_Data/UserNotifications.txt");
+            historyFilePath = Server.MapPath("~/adnan/App_Data/UserHistory.txt");
 
             if (!IsPostBack)
             {
                 LoadRequests();
             }
         }
+
         private void LoadRequests()
         {
             if (!File.Exists(requestsFilePath)) return;
@@ -52,29 +55,32 @@ namespace webFormProject.adnan
 
         protected void btnApprove_Click(object sender, EventArgs e)
         {
-            Button btnApprove = (Button)sender;
-            string[] args = btnApprove.CommandArgument.Split('|');
+            Button btn = (Button)sender;
+            string[] args = btn.CommandArgument.Split('|');
             string email = args[0];
             string bookID = args[1];
 
             UpdateRequestStatus(email, bookID, "Approved");
             SendNotification(email, "✅ Your borrow request has been approved!");
+            LogHistory(email, bookID, "Approved");
 
             LoadRequests();
         }
 
         protected void btnReject_Click(object sender, EventArgs e)
         {
-            Button btnReject = (Button)sender;
-            string[] args = btnReject.CommandArgument.Split('|');
+            Button btn = (Button)sender;
+            string[] args = btn.CommandArgument.Split('|');
             string email = args[0];
             string bookID = args[1];
 
             UpdateRequestStatus(email, bookID, "Rejected");
             SendNotification(email, "❌ Your borrow request has been rejected.");
+            LogHistory(email, bookID, "Rejected");
 
             LoadRequests();
         }
+
         private void UpdateRequestStatus(string email, string bookID, string status)
         {
             if (!File.Exists(requestsFilePath)) return;
@@ -97,10 +103,17 @@ namespace webFormProject.adnan
 
             File.WriteAllLines(requestsFilePath, updatedLines);
         }
+
         private void SendNotification(string email, string message)
         {
             string notification = email + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
+        }
+
+        private void LogHistory(string email, string bookID, string status)
+        {
+            string message = $"{DateTime.Now}: {status} | Email: {email} | Book ID: {bookID}";
+            File.AppendAllText(historyFilePath, message + Environment.NewLine);
         }
     }
 }

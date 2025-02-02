@@ -13,27 +13,35 @@ namespace webFormProject.adnan
         {
             if (!IsPostBack)
             {
-                LoadBooks("All");
+                BindBooks("All");
             }
         }
 
         protected void FilterChanged(object sender, EventArgs e)
         {
-            LoadBooks(ddlFilter.SelectedValue);
+            BindBooks(ddlFilter.SelectedValue);
         }
 
-        private void LoadBooks(string filter)
+        private void BindBooks(string filter)
+        {
+            var booksData = LoadBooksData(filter);
+            rptBooks.DataSource = booksData;
+            rptBooks.DataBind();
+        }
+
+        private List<dynamic> LoadBooksData(string filter)
         {
             string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
             if (!File.Exists(filePath))
             {
-                return;
+                ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alert('File not found.');", true);
+                return new List<dynamic>();  // Return an empty list if the file does not exist.
             }
 
             var booksData = File.ReadAllLines(filePath).Select(book =>
             {
                 var details = book.Split('|');
-                return (dynamic)new
+                return new
                 {
                     BookID = details[0],
                     BookName = details[1],
@@ -46,54 +54,50 @@ namespace webFormProject.adnan
                 };
             }).Where(b => filter == "All" || b.Availability == filter).ToList();
 
-            rptBooks.DataSource = booksData;
-            rptBooks.DataBind();
+            return booksData.Cast<dynamic>().ToList();
         }
 
         protected void export_Click(object sender, EventArgs e)
         {
-            ExportBooks("Available");
-            ExportBooks("Unavailable");
-            ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alert('Data exported successfully!');", true);
+            ExportBooks(ddlFilter.SelectedValue);
         }
 
-        private void ExportBooks(string availability)
+        private void ExportBooks(string filter)
         {
-            string filePath = Server.MapPath($"~/adnan/App_Data/{availability}Books.txt");
-            var booksData = GetBooksData(availability);
+            var booksData = LoadBooksData(filter);
 
-            List<string> lines = booksData.Select(book => $"{book.BookID}|{book.BookName}|{book.Type}|{book.Level}|{book.ImagePath}|{book.Description}|{book.Availability}").ToList();
-            File.WriteAllLines(filePath, lines);
-        }
-
-        private List<dynamic> GetBooksData(string filter)
-        {
-            string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
-            if (!File.Exists(filePath))
+            if (!booksData.Any())
             {
-                return new List<dynamic>();
+                ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alert('No data available to export.');", true);
+                return;
             }
 
-            return File.ReadAllLines(filePath).Select(book =>
+            string html = "<table border='1' style='width:100%; border-collapse:collapse;'>";
+            html += "<tr><th>ID</th><th>Book Name</th><th>Type</th><th>Level</th><th>Image</th><th>Description</th><th>Availability</th></tr>";
+
+            foreach (var book in booksData)
             {
-                var details = book.Split('|');
-                return (dynamic)new
-                {
-                    BookID = details[0],
-                    BookName = details[1],
-                    Type = details[2],
-                    Level = details[3],
-                    ImagePath = details[4].Replace("~", ""),
-                    Description = details[5],
-                    Availability = details[6],
-                    AvailabilityClass = details[6] == "Available" ? "text-success" : "text-danger"
-                };
-            }).Where(b => filter == "All" || b.Availability == filter).ToList();
+                html += "<tr>";
+                html += $"<td>{book.BookID}</td><td>{book.BookName}</td><td>{book.Type}</td><td>{book.Level}</td><td>{book.ImagePath}</td><td>{book.Description}</td><td>{book.Availability}</td>";
+                html += "</tr>";
+            }
+            html += "</table>";
+
+            Response.Clear();
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("content-disposition", "attachment;filename=BooksExport.xls");
+            Response.Write(html);
+            Response.End();
         }
 
         protected void edit_Click(object sender, EventArgs e)
         {
             Response.Redirect("EditBook.aspx");
+        }
+
+        protected void btnAddBook_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddBook.aspx");
         }
     }
 }

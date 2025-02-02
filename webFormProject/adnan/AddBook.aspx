@@ -43,6 +43,8 @@
             </div>
             <asp:Button ID="btnAddBook" runat="server" Text=" Add book " CssClass="btn btn-primary" OnClick="btnAddBook_Click" />
             <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3"></asp:Label>
+            
+           <%-- <asp:Button ID="btnShowBooks" runat="server" Text="Show Books" CssClass="btn btn-secondary" OnClick="btnShowBooks_Click" />--%>
         </form>
     </div>
 </body>
