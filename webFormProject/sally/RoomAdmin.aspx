@@ -12,8 +12,15 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <style>
+        *{
+            margin:0;
+            padding:0;
+        }
         .bg-umber {
             background-color: #22333B;
+        }
+        form{
+            height : 95vh;
         }
 
         body {
@@ -62,56 +69,58 @@
             margin-right: 5px;
             width: 10% !important;
         }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+
+            .card:hover {
+                transform: translateY(-5px); /* Moves the card up */
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Adds shadow */
+            }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" class="" runat="server">
         <div>
             <!-- navbar -->
             <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
                 <a class="navbar-brand ps-3 text-white" href="#">
-                    <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" /></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item ">
+                    <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" />
 
-                            <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="contactTab_Click" Text="Books"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="contactTab_Click" Text="Meeting Rooms"></asp:LinkButton>
-                        </li>
-                    </ul>
-                    <div>
-                        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0"></asp:Button>
-                        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0"></asp:Button>
-                    </div>
-                </div>
+                </a>
+
             </nav>
             <div class="container my-5">
                 <div class="row d-flex w-100">
-                    <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server"></asp:TextBox>
-                    <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>
+                    <asp:Button ID="backtodash" runat="server" Text="Back" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="backtodash_Click"></asp:Button>
                     <asp:Button ID="EditRooms" runat="server" Text="Edit Rooms" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="EditRoom_Click"></asp:Button>
-                    <asp:Button ID="DeleteRooms" runat="server" Text="Delete Rooms" CssClass="btn btn-green1 my-2 my-sm-0"></asp:Button>
-                    <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0"></asp:Button>
+                    <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="AddRooms_Click"></asp:Button>
+                    <asp:Button ID="ReservationConfirm" runat="server" Text="Reservations" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="ReservationConfirm_Click"></asp:Button>
+                    <asp:Button ID="Export" runat="server" Text="Export Report" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="Export_Click"></asp:Button>
+                    <asp:DropDownList CssClass="form-select w-25 me-1" ID="ddlSearchRoom" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SearchRoom_Click">
+                        <asp:ListItem Text="Select Room" Value="" />
+                        <asp:ListItem Text="Private Room" Value="Private room" />
+                        <asp:ListItem Text="Meeting Room" Value="Meeting room" />
+                        <asp:ListItem Text="Available" Value="true" />
+                        <asp:ListItem Text="not Available" Value="false" />
+                    </asp:DropDownList>
+
+                    <%--<asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>--%>
                 </div>
             </div>
             <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
             </div>
         </div>
-    </form>
 
+    </form>
+    <footer class="bg-umber text-center text-lg-start text-white">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright:
+            <span>LUMINA</span>
+        </div>
+        <!-- Copyright -->
+    </footer>
 </body>
 </html>

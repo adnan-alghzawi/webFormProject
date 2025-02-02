@@ -1,0 +1,2 @@
+1|math|Basic Mathematics|7 class|/adnan/Images/Books/math.jpg|fundamental|Available
+3|seience|earth sience|9 class|/adnan/Images/Books/math.jpg|history of earth|Available

@@ -79,34 +79,10 @@
             <!-- navbar -->
             <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
                 <a class="navbar-brand ps-3 text-white" href="#">
-                    <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" /></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item ">
+                    <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" />
 
-                            <asp:LinkButton ID="homeTab" CssClass="nav-link active text-white" runat="server" Text="Home"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton ID="aboutTab" runat="server" Text="About Us" CssClass="nav-link text-white"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton ID="contactTab" runat="server" Text="Contact Us" CssClass="nav-link text-white"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton ID="books" runat="server" Text="Books" CssClass="nav-link text-white"></asp:LinkButton>
-                        </li>
-                        <li class="nav-item">
-                            <asp:LinkButton ID="rooms" runat="server" Text="Meeting Rooms" CssClass="nav-link text-white"></asp:LinkButton>
-                        </li>
-                    </ul>
-                    <div>
-                        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0"></asp:Button>
-                        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0"></asp:Button>
-                    </div>
-                </div>
+                </a>
+                
             </nav>
 
 

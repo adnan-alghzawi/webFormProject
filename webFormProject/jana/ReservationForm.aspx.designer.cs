@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webFormProject.sally
+namespace webFormProject.jana
 {
 
 
-    public partial class reset_password
+    public partial class ReservationForm
     {
 
         /// <summary>
@@ -24,111 +24,93 @@ namespace webFormProject.sally
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// back control.
+        /// roomID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button back;
+        protected global::System.Web.UI.WebControls.TextBox roomID;
 
         /// <summary>
-        /// Email control.
+        /// roomType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.WebControls.TextBox roomType;
 
         /// <summary>
-        /// check control.
+        /// fullName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button check;
+        protected global::System.Web.UI.WebControls.TextBox fullName;
 
         /// <summary>
-        /// EmailLabel control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailLabel;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// resetForm control.
+        /// phoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resetForm;
+        protected global::System.Web.UI.WebControls.TextBox phoneNumber;
 
         /// <summary>
-        /// oldpass control.
+        /// reservationDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox oldpass;
+        protected global::System.Web.UI.WebControls.TextBox reservationDate;
 
         /// <summary>
-        /// oldPassLabel control.
+        /// startTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label oldPassLabel;
+        protected global::System.Web.UI.WebControls.TextBox startTime;
 
         /// <summary>
-        /// newPass control.
+        /// endTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox newPass;
+        protected global::System.Web.UI.WebControls.TextBox endTime;
 
         /// <summary>
-        /// Confirm control.
+        /// specialRequests control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Confirm;
+        protected global::System.Web.UI.WebControls.TextBox specialRequests;
 
         /// <summary>
-        /// pass control.
+        /// btnReserve control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pass;
-
-        /// <summary>
-        /// cancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cancel;
-
-        /// <summary>
-        /// saveCanghes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button saveCanghes;
+        protected global::System.Web.UI.WebControls.Button btnReserve;
     }
 }

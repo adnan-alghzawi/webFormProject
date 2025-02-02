@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adnan\App_Data\UserHistory.txt" />
     <Content Include="adnan\WebForm1.aspx" />
     <Content Include="hazem\data\Hazem.txt" />
     <Content Include="hazem\data\logged.txt" />
@@ -86,18 +87,25 @@
     <Content Include="adnan\Images\Books\math2.jpg" />
     <Content Include="adnan\ShowBooks.aspx" />
     <Content Include="hazem\WebForm1.aspx" />
+    <Content Include="jana\MeetingRoom3.jpg" />
+    <Content Include="jana\ReservationForm.aspx" />
+    <Content Include="jana\ViewRooms.aspx" />
     <Content Include="jana\WebForm1.aspx" />
     <Content Include="nada\WebForm1.aspx" />
     <Content Include="sally\add.aspx" />
+    <Content Include="sally\ConfirmReservation.aspx" />
     <Content Include="sally\imgs\meetingRoom1.jpg" />
     <Content Include="sally\imgs\Lumina-removebg-preview.png" />
     <Content Include="sally\imgs\Lumina__1_-removebg-preview.png" />
     <Content Include="sally\imgs\privateRoom1.jpg" />
     <Content Include="sally\imgs\persRoom1.jpeg" />
+    <Content Include="sally\reservations.txt" />
     <Content Include="sally\reset password.aspx" />
     <Content Include="sally\RoomAdmin.aspx" />
     <Content Include="sally\rooms.txt" />
     <Content Include="sally\edit.aspx" />
+    <Content Include="suleiman\aboutUs.aspx" />
+    <Content Include="suleiman\contactUs.aspx" />
     <Content Include="suleiman\feedbackAdmin.aspx" />
     <Content Include="suleiman\feedback.txt" />
     <Content Include="suleiman\imgs\Lumina-removebg-preview.png" />
@@ -187,6 +195,20 @@
     <Compile Include="hazem\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="jana\ReservationForm.aspx.cs">
+      <DependentUpon>ReservationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\ReservationForm.aspx.designer.cs">
+      <DependentUpon>ReservationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jana\ViewRooms.aspx.cs">
+      <DependentUpon>ViewRooms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\ViewRooms.aspx.designer.cs">
+      <DependentUpon>ViewRooms.aspx</DependentUpon>
+    </Compile>
     <Compile Include="jana\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,6 +231,13 @@
     <Compile Include="sally\add.aspx.designer.cs">
       <DependentUpon>add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sally\ConfirmReservation.aspx.cs">
+      <DependentUpon>ConfirmReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sally\ConfirmReservation.aspx.designer.cs">
+      <DependentUpon>ConfirmReservation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sally\reset password.aspx.cs">
       <DependentUpon>reset password.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,6 +258,20 @@
     </Compile>
     <Compile Include="sally\edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suleiman\aboutUs.aspx.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suleiman\aboutUs.aspx.designer.cs">
+      <DependentUpon>aboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="suleiman\contactUs.aspx.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="suleiman\contactUs.aspx.designer.cs">
+      <DependentUpon>contactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="suleiman\feedbackAdmin.aspx.cs">
       <DependentUpon>feedbackAdmin.aspx</DependentUpon>
