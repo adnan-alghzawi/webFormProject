@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -94,7 +95,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <asp:Button ID="submitButton" runat="server" Text="Submit" class="btn btn-primary" OnClick="submitButton_Click" />
-                                    <asp:Label ID="msg" Text="Please fill in all fields" runat="server" Visible="false" />
+                                    <asp:Label ID="msg" Text="Please fill up all fields" runat="server" Visible="false" />
                                 </div>
 
                             </div>
@@ -103,28 +104,9 @@
 
                 </div>
             </div>
-            <!-- Modal (Popup) -->
-           <%-- <div class="modal fade" id="borrowRequestModal" tabindex="-1" aria-labelledby="borrowRequestModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="borrowRequestModalLabel">Request Submitted</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            Your borrow request has been submitted successfully.
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <a href="show_books.aspx" class="btn btn-primary">Go to Books</a>
-                        </div>
-                    </div>
-                </div>
-            </div>--%>
 
         </div>
     </form>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

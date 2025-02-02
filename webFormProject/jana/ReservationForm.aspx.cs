@@ -55,7 +55,7 @@ namespace webFormProject.jana
                 string[] reservations = File.ReadAllLines(filePath);
                 foreach (var reservation in reservations)
                 {
-                    string[] details = reservation.Split(',');
+                    string[] details = reservation.Split('|');
 
                     if (details.Length >= 8)
                     {
@@ -85,7 +85,7 @@ namespace webFormProject.jana
 
             if (isAvailable)
             {
-                string newReservation = $"{roomId},{roomTypeText},{fullNameText},{emailText},{phoneNumberText},{reservationDateText},{startTimeText},{endTimeText},Pending";
+                string newReservation = $"{roomId}|{roomTypeText}|{fullNameText}|{emailText}|{phoneNumberText}|{reservationDateText}|{startTimeText}|{endTimeText}|Pending";
                 File.AppendAllText(filePath, newReservation + Environment.NewLine);
 
                 ShowAlert("Reservation successful!", true);
@@ -151,6 +151,31 @@ namespace webFormProject.jana
                     endTime.Text = endTimeValue.ToString("HH:mm");
                 }
             }
+        }
+
+        protected void homeTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void aboutTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void contactTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void books_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rooms_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
