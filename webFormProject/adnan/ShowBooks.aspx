@@ -63,6 +63,10 @@
             width: auto;
             display: inline-block;
         }
+
+        .bg-umber {
+            background-color: #22333B;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +101,18 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
+
+            <br />
+
+            <footer class="bg-umber text-center text-lg-start text-white">
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2020 Copyright:
+        <span>LUMINA</span>
+                </div>
+                <!-- Copyright -->
+            </footer>
+
         </div>
     </form>
 </body>
