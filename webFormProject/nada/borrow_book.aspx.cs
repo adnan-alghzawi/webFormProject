@@ -79,7 +79,7 @@ namespace webFormProject.nada
                         if (!string.IsNullOrEmpty(startDate.Text) && !string.IsNullOrEmpty(startTime.Text) &&
                         !string.IsNullOrEmpty(endDate.Text) && !string.IsNullOrEmpty(endTime.Text))
                         {
-                            string borrow_file = Server.MapPath("borrow_book_request.txt");
+                            string borrow_file = Server.MapPath("~/nada/borrow_book_request.txt");
                             if (!File.Exists(borrow_file))
                             {
                                 File.Create(borrow_file);
