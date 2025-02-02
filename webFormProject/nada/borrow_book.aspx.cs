@@ -79,7 +79,7 @@ namespace webFormProject.nada
                                 string cleanedUserData2 = userData[2].Trim();
                                 sw.WriteLine($"{bookData[0]}|{bookData[1]}|{userData[0]}|{userData[1]}|{cleanedUserData2}|{startDate.Text}|{startTime.Text}|{endDate.Text}|{endTime.Text}|\"Pending\"");
                             }
-                            Response.Write("<script>alert('Your borrow request has been submitted successfully.'); window.location='show_books.aspx';</script>");
+                            Response.Write("<script>$(document).ready(function() { $('#borrowRequestModal').modal('show'); });</script>");
                         }
                         else
                         {
