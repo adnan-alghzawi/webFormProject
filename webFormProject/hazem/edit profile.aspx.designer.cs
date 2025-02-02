@@ -11,7 +11,7 @@ namespace task1_webForm_27_1_2025
 {
 
 
-    public partial class profile
+    public partial class edit_profile
     {
 
         /// <summary>
@@ -24,22 +24,22 @@ namespace task1_webForm_27_1_2025
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// profileImageUpload control.
+        /// ProfileImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload profileImageUpload;
+        protected global::System.Web.UI.WebControls.Image ProfileImage;
 
         /// <summary>
-        /// profileImage control.
+        /// FileUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image profileImage;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
         /// name control.
@@ -51,48 +51,21 @@ namespace task1_webForm_27_1_2025
         protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
-        /// Male control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Male;
+        protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
-        /// Female control.
+        /// dob control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Female;
-
-        /// <summary>
-        /// name2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name2;
-
-        /// <summary>
-        /// email2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email2;
-
-        /// <summary>
-        /// dob2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dob2;
+        protected global::System.Web.UI.WebControls.TextBox dob;
     }
 }

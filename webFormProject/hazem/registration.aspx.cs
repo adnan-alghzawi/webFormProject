@@ -17,7 +17,7 @@ namespace task1_webForm_27_1_2025
 
         protected void register_Click(object sender, EventArgs e)
         {
-            string file = Server.MapPath("~/data/Hazem.txt");
+            string file = Server.MapPath("~/hazem/data/Hazem.txt");
 
             if (!File.Exists(file))
             {

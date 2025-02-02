@@ -70,6 +70,7 @@
     <Content Include="adnan\WebForm1.aspx" />
     <Content Include="hazem\data\Hazem.txt" />
     <Content Include="hazem\data\logged.txt" />
+    <Content Include="hazem\edit profile.aspx" />
     <Content Include="hazem\LogIn.aspx" />
     <Content Include="hazem\profile.aspx" />
     <Content Include="hazem\registration.aspx" />
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="adnan\ShowBooks.aspx.designer.cs">
       <DependentUpon>ShowBooks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hazem\edit profile.aspx.cs">
+      <DependentUpon>edit profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hazem\edit profile.aspx.designer.cs">
+      <DependentUpon>edit profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="hazem\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
@@ -246,7 +254,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="hazem\images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
