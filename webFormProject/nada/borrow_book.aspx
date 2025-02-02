@@ -104,7 +104,7 @@
                 </div>
             </div>
             <!-- Modal (Popup) -->
-            <div class="modal fade" id="borrowRequestModal" tabindex="-1" aria-labelledby="borrowRequestModalLabel" aria-hidden="true">
+           <%-- <div class="modal fade" id="borrowRequestModal" tabindex="-1" aria-labelledby="borrowRequestModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -120,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
 
         </div>
     </form>
