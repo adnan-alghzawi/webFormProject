@@ -23,7 +23,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ">
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
                         </li>
                         <li class="nav-item">
