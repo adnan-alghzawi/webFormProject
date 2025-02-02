@@ -15,29 +15,25 @@ namespace webFormProject.sally
         {
 
         }
-        protected void homeTab_Click(object sender, EventArgs e)
-        {
 
+        protected void editB_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/adnan/EditBook.aspx");
         }
 
-        protected void aboutTab_Click(object sender, EventArgs e)
+        protected void editR_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("edit.aspx");
         }
 
-        protected void contactTab_Click(object sender, EventArgs e)
+        protected void Reservations_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ConfirmReservation.aspx");
         }
 
-        protected void books_Click(object sender, EventArgs e)
+        protected void Borrow_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void rooms_Click(object sender, EventArgs e)
-        {
-
+            Response.Redirect("~/adnan/ConfirmBorrow.aspx");
         }
 
         protected void Back_Click(object sender, EventArgs e)
@@ -107,6 +103,14 @@ namespace webFormProject.sally
             {
                 File.WriteAllText(filePath, newRoomEntry + Environment.NewLine);
 
+            }
+        }
+
+        protected void Capacity_TextChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(Capacity.Text) > 1)
+            {
+                type.SelectedIndex = 1;
             }
         }
     }

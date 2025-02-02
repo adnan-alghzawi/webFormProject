@@ -15,7 +15,7 @@ namespace webFormProject.sally
         private string roomFilePath;
         protected void Page_Load(object sender, EventArgs e)
         {
-            requestsFilePath = Server.MapPath("~/sally/reservations.txt");
+            requestsFilePath = Server.MapPath("~/jana/reservations.txt");
             notificationsFilePath = Server.MapPath("~/adnan/App_Data/UserNotifications.txt");
             roomFilePath = Server.MapPath("rooms.txt");
             
@@ -34,7 +34,7 @@ namespace webFormProject.sally
 
             foreach (string line in lines)
             {
-                string[] details = line.Split(',');
+                string[] details = line.Split('|');
                 if (details.Length < 8) continue;
 
                 requests.Add(new
@@ -66,8 +66,11 @@ namespace webFormProject.sally
             for (int i = 0; i < rooms.Length; i++)
             {
                 string[] room = rooms[i].Split('|');
-                room[6] = "false";
-                rooms[i] = $"{room[0]}|{room[1]}|{room[2]}|{room[3]}|{room[4]}|{room[5]}|{room[6]}";
+                if (room[0] == RoomID)
+                {
+                    room[6] = "false";
+                    rooms[i] = $"{room[0]}|{room[1]}|{room[2]}|{room[3]}|{room[4]}|{room[5]}|{room[6]}";
+                }
 
             }
             File.WriteAllLines(roomFilePath, rooms);

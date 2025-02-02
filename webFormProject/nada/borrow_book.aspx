@@ -75,33 +75,30 @@
                                     <label for="bookLevel">Book Level:</label>
                                     <asp:TextBox ID="bookLevel" runat="server" Text="Intermediate" ReadOnly="True" CssClass="form-control" />
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="startTime">Start Time:</label>
-                                    <asp:TextBox ID="startTime" runat="server" CssClass="form-control" TextMode="Time" />
-                                </div>
-                                <!-- End Date & Time -->
-                                <div class="col-md-6">
+
+                                <div class="col-md-6 mb-3">
                                     <label for="startDate">Start Date:</label>
                                     <asp:TextBox ID="startDate" runat="server" CssClass="form-control" TextMode="Date" />
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="endTime">End Time:</label>
-                                    <asp:TextBox ID="endTime" runat="server" CssClass="form-control" TextMode="Time" />
+                                <div class="col-md-6 mb-3">
+                                    <label for="startTime">Start Time:</label>
+                                    <asp:TextBox ID="startTime" runat="server" CssClass="form-control" TextMode="Time" />
                                 </div>
-                                <!-- End Date & Time -->
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
                                     <label for="endDate">End Date:</label>
                                     <asp:TextBox ID="endDate" runat="server" CssClass="form-control" TextMode="Date" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="endTime">End Time:</label>
+                                    <asp:TextBox ID="endTime" runat="server" CssClass="form-control" TextMode="Time" />
                                 </div>
                                 <div class="col-md-6">
                                     <asp:Button ID="submitButton" runat="server" Text="Submit" class="btn btn-primary" OnClick="submitButton_Click" />
                                     <asp:Label ID="msg" Text="Please fill up all fields" runat="server" Visible="false" />
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -109,5 +106,39 @@
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var today = new Date();
+            var tenDaysLater = new Date(today);
+            tenDaysLater.setDate(today.getDate() + 10);
+
+            var startDateInput = document.getElementById("<%= startDate.ClientID %>");
+            var endDateInput = document.getElementById("<%= endDate.ClientID %>");
+
+            startDateInput.min = today.toISOString().split("T")[0];
+            startDateInput.max = tenDaysLater.toISOString().split("T")[0];
+
+            startDateInput.addEventListener("change", function () {
+                if (startDateInput.value) {
+                    var startDateValue = new Date(startDateInput.value);
+                    var minEndDate = new Date(startDateValue);
+                    minEndDate.setDate(startDateValue.getDate() + 1);
+                    var maxEndDate = new Date(startDateValue);
+                    maxEndDate.setDate(startDateValue.getDate() + 7);
+
+                    endDateInput.min = minEndDate.toISOString().split("T")[0];
+                    endDateInput.max = maxEndDate.toISOString().split("T")[0];
+
+                    if (endDateInput.value < endDateInput.min || endDateInput.value > endDateInput.max) {
+                        endDateInput.value = "";
+                    }
+                }
+            });
+        };
+
+
+    </script>
+
+
 </body>
 </html>
