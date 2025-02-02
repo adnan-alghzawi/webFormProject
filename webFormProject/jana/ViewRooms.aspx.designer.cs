@@ -105,24 +105,6 @@ namespace webFormProject.jana
         protected global::System.Web.UI.WebControls.Button SearchRoom;
 
         /// <summary>
-        /// resultContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal resultContainer;
-
-        /// <summary>
-        /// ddlFilter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFilter;
-
-        /// <summary>
         /// Cards control.
         /// </summary>
         /// <remarks>
