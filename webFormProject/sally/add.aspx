@@ -146,7 +146,7 @@
                     <div class="row w-100">
                         <div class="col-md-6">
                             <label class="form-label">Capacity:</label>
-                            <asp:TextBox ID="Capacity" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="Capacity" runat="server" CssClass="form-control" OnTextChanged="Capacity_TextChanged" AutoPostBack="true"></asp:TextBox>
                         </div>
                         <div class="col-md-6">
 

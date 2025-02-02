@@ -105,5 +105,13 @@ namespace webFormProject.sally
 
             }
         }
+
+        protected void Capacity_TextChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(Capacity.Text) > 1)
+            {
+                type.SelectedIndex = 1;
+            }
+        }
     }
 }
