@@ -125,25 +125,28 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item ">
-                        <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
+
+                        <a class="nav-link active text-white" id="homeTab" href="../jana/index.aspx">Home</a>
                     </li>
                     <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
+                        <a class="nav-link text-white" id="aboutTab" href="../jana/about.aspx">About</a>
                     </li>
                     <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
+                        <a class="nav-link  text-white" runat="server" id="books" href="../nada/show_books.aspx">Books</a>
                     </li>
                     <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="books_Click" Text="Books"></asp:LinkButton>
+                        <a class="nav-link  text-white" runat="server" id="rooms" href="../jana/ViewRooms.aspx">Rooms</a>
                     </li>
                     <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="rooms_Click" Text="Meeting Rooms"></asp:LinkButton>
+                        <a class="nav-link  text-white" id="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
+
                     </li>
                 </ul>
             </div>
-            <div>
-                <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click" />
-                <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click" />
+
+            <div runat="server" id="buttons2">
+                <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
+                <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
             </div>
 
         </nav>
@@ -151,7 +154,7 @@
             <div class="card profile-card text-center">
                 <img src="https://i.pinimg.com/736x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg" alt="Avatar" class="profile-img mb-3">
                 <h4>
-                    <asp:TextBox ID="name" runat="server" CssClass="form-control text-center" placeholder="Enter Name"></asp:TextBox>
+                    <asp:TextBox ID="name" runat="server" CssClass="form-control text-center" ReadOnly></asp:TextBox>
                 </h4>
                 <div class="form-outline flex-fill mb-3">
                     <asp:RadioButton ID="Male" GroupName="Gender" Text="Male" runat="server" CssClass="form-check-input" Style="background-color: #22333B; border: none;" />
@@ -159,7 +162,7 @@
                     <label class="form-label ms-3">Gender</label>
                 </div>
                 <div class="button-group">
-                    <asp:Button runat="server" OnClick="Save_Click" Text="Save" CssClass="btn btn-custom" />
+                    <%--                    <asp:Button runat="server" OnClick="Save_Click" Text="Save" CssClass="btn btn-custom" />--%>
                     <asp:Button runat="server" OnClick="btnEdit_Click" Text="Edit" CssClass="btn btn-warning btn-custom" />
                     <asp:Button runat="server" OnClick="UserHistory_Click" Text="User History" CssClass="btn btn-info btn-custom" />
                 </div>
