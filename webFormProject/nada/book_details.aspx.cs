@@ -38,6 +38,8 @@ namespace webFormProject.nada
         private void LoadBookDetails(string bookId)
         {
             string file = Server.MapPath("~/adnan/App_Data/Books.txt");
+            string borrowFile = Server.MapPath("~/nada/borrow_book_request.txt");
+            bool isPending = IsBorrowRequestPending(bookId, borrowFile);
             if (File.Exists(file))
             {
                 string[] books = File.ReadAllLines(file);
@@ -47,9 +49,13 @@ namespace webFormProject.nada
                     if (bookData[0] == bookId)
                     {
                         bool isAvailable = bookData[6].Equals("Available", StringComparison.OrdinalIgnoreCase);
-                        string buttonDisabled = isAvailable ? "" : "disabled style='cursor: not-allowed; background-color: #EAE0D6;padding: 10px 20px;border: none;border-radius: 5px;font-size: 0.9rem;'onclick='return false;'";
+                        string buttonText = isPending ? "Pending" : "Borrow Book";
+                        string buttonDisabled = isPending || !isAvailable
+                            ? "disabled style='cursor: not-allowed; background-color: #EAE0D6;padding: 10px 20px;border: none;border-radius: 5px;font-size: 0.9rem;'"
+                            : "";
+
                         div_book_details.InnerHtml = $@"
-                        <img src={bookData[4].Replace("~","")} alt=""Book Cover"">
+                        <img src={bookData[4].Replace("~", "")} alt=""Book Cover"">
                         <div class=""book-content"">
                             <h1>{bookData[1]}</h1>
                             <p>{bookData[5]}</p>
@@ -63,7 +69,12 @@ namespace webFormProject.nada
                                 </p>
                             </div>
                             <div class=""buttons"">
-                                <a href='borrow_book.aspx?bookId={bookData[0]}' {buttonDisabled}>Borrow Book</a>
+                                <a href='{(isPending || !isAvailable ? "#" : "borrow_book.aspx?bookId=" + bookData[0])}' 
+                                   class='borrow-button' 
+                                   style='{(isPending || !isAvailable ? "cursor: not-allowed; background-color: #EAE0D6; padding: 10px 20px; border: none; border-radius: 5px; font-size: 0.9rem;" : "")}'>
+                                   {buttonText}
+                                </a>
+
                             </div>
                         </div>
                     ";
@@ -71,6 +82,23 @@ namespace webFormProject.nada
                     }
                 }
             }
+        }
+
+        private bool IsBorrowRequestPending(string bookId, string borrowFile)
+        {
+            if (File.Exists(borrowFile))
+            {
+                string[] requests = File.ReadAllLines(borrowFile);
+                foreach (string request in requests)
+                {
+                    string[] requestData = request.Split('|');
+                    if (requestData[0] == bookId && requestData[9].Trim('"') == "Pending")
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         protected void homeTab_Click(object sender, EventArgs e)
