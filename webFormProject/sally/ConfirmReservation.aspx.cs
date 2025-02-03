@@ -105,7 +105,7 @@ namespace webFormProject.sally
         {
             Response.Redirect("~/sally/AdminDash.aspx");
         }
-        private void UpdateRequestStatus(string email, string RoomID, string status)
+        private void UpdateRequestStatus(string RoomType ,string email, string RoomID, string status)
         {
             if (!File.Exists(requestsFilePath)) return;
 
