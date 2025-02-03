@@ -24,40 +24,13 @@ namespace webFormProject.suleiman
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// homeTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton homeTab;
-
-        /// <summary>
-        /// aboutTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton aboutTab;
-
-        /// <summary>
-        /// contactTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton contactTab;
-
-        /// <summary>
         /// books control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton books;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor books;
 
         /// <summary>
         /// rooms control.
@@ -66,7 +39,16 @@ namespace webFormProject.suleiman
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton rooms;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor rooms;
+
+        /// <summary>
+        /// buttons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttons;
 
         /// <summary>
         /// login control.
@@ -78,13 +60,40 @@ namespace webFormProject.suleiman
         protected global::System.Web.UI.WebControls.Button login;
 
         /// <summary>
-        /// register control.
+        /// rigester control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button register;
+        protected global::System.Web.UI.WebControls.Button rigester;
+
+        /// <summary>
+        /// buttons2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttons2;
+
+        /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logout;
+
+        /// <summary>
+        /// prof control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button prof;
 
         /// <summary>
         /// pnlSuccess control.

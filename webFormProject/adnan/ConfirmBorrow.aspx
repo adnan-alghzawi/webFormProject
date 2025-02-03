@@ -114,9 +114,9 @@
                         <asp:TemplateField HeaderText="Action">
                             <ItemTemplate>
                                 <asp:Button ID="btnApprove" runat="server" Text="Approve" CssClass="btn btn-success btn-sm"
-                                    CommandArgument='<%# Eval("Email") + "|" + Eval("BookID") %>' OnClick="btnApprove_Click" />
+                                    CommandArgument='<%# Eval("Email") + "|" + Eval("BookID")+ "|" + Eval("BookName") %>' OnClick="btnApprove_Click" />
                                 <asp:Button ID="btnReject" runat="server" Text="Reject" CssClass="btn btn-danger btn-sm"
-                                    CommandArgument='<%# Eval("Email") + "|" + Eval("BookID") %>' OnClick="btnReject_Click" />
+                                    CommandArgument='<%# Eval("Email") + "|" + Eval("BookID")+ "|" + Eval("BookName") %>' OnClick="btnReject_Click" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

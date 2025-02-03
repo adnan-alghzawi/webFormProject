@@ -44,6 +44,7 @@
                     <asp:BoundField DataField="Status" HeaderText="Status" />
                     <asp:BoundField DataField="Email" HeaderText="Email" />
                     <asp:BoundField DataField="BookID" HeaderText="Book ID" />
+                    <asp:BoundField DataField="BookName" HeaderText="Book name" />
                 </Columns>
             </asp:GridView>
         </div>

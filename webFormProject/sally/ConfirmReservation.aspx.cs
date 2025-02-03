@@ -13,11 +13,13 @@ namespace webFormProject.sally
         private string requestsFilePath;
         private string notificationsFilePath;
         private string roomFilePath;
+        private string historyFilePath = HttpContext.Current.Server.MapPath("~/adnan/App_Data/UserHistory.txt");
         protected void Page_Load(object sender, EventArgs e)
         {
             requestsFilePath = Server.MapPath("~/jana/reservations.txt");
             notificationsFilePath = Server.MapPath("~/adnan/App_Data/UserNotifications.txt");
             roomFilePath = Server.MapPath("rooms.txt");
+
             
 
             if (!IsPostBack)
@@ -105,7 +107,7 @@ namespace webFormProject.sally
         {
             Response.Redirect("~/sally/AdminDash.aspx");
         }
-        private void UpdateRequestStatus(string email, string RoomID, string status)
+        private void UpdateRequestStatus(string RoomType,string email, string RoomID, string status)
         {
             if (!File.Exists(requestsFilePath)) return;
 
@@ -120,6 +122,7 @@ namespace webFormProject.sally
                 if (details[3] == email && details[0] == RoomID)
                 {
                     details[8] = status;
+                    LogHistory(RoomType,email,RoomID , status);
                 }
 
                 updatedLines.Add(string.Join("|", details));
@@ -131,6 +134,11 @@ namespace webFormProject.sally
         {
             string notification = RoomType+"|"+ email + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
+        }
+        private void LogHistory(string RoomType, string email, string RoomID, string status)
+        {
+            string logEntry = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - Status: {status} | Email: {email} | Room ID: {RoomID}| Room Name: {RoomType}";
+            File.AppendAllText(historyFilePath, logEntry + Environment.NewLine);
         }
 
         protected void back_Click(object sender, EventArgs e)

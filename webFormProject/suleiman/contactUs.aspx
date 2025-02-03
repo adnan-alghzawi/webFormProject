@@ -31,13 +31,16 @@
             margin-right: 5px;
         }
 
-        .container-main {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+       .container-main {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    background-color: #22333B;
+    color:#EAE0D6;
+}
 
         .contact-form {
             max-width: 600px;
@@ -50,36 +53,43 @@
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-umber">
             <a class="navbar-brand ps-3 text-white" href="#">
-                <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" /></a>
+                <img class="imglogo" src="../adnan/Images/Books/Lumina-removebg-preview.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
-                    </li>
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
-                    </li>
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link active text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
-                    </li>
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="books_Click" Text="Books"></asp:LinkButton>
-                    </li>
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="rooms_Click" Text="Meeting Rooms"></asp:LinkButton>
-                    </li>
-                </ul>
-                <div>
-                    <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0" OnClick="login_Click" />
-                    <asp:Button ID="register" runat="server" Text="register" class="btn btn-green my-2 my-sm-0" OnClick="register_Click" />
-                </div>
+     <ul class="navbar-nav ">
+         <li class="nav-item ">
+             
+             <a class="nav-link active text-white" id="homeTab" href="../jana/index.aspx">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link text-white" ID="aboutTab" href="../jana/about.aspx">About</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link  text-white" runat="server" ID="books" href="../nada/show_books.aspx">Books</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link  text-white" runat="server" ID="rooms" href="../jana/ViewRooms.aspx">Rooms</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link  text-white" ID="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
+         </li>
+     </ul>
+ </div>
+ <div runat="server" id="buttons" visible="true">
+     <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
+     <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
+ </div>
+
+    <div runat="server" id="buttons2" visible="false">
+    <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
+    <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
+</div>
             </div>
         </nav>
 
-        <div class="container container-main">
+        <div class="container container-main ">
             <div class="contact-form">
                 <h2 class="text-center mb-4">Contact Us</h2>
                 
