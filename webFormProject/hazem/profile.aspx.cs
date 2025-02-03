@@ -39,7 +39,7 @@ namespace task1_webForm_27_1_2025
 
             foreach (string line in userData)
             {
-                string[] user = line.Split(' ');
+                string[] user = line.Split(',');
                 if (user.Length >= 6 && user[1].Trim() == email1)
                 {
                     name.Text = user[0];
@@ -52,14 +52,13 @@ namespace task1_webForm_27_1_2025
                 }
             }
 
-            // إذا لم يتم العثور على المستخدم، قم بإنشاء سجل جديد له
             Response.Write("<script>alert('User not found, creating new profile.');</script>");
             SaveNewUser(email1);
         }
 
         private void SaveNewUser(string email)
         {
-            string defaultUser = $"New User,{email},,,,,";
+            string defaultUser = $"New User,{email},,,,";
             File.AppendAllText(filePath, defaultUser + Environment.NewLine);
             LoadProfile();
         }
@@ -102,6 +101,49 @@ namespace task1_webForm_27_1_2025
                 File.WriteAllText(filePath2, email2.Text);
                 Response.Write("<script>alert('Profile updated successfully!');</script>");
             }
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editProfile2.aspx");
+        }
+
+        protected void UserHistory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/adnan/userHistory.aspx");
+        }
+        protected void rigester_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/registration.aspx");
+        }
+
+        protected void login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/logIn.aspx");
+        }
+        protected void homeTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void aboutTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void contactTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void books_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rooms_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,7 +17,7 @@
         <div>
             <nav class="navbar navbar-expand-lg navbar-light  bg-umber pb-0 pt-0">
                 <a class="navbar-brand ps-3 text-white  pb-0 pt-0" href="#">
-                    <img class="imglogo" src="./imgs/Lumina-removebg-preview.png" /></a>
+                    <img class="imglogo" src="./imgs/Lumina-removebg-preview.png"/></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,7 +67,6 @@
 
             <section class="cards-book">
                 <div class="mb-3 row" runat="server" id="booksContainer">
-                    
                 </div>
             </section>
         </div>

@@ -24,67 +24,40 @@ namespace webFormProject.suleiman
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// homeTab control.
+        /// editB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton homeTab;
+        protected global::System.Web.UI.WebControls.Button editB;
 
         /// <summary>
-        /// aboutTab control.
+        /// editR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton aboutTab;
+        protected global::System.Web.UI.WebControls.Button editR;
 
         /// <summary>
-        /// contactTab control.
+        /// Reservations control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton contactTab;
+        protected global::System.Web.UI.WebControls.Button Reservations;
 
         /// <summary>
-        /// books control.
+        /// Borrow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton books;
-
-        /// <summary>
-        /// rooms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton rooms;
-
-        /// <summary>
-        /// login control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button login;
-
-        /// <summary>
-        /// rigester control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rigester;
+        protected global::System.Web.UI.WebControls.Button Borrow;
 
         /// <summary>
         /// pnlNoFeedback control.

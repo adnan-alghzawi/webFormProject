@@ -132,15 +132,6 @@ namespace webFormProject.nada
         protected global::System.Web.UI.WebControls.TextBox bookLevel;
 
         /// <summary>
-        /// startTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox startTime;
-
-        /// <summary>
         /// startDate control.
         /// </summary>
         /// <remarks>
@@ -150,13 +141,13 @@ namespace webFormProject.nada
         protected global::System.Web.UI.WebControls.TextBox startDate;
 
         /// <summary>
-        /// endTime control.
+        /// startTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox endTime;
+        protected global::System.Web.UI.WebControls.TextBox startTime;
 
         /// <summary>
         /// endDate control.
@@ -166,6 +157,15 @@ namespace webFormProject.nada
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox endDate;
+
+        /// <summary>
+        /// endTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox endTime;
 
         /// <summary>
         /// submitButton control.

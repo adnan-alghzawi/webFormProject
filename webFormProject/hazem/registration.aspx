@@ -1,111 +1,185 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="register_page.aspx.cs" Inherits="task1_webForm_27_1_2025.register_page" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #EAE0D6;
+            color: #22333B;
+        }
+        .card {
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #22333B;
+        }
+        .form-control {
+            border-radius: 10px;
+            background-color: #EAE0D6;
+            color: #22333B;
+            border: none;
+        }
+        .btn-primary {
+            background-color: #EAE0D6;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            color: #22333B;
+        }
+        .btn-primary:hover {
+            background-color: #22333B;
+            color: #EAE0D6;
+        }
+        .img-fluid {
+            border-radius: 20px;
+        }
+        label, .form-check-label {
+            color: #EAE0D6;
+        }
+        .img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10%;
+}
+        .bg-umber {
+    background-color: #22333B;
+}
 
-    <title></title>
+.imglogo {
+    width: 20%;
+}
+
+.btn-green {
+    --bs-btn-color: #22333B !important;
+    --bs-btn-bg: #EAE0D6 !important;
+    --bs-btn-border-color: #EAE0D6;
+    --bs-btn-hover-color: #22333B;
+    --bs-btn-hover-bg: #C6AD8F;
+    --bs-btn-hover-border-color: #C6AD8F !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #22333B;
+    --bs-btn-active-bg: #EAE0D6;
+    --bs-btn-active-border-color: #EAE0D6;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #22333B;
+    --bs-btn-disabled-bg: #EAE0D6;
+    --bs-btn-disabled-border-color: #EAE0D6;
+    border-radius: 20px !important;
+    margin-right: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),inset 3px 3px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+.btn-green1 {
+    --bs-btn-color: #EAE0D6 !important;
+    --bs-btn-bg: #22333B !important;
+    --bs-btn-border-color: #22333B;
+    --bs-btn-hover-color: #22333B;
+    --bs-btn-hover-bg: #EAE0D6;
+    --bs-btn-hover-border-color: #22333B !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #EAE0D6;
+    --bs-btn-active-bg: #22333B;
+    --bs-btn-active-border-color: #22333B;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #EAE0D6;
+    --bs-btn-disabled-bg: #22333B;
+    --bs-btn-disabled-border-color: #22333B;
+    border-radius: 170px !important;
+    margin-right: 5px;
+    width: 10% !important;
+}
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-
-            <section class="vh-100" style="background-color: #eee;">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-
-                <form class="mx-1 mx-md-4">
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <asp:TextBox ID="name" runat="server" type="text"  class="form-control" />
-                      <label class="form-label" for="form3Example1c">Your Name</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <asp:TextBox ID="email" runat="server" type="email"  class="form-control" />
-                      <label class="form-label" for="form3Example3c">Your Email</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <asp:TextBox ID="password" runat="server" type="password"  class="form-control" />
-                      <label class="form-label" for="form3Example4c">Password</label>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <asp:TextBox ID="repeat_password" runat="server" type="password"  class="form-control" />
-                      <label class="form-label" for="form3Example4cd">Repeat your password</label>
-                    </div>
-                  </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-
-        <asp:RadioButton ID="Male" GroupName="Gender" Text="Male" runat="server" />
-        <asp:RadioButton ID="Female" GroupName="Gender" Text="Female" runat="server" />
-        <asp:Label Text="Gender" runat="server"></asp:Label><br />
+        <nav class="navbar navbar-expand-lg navbar-light  bg-umber pb-0 pt-0">
+    <a class="navbar-brand ps-3 text-white  pb-0 pt-0" href="#">
+        <img class="imglogo" src="../adnan/Images/Books/Lumina-removebg-preview.png" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+            <li class="nav-item ">
+                <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
+            </li>
+            <li class="nav-item">
+                <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
+            </li>
+            <li class="nav-item">
+                <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
+            </li>
+            <li class="nav-item">
+                <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="books_Click" Text="Books"></asp:LinkButton>
+            </li>
+            <li class="nav-item">
+                <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="rooms_Click" Text="Meeting Rooms"></asp:LinkButton>
+            </li>
+        </ul>
     </div>
-</div>
-
-<div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-calendar-alt fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-
-        <asp:TextBox ID="dob" runat="server" TextMode="Date"></asp:TextBox>
-        <asp:Label Text="Date of Birth" runat="server"></asp:Label>
+    <div>
+        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click" />
+        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click" />
     </div>
-</div>
 
-                  <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                    <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
-                    </label>
-                  </div>
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <asp:Button ID="register" runat="server" text="Register" OnClick="register_Click" type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"/>
-                  </div>
-
-                </form>
-
-              </div>
-              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                  class="img-fluid" alt="Sample image">
-
-              </div>
+</nav>
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="row w-100">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <div class="card p-4">
+                        <div class="row">
+                            <div class="col-md-6 d-flex flex-column justify-content-center">
+                                <h2 class="text-center fw-bold" style="color:#EAE0D6">Sign Up</h2>
+                                <div class="mb-3">
+                                    <label class="form-label">Your Name</label>
+                                    <asp:TextBox ID="name" runat="server" CssClass="form-control" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Your Email</label>
+                                    <asp:TextBox ID="email" runat="server" CssClass="form-control" TextMode="Email" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <asp:TextBox ID="password" runat="server" CssClass="form-control" TextMode="Password" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Repeat Password</label>
+                                    <asp:TextBox ID="repeat_password" runat="server" CssClass="form-control" TextMode="Password" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Gender</label><br>
+                                    <asp:RadioButton ID="Male" GroupName="Gender" Text="Male" runat="server" CssClass="me-2" />
+                                    <asp:RadioButton ID="Female" GroupName="Gender" Text="Female" runat="server" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Date of Birth</label>
+                                    <asp:TextBox ID="dob" runat="server" CssClass="form-control" TextMode="Date" />
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="terms" />
+                                    <label class="form-check-label" for="terms">
+                                        I agree to the <a href="#" style="color: #C6AD8F;">Terms of Service</a>
+                                    </label>
+                                </div>
+                                <div class="text-center">
+                                    <asp:Button ID="register" runat="server" Text="Register" OnClick="register_Click" CssClass="btn btn-primary w-100" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-none d-md-block">
+                                <img src="https://i.pinimg.com/736x/c7/01/f6/c701f60c0feca8181e81eb079d15c3e4.jpg" class="img-fluid" alt="Library Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
         </div>
     </form>
-
 </body>
 </html>
+

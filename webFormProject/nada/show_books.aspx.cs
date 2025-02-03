@@ -20,7 +20,7 @@ namespace webFormProject.nada
 
         private void LoadBooks(string searchQuery, string filterOption)
         {
-            string file = Server.MapPath("books.txt");
+            string file = Server.MapPath("~/adnan/App_Data/Books.txt");
             booksContainer.InnerHtml = "";
             if (File.Exists(file))
             {
@@ -28,7 +28,7 @@ namespace webFormProject.nada
                 foreach (string book in books)
                 {
                     string[] bookData = book.Split('|');
-                    bool isAvailable = bookData[6].Equals("true", StringComparison.OrdinalIgnoreCase);
+                    bool isAvailable = bookData[6].Equals("Available", StringComparison.OrdinalIgnoreCase);
                     if (!string.IsNullOrEmpty(searchQuery) && bookData[1].IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase).Equals(-1))
                     {
                         continue;
@@ -43,10 +43,9 @@ namespace webFormProject.nada
                     {
                         continue;
                     }
-
                     booksContainer.InnerHtml += $@"
                         <div class='card p-2 mb-3' style='width: 14rem;'>
-                            <img src='{bookData[4]}' class='card-img-top' alt='Book Image' height='280' />
+                            <img src='{bookData[4].Replace("~","")}' class='card-img-top' alt='Book Image' height='280' />
                             <div class='card-body'>
                                 <h5 class='card-title'>{bookData[1]}</h5>
                                 <p class='card-text'>{bookData[2]}</p>

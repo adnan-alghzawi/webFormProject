@@ -18,13 +18,13 @@ namespace webFormProject.sally
         protected void check_Click(object sender, EventArgs e)
         {
             EmailLabel.Visible = false;
-            string filepath = Server.MapPath("users.txt");
+            string filepath = Server.MapPath("~/hazem/data/Hazem.txt");
             string[] users = File.ReadAllLines(filepath);
             foreach (string line in users)
             {
 
-                string[] user = line.Split(',');
-                if (Email.Text == user[0])
+                string[] user = line.Split(' ');
+                if (Email.Text == user[1])
                 {
                     resetForm.Visible = true;
                     return;
@@ -47,7 +47,7 @@ namespace webFormProject.sally
             if (newPass.Text == Confirm.Text)
             {
                 pass.Visible = false;
-                string filePath = Server.MapPath("users.txt");
+                string filePath = Server.MapPath("~/hazem/data/Hazem.txt");
                 if (File.Exists(filePath))
                 {
                     string[] content = File.ReadAllLines(filePath);
@@ -55,11 +55,12 @@ namespace webFormProject.sally
 
                     for (int i = 0; i < content.Length; i++)
                     {
-                        string[] user = content[i].Split(',');
+                        string[] user = content[i].Split(' ');
                         if (user[0] == userEmail)
                         {
-                            user[1] = newPass.Text;
-                            content[i] = $"{user[0]},{user[1]}";
+                            user[2] = newPass.Text;
+                            user[3] = newPass.Text;
+                            content[i] = $"{user[0]},{user[1]},{user[2]},{user[3]},{user[4]},{user[5]}";
 
                             Response.Write("<script>alert('information changed!');</script>");
                             resetForm.Visible = false;
@@ -82,7 +83,7 @@ namespace webFormProject.sally
 
         protected void oldpass_TextChanged(object sender, EventArgs e)
         {
-            string filePath = Server.MapPath("users.txt");
+            string filePath = Server.MapPath("~/hazem/data/Hazem.txt");
             if (File.Exists(filePath))
             {
                 string[] content = File.ReadAllLines(filePath);
@@ -90,11 +91,11 @@ namespace webFormProject.sally
 
                 foreach (string line in content)
                 {
-                    string[] user = line.Split(',');
+                    string[] user = line.Split(' ');
 
-                    if (user[0] == userEmail)
+                    if (user[1] == userEmail)
                     {
-                        if (user[1] == oldpass.Text)
+                        if (user[2] == oldpass.Text)
                         {
                             oldPassLabel.Visible = true;
                             oldPassLabel.Text = "Old password is correct.";

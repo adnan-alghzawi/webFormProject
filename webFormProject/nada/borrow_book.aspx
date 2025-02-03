@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -51,7 +52,7 @@
                     <div class="row">
                         <!-- Book Image -->
                         <div class="col-md-3">
-                            <asp:Image ID="bookImage" runat="server" ImageUrl=".\imgs\book1.jpg" CssClass="img-fluid" />
+                            <asp:Image ID="bookImage" runat="server" ImageUrl="" CssClass="img-fluid" Height="500px"/>
                         </div>
 
                         <!-- Book Details -->
@@ -74,58 +75,70 @@
                                     <label for="bookLevel">Book Level:</label>
                                     <asp:TextBox ID="bookLevel" runat="server" Text="Intermediate" ReadOnly="True" CssClass="form-control" />
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="startTime">Start Time:</label>
-                                    <asp:TextBox ID="startTime" runat="server" CssClass="form-control" TextMode="Time" />
-                                </div>
-                                <!-- End Date & Time -->
-                                <div class="col-md-6">
+
+                                <div class="col-md-6 mb-3">
                                     <label for="startDate">Start Date:</label>
                                     <asp:TextBox ID="startDate" runat="server" CssClass="form-control" TextMode="Date" />
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="endTime">End Time:</label>
-                                    <asp:TextBox ID="endTime" runat="server" CssClass="form-control" TextMode="Time" />
+                                <div class="col-md-6 mb-3">
+                                    <label for="startTime">Start Time:</label>
+                                    <asp:TextBox ID="startTime" runat="server" CssClass="form-control" TextMode="Time" />
                                 </div>
-                                <!-- End Date & Time -->
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-3">
                                     <label for="endDate">End Date:</label>
                                     <asp:TextBox ID="endDate" runat="server" CssClass="form-control" TextMode="Date" />
                                 </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="endTime">End Time:</label>
+                                    <asp:TextBox ID="endTime" runat="server" CssClass="form-control" TextMode="Time" />
+                                </div>
                                 <div class="col-md-6">
                                     <asp:Button ID="submitButton" runat="server" Text="Submit" class="btn btn-primary" OnClick="submitButton_Click" />
-                                    <asp:Label ID="msg" Text="Please fill in all fields" runat="server" Visible="false" />
+                                    <asp:Label ID="msg" Text="Please fill up all fields" runat="server" Visible="false" />
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-            <!-- Modal (Popup) -->
-           <%-- <div class="modal fade" id="borrowRequestModal" tabindex="-1" aria-labelledby="borrowRequestModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="borrowRequestModalLabel">Request Submitted</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            Your borrow request has been submitted successfully.
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <a href="show_books.aspx" class="btn btn-primary">Go to Books</a>
-                        </div>
-                    </div>
-                </div>
-            </div>--%>
 
         </div>
     </form>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var today = new Date();
+            var tenDaysLater = new Date(today);
+            tenDaysLater.setDate(today.getDate() + 10);
+
+            var startDateInput = document.getElementById("<%= startDate.ClientID %>");
+            var endDateInput = document.getElementById("<%= endDate.ClientID %>");
+
+            startDateInput.min = today.toISOString().split("T")[0];
+            startDateInput.max = tenDaysLater.toISOString().split("T")[0];
+
+            startDateInput.addEventListener("change", function () {
+                if (startDateInput.value) {
+                    var startDateValue = new Date(startDateInput.value);
+                    var minEndDate = new Date(startDateValue);
+                    minEndDate.setDate(startDateValue.getDate() + 1);
+                    var maxEndDate = new Date(startDateValue);
+                    maxEndDate.setDate(startDateValue.getDate() + 7);
+
+                    endDateInput.min = minEndDate.toISOString().split("T")[0];
+                    endDateInput.max = maxEndDate.toISOString().split("T")[0];
+
+                    if (endDateInput.value < endDateInput.min || endDateInput.value > endDateInput.max) {
+                        endDateInput.value = "";
+                    }
+                }
+            });
+        };
+
+
+    </script>
+
+
 </body>
 </html>

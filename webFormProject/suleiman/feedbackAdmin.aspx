@@ -18,7 +18,7 @@
         }
 
         .imglogo {
-            width: 20%;
+            width: 40%;
         }
 
         .btn-green {
@@ -58,53 +58,74 @@
             margin-top: 2rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #22333B;
+            color: white;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .abtn {
+            display: block;
+            color: white;
+            background-color: #22333B;
+            padding: 10px;
+            text-decoration: none;
+            margin: 10px 0;
+            border: none !important;
+            width: 100%;
+            text-align: left;
+        }
+
+            .abtn:hover {
+                background-color: #34495e;
+            }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
     </style>
 </head>
 
 <body>
     <form id="form1" runat="server">
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light  bg-umber">
-            <a class="navbar-brand ps-3 text-white" href="#">
-                <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ">
-                    <li class="nav-item ">
 
-                        <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
-                    </li>
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
-                    </li>
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
-                    </li>
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="contactTab_Click" Text="Books"></asp:LinkButton>
-                    </li>
-                    <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="contactTab_Click" Text="Meeting Rooms"></asp:LinkButton>
-                    </li>
-                </ul>
-                <div>
-                    <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0"></asp:Button>
-                    <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0"></asp:Button>
-                </div>
-            </div>
-        </nav>
-
-        <div class="container container-main">
-            <h2 class="mb-4">Feedback Administration</h2>
-
-            <asp:Panel ID="pnlNoFeedback" runat="server" Visible="false" CssClass="alert alert-info">
-                <p>No feedback entries available.</p>
-            </asp:Panel>
-
-            <asp:Literal ID="litFeedbackTable" runat="server" />
+        <div class="sidebar animate hidden">
+            <img src="imgs/Lumina__1_-removebg-preview.png" class="imglogo" />
+            <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
+            <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
+            <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
+            <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
         </div>
+        <div class="content">
+
+            <div class="container container-main">
+                <h2 class="mb-4">Feedback Administration</h2>
+
+                <asp:Panel ID="pnlNoFeedback" runat="server" Visible="false" CssClass="alert alert-info">
+                    <p>No feedback entries available.</p>
+                </asp:Panel>
+
+                <asp:Literal ID="litFeedbackTable" runat="server" />
+            </div>
+
+        </div>
+        <footer class="bg-umber text-center text-lg-start text-white">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2020 Copyright:
+        <span>LUMINA</span>
+            </div>
+            <!-- Copyright -->
+        </footer>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
