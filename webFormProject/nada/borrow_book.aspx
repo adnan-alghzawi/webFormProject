@@ -42,8 +42,15 @@
                     </ul>
                 </div>
                 <div>
-                    <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4"></asp:Button>
-                    <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4"></asp:Button>
+                    <div runat="server" id="buttons" visible="true">
+                        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
+                        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
+                    </div>
+
+                    <div runat="server" id="buttons2" visible="false">
+                        <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
+                        <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
+                    </div>
                 </div>
             </nav>
             <div id="borrowBook" runat="server">
@@ -52,7 +59,7 @@
                     <div class="row">
                         <!-- Book Image -->
                         <div class="col-md-3">
-                            <asp:Image ID="bookImage" runat="server" ImageUrl="" CssClass="img-fluid" Height="500px"/>
+                            <asp:Image ID="bookImage" runat="server" ImageUrl="" CssClass="img-fluid" Height="500px" />
                         </div>
 
                         <!-- Book Details -->
