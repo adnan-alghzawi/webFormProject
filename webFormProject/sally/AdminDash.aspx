@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
+    <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
@@ -16,6 +17,11 @@
             margin: 0;
             padding: 0;
             background-color: #EAE0D6;
+        }
+        .umber{
+            color: #22333B;
+            font-size:30px  ;         
+            text-align:right;
         }
 
         .sidebar {
@@ -199,6 +205,9 @@
                 transition: all 0.5s ease-out;
                 color: #ffffff;
             }
+            .umber:hover{
+                color:white;
+            }
     </style>
 </head>
 <body>
@@ -276,7 +285,11 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row w-100 animate hidden ">
+                <asp:LinkButton ID="feedbacks" runat="server" OnClick="feedbacks_Click" ToolTip="Feedbacks" CssClass="icon-button text-end">
+    <i class="fa-solid fa-comment umber"></i>
+</asp:LinkButton>
+            </div>
 
 
         </div>
