@@ -151,15 +151,15 @@
             <div class="card profile-card text-center">
                 <img src="https://i.pinimg.com/736x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg" alt="Avatar" class="profile-img mb-3">
                 <h4>
-                    <asp:TextBox ID="name" runat="server" CssClass="form-control text-center" placeholder="Enter Name"></asp:TextBox>
+                    <asp:TextBox ID="name" runat="server" CssClass="form-control text-center" ReadOnly></asp:TextBox>
                 </h4>
                 <div class="form-outline flex-fill mb-3">
-                    <asp:RadioButton ID="Male" GroupName="Gender" Text="Male" runat="server" CssClass="form-check-input" Style="background-color: #22333B; border: none;" />
+                    <asp:RadioButton ID="Male" GroupName="Gender" Text="Male" runat="server" CssClass="form-check-input" Style="background-color: #22333B; border: none;"  />
                     <asp:RadioButton ID="Female" GroupName="Gender" Text="Female" runat="server" CssClass="form-check-input ms-2" Style="background-color: #22333B; border: none;" />
                     <label class="form-label ms-3">Gender</label>
                 </div>
                 <div class="button-group">
-                    <asp:Button runat="server" OnClick="Save_Click" Text="Save" CssClass="btn btn-custom" />
+<%--                    <asp:Button runat="server" OnClick="Save_Click" Text="Save" CssClass="btn btn-custom" />--%>
                     <asp:Button runat="server" OnClick="btnEdit_Click" Text="Edit" CssClass="btn btn-warning btn-custom" />
                     <asp:Button runat="server" OnClick="UserHistory_Click" Text="User History" CssClass="btn btn-info btn-custom" />
                 </div>

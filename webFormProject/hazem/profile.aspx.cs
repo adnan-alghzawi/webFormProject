@@ -39,7 +39,7 @@ namespace task1_webForm_27_1_2025
 
             foreach (string line in userData)
             {
-                string[] user = line.Split(',');
+                string[] user = line.Split(' ');
                 if (user.Length >= 6 && user[1].Trim() == email1)
                 {
                     name.Text = user[0];
@@ -52,16 +52,9 @@ namespace task1_webForm_27_1_2025
                 }
             }
 
-            Response.Write("<script>alert('User not found, creating new profile.');</script>");
-            SaveNewUser(email1);
         }
+            
 
-        private void SaveNewUser(string email)
-        {
-            string defaultUser = $"New User,{email},,,,";
-            File.AppendAllText(filePath, defaultUser + Environment.NewLine);
-            LoadProfile();
-        }
 
         protected void Save_Click(object sender, EventArgs e)
         {
@@ -93,7 +86,7 @@ namespace task1_webForm_27_1_2025
             if (!userFound)
             {
                 Response.Write("<script>alert('User not found, creating new profile.');</script>");
-                SaveNewUser(email1);
+               
             }
             else
             {
