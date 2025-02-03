@@ -118,7 +118,7 @@ namespace webFormProject.sally
 
         protected void back_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/hazem/editProfile2.aspx");
         }
     }
 }

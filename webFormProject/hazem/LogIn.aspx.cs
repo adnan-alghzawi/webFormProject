@@ -33,7 +33,7 @@ namespace task1_webForm_27_1_2025
 
 
                 string[] userData = user.Split(' ');
-                if (email_address.Text == userData[1] && login_password.Text == userData[2])
+                if (email_address.Text.Trim() == userData[1].Trim() && login_password.Text.Trim() == userData[2].Trim())
                 {
                     string logged = Server.MapPath("~/hazem/data/logged.txt");
                     File.WriteAllText(logged, email_address.Text);
@@ -50,31 +50,8 @@ namespace task1_webForm_27_1_2025
 
         protected void login_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/jana/index.aspx");
+            
         }
-        protected void homeTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void aboutTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void contactTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void books_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void rooms_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
