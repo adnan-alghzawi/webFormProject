@@ -644,25 +644,32 @@ body {
       <ul class="navbar-nav ">
           <li class="nav-item ">
               
-              <a class="nav-link active text-white" ID="homeTab" href="">Home</a>
+              <a class="nav-link active text-white" id="homeTab" href="../jana/index.aspx">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" ID="aboutTab" href="">About</a>
+            <a class="nav-link text-white" ID="aboutTab" href="../jana/about.aspx">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  text-white" ID="books" href="">Books</a>
+            <a class="nav-link  text-white" runat="server" ID="books" href="../nada/show_books.aspx">Books</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  text-white" ID="rooms" href="">Rooms</a>
+            <a class="nav-link  text-white" runat="server" ID="rooms" href="../sally/RoomAdmin.aspx">Rooms</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link  text-white" ID="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
+
           </li>
       </ul>
   </div>
-  <div>
-      <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4"></asp:Button>
-      <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4"></asp:Button>
+  <div runat="server" id="buttons" visible="true">
+      <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
+      <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
   </div>
+
+     <div runat="server" id="buttons2" visible="false">
+     <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
+     <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
+ </div>
 </nav>
       <div class="section__container header__container" id="home">
         <p>Explore, Borrow, Reserve</p>
