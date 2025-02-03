@@ -116,7 +116,7 @@
                     </div>
                     <asp:Label ID="lblMessage2" runat="server" CssClass="text-success mt-3"></asp:Label>
                 </div>
-                <div class="container bg-umber d-flex flex-column align-items-start text-white justify-content-center w-50 mt-5 p-5">
+                <div class="container bg-umber d-flex flex-column align-items-start text-white justify-content-center w-50 mt-5 p-5 rounded">
                     <div class="row w-100">
                         <div class="col-md-6">
                             <label class="form-label">Room ID:</label>

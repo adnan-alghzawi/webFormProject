@@ -74,7 +74,7 @@ namespace webFormProject.adnan
                 fuImage.SaveAs(savePath);
 
                 
-                imagePath = "~/adnan/Images/Books/" + fileName;
+                imagePath = "../adnan/Images/Books/" + fileName;
             }
 
             

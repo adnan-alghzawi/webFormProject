@@ -67,14 +67,20 @@ namespace webFormProject.sally
 
                 fuImage.SaveAs(imagePath);
             }
-            string newRoomEntry = $"{roomId},{roomNameText},{roomType},{roomCapacity},{imageFileName},{roomDescription},{roomAvailable}";
+            if (string.IsNullOrEmpty(roomId) || string.IsNullOrEmpty(roomNameText) || string.IsNullOrEmpty(roomType) || string.IsNullOrEmpty(roomCapacity) || string.IsNullOrEmpty(roomDescription) || string.IsNullOrEmpty(roomAvailable))
+            {
+                lblMessage.Text = "⚠️ All fields are required.";
+                return;
+
+            }
+            string newRoomEntry = $"{roomId}|{roomNameText}|{roomType}|{roomCapacity}|{imageFileName}|{roomDescription}|{roomAvailable}";
             if (File.Exists(filePath))
             {
                 string[] existingRooms = File.ReadAllLines(filePath);
 
                 foreach (string room in existingRooms)
                 {
-                    string[] details = room.Split(',');
+                    string[] details = room.Split('|');
 
                     if (details[0].Trim() == roomId)
                     {
