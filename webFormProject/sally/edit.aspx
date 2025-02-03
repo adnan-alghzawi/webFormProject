@@ -54,7 +54,7 @@
         }
 
         .imglogo {
-            width: 20%;
+            width: 40%;
         }
 
         .btn-green {
