@@ -12,26 +12,48 @@ namespace webFormProject.adnan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                InitializeBookId();
+            }
+        }
 
+        private void InitializeBookId()
+        {
+            string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
+            if (File.Exists(filePath))
+            {
+                string lastLine = File.ReadLines(filePath).LastOrDefault();
+                if (lastLine != null)
+                {
+                    string[] parts = lastLine.Split('|');
+                    int lastId = int.Parse(parts[0]); // Assuming the ID is the first part
+                    txtBookID.Text = (lastId + 1).ToString(); // Set next ID
+                }
+                else
+                {
+                    txtBookID.Text = "1"; // Start from 1 if file is empty
+                }
+            }
+            else
+            {
+                txtBookID.Text = "1"; // Start from 1 if file doesn't exist
+            }
         }
 
         protected void btnAddBook_Click(object sender, EventArgs e)
         {
-
-            // تحديد مسار المجلد والملف
             string folderPath = Server.MapPath("~/adnan/App_Data/");
             string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
 
-            
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }
 
-          
             if (!File.Exists(filePath))
             {
-                File.Create(filePath).Close(); 
+                File.Create(filePath).Close();
             }
 
             string bookID = txtBookID.Text.Trim();
@@ -42,27 +64,23 @@ namespace webFormProject.adnan
             string availability = ddlAvailability.SelectedValue;
             string imagePath = "";
 
-            // التحقق من رفع الصورة
             if (fuImage.HasFile)
             {
                 string[] validExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".webp" };
                 string fileExtension = Path.GetExtension(fuImage.FileName).ToLower();
 
-                // التحقق من نوع الصورة
                 if (!validExtensions.Contains(fileExtension))
                 {
-                    lblMessage.Text = "⚠️  please uploade photo like JPG or PNG or GIF or WEBP only!";
+                    lblMessage.Text = "⚠️ Please upload a photo in JPG, PNG, GIF, or WEBP format only!";
                     return;
                 }
 
-              
                 if (fuImage.PostedFile.ContentLength > 2 * 1024 * 1024)
                 {
-                    lblMessage.Text = "⚠️  the size of image should be less than 2MB!";
+                    lblMessage.Text = "⚠️ The size of the image should be less than 2MB!";
                     return;
                 }
 
-                
                 string imageFolder = Server.MapPath("~/adnan/Images/Books/");
                 if (!Directory.Exists(imageFolder))
                 {
@@ -73,26 +91,24 @@ namespace webFormProject.adnan
                 string savePath = Path.Combine(imageFolder, fileName);
                 fuImage.SaveAs(savePath);
 
-                
-                imagePath = "../adnan/Images/Books/" + fileName;
+                imagePath = "~/adnan/Images/Books/" + fileName;
             }
 
-            
             string bookData = $"{bookID}|{bookName}|{type}|{level}|{imagePath}|{description}|{availability}";
 
             try
             {
-               
                 using (StreamWriter sw = new StreamWriter(filePath, true))
                 {
                     sw.WriteLine(bookData);
                 }
 
-                lblMessage.Text = "✅    Book added!";
+                lblMessage.Text = "✅ Book added successfully!";
+                InitializeBookId(); // Update ID for the next book
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "❌ Rewrite the data : " + ex.Message;
+                lblMessage.Text = "❌ Error adding book: " + ex.Message;
             }
 
             ClearFields();
@@ -100,18 +116,12 @@ namespace webFormProject.adnan
 
         void ClearFields()
         {
-            txtBookID.Text = "";
             txtBookName.Text = "";
             txtType.Text = "";
             txtLevel.Text = "";
             txtDescription.Text = "";
-            ddlAvailability.SelectedIndex = 0;
+            ddlAvailability.SelectedIndex = -1;
         }
-
-        //protected void btnShowBooks_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("ShowBooks");
-        //}
         protected void editB_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/adnan/EditBook.aspx");
