@@ -68,5 +68,11 @@ namespace webFormProject.adnan
         {
             Response.Redirect("~/sally/AdminDash.aspx");
         }
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
+            Response.Redirect("~/jana/index.aspx");
+        }
     }
 }

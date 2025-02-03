@@ -74,8 +74,29 @@ namespace LibraryManagement
             gvUserHistory.DataBind();
         }
 
-        
+        protected void login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/LogIn.aspx");
+        }
+
+        protected void rigester_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/registration.aspx");
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
+            Response.Redirect("~/jana/index.aspx");
+        }
+
+        protected void prof_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/profile.aspx");
+        }
     }
+    
 
     public class UserHistoryEntry
     {
@@ -85,4 +106,5 @@ namespace LibraryManagement
         public string BookID { get; set; }
         public string BookName { get; set; }
     }
+    
 }

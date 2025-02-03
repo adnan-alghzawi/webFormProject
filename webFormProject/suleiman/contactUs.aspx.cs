@@ -60,7 +60,7 @@ namespace webFormProject.suleiman
             Response.Redirect("~/hazem/LogIn.aspx");
         }
 
-        protected void rigester_Click(object sender, EventArgs e)
+        protected void register_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/hazem/registration.aspx");
         }

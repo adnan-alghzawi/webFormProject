@@ -69,6 +69,15 @@ namespace webFormProject.adnan
         protected global::System.Web.UI.WebControls.Button Borrow;
 
         /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logout;
+
+        /// <summary>
         /// txtEmail control.
         /// </summary>
         /// <remarks>
