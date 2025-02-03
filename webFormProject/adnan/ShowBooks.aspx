@@ -145,58 +145,58 @@
             width: 10% !important;
         }
 
-        
+
         .text-center {
-    text-align: center !important;
-    margin-left: 25px;
-}
+            text-align: center !important;
+            margin-left: 25px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-         <div class="sidebar animate hidden">
-     <img src="Images/Books/Lumina-removebg-preview.png" class="imglogo" />
-     <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
-     <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
-     <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
-     <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
- </div>
+        <div class="sidebar animate hidden">
+            <img src="Images/Books/Lumina-removebg-preview.png" class="imglogo" />
+            <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
+            <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
+            <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
+            <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
+        </div>
         <div class="content">
-        <div class="container mt-5">
-            <h2 class="text-center">📚 Books</h2>
-            <div class="btn-container">
-                <asp:DropDownList ID="ddlFilter" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="FilterChanged">
-                    <asp:ListItem Value="All">All Books</asp:ListItem>
-                    <asp:ListItem Value="Available">Available Books</asp:ListItem>
-                    <asp:ListItem Value="Unavailable">Unavailable Books</asp:ListItem>
-                </asp:DropDownList>
-                <asp:Button ID="btnExport" runat="server" Text="Export" CssClass="btn btn-primary export-btn" OnClick="export_Click" />
+            <div class="container mt-5">
+                <h2 class="text-center">📚 Books</h2>
+                <div class="btn-container">
+                    <asp:DropDownList ID="ddlFilter" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="FilterChanged">
+                        <asp:ListItem Value="All">All Books</asp:ListItem>
+                        <asp:ListItem Value="Available">Available Books</asp:ListItem>
+                        <asp:ListItem Value="Unavailable">Unavailable Books</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Button ID="btnExport" runat="server" Text="Export" CssClass="btn btn-primary export-btn" OnClick="export_Click" />
 
-                <asp:Button ID="btnEdit" runat="server" Text="Edit Books" CssClass="btn btn-success edit-btn" OnClick="edit_Click" />
-                <asp:Button ID="btnAddBook" runat="server" Text="Add Book" CssClass="btn btn-info add-btn" OnClick="btnAddBook_Click" />
-            </div>
-            <br />
-            <div class="card-container">
-                <asp:Repeater ID="rptBooks" runat="server">
-                    <ItemTemplate>
-                        <div class="card">
-                            <img src='<%# Eval("ImagePath") %>' alt='Book Image' />
-                            <div class="card-body">
-                                <h5 class="card-title"><%# Eval("BookName") %></h5>
-                                <p class="card-text"><strong>Type:</strong> <%# Eval("Type") %></p>
-                                <p class="card-text"><strong>Level:</strong> <%# Eval("Level") %></p>
-                                <p class="card-text"><strong>Description:</strong> <%# Eval("Description") %></p>
-                                <p class="card-text"><strong>Availability:</strong> <span class='<%# Eval("AvailabilityClass") %>'><%# Eval("Availability") %></span></p>
+                    <asp:Button ID="btnEdit" runat="server" Text="Edit Books" CssClass="btn btn-success edit-btn" OnClick="edit_Click" />
+                    <asp:Button ID="btnAddBook" runat="server" Text="Add Book" CssClass="btn btn-info add-btn" OnClick="btnAddBook_Click" />
+                </div>
+                <br />
+                <div class="card-container">
+                    <asp:Repeater ID="rptBooks" runat="server">
+                        <ItemTemplate>
+                            <div class="card">
+                                <img src='<%# Eval("ImagePath") %>' alt='Book Image' />
+                                <div class="card-body">
+                                    <h5 class="card-title"><%# Eval("BookName") %></h5>
+                                    <p class="card-text"><strong>Type:</strong> <%# Eval("Type") %></p>
+                                    <p class="card-text"><strong>Level:</strong> <%# Eval("Level") %></p>
+                                    <p class="card-text"><strong>Description:</strong> <%# Eval("Description") %></p>
+                                    <p class="card-text"><strong>Availability:</strong> <span class='<%# Eval("AvailabilityClass") %>'><%# Eval("Availability") %></span></p>
+                                </div>
                             </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+
+                <br />
             </div>
 
-            <br />
-            </div>
 
-          
 
         </div>
     </form>
