@@ -92,8 +92,26 @@
     <Content Include="adnan\Images\Books\math2.jpg" />
     <Content Include="adnan\ShowBooks.aspx" />
     <Content Include="hazem\WebForm1.aspx" />
+    <Content Include="jana\assets\about.jpg" />
+    <Content Include="jana\assets\explore.jpg" />
+    <Content Include="jana\assets\facebook.png" />
+    <Content Include="jana\assets\header.jpg" />
+    <Content Include="jana\assets\instagram.png" />
+    <Content Include="jana\assets\logo.png" />
+    <Content Include="jana\assets\MeetingRoom1.jpg" />
+    <Content Include="jana\assets\MeetingRoom2.jpg" />
+    <Content Include="jana\assets\MeetingRoom3.jpg" />
+    <Content Include="jana\assets\room-1.jpg" />
+    <Content Include="jana\assets\room-2.jpg" />
+    <Content Include="jana\assets\room-3.jpg" />
+    <Content Include="jana\assets\service.jpg" />
+    <Content Include="jana\assets\twitter.png" />
+    <Content Include="jana\assets\uni.jpg" />
+    <Content Include="jana\assets\youtube.png" />
     <Content Include="jana\CancelReservation.aspx" />
     <Content Include="jana\FormPhoto.jpg" />
+    <Content Include="jana\index.aspx" />
+    <Content Include="jana\Lumina-removebg-preview1.png" />
     <Content Include="jana\MeetingRoom3.jpg" />
     <Content Include="jana\ReservationForm.aspx" />
     <Content Include="jana\ViewAndCancelReservation.aspx" />
@@ -233,6 +251,13 @@
     </Compile>
     <Compile Include="jana\CancelReservation.aspx.designer.cs">
       <DependentUpon>CancelReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="jana\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jana\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="jana\ReservationForm.aspx.cs">
       <DependentUpon>ReservationForm.aspx</DependentUpon>
