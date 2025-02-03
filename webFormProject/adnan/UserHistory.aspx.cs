@@ -71,6 +71,8 @@ namespace LibraryManagement
             gvUserHistory.DataSource = historyList;
             gvUserHistory.DataBind();
         }
+
+        
     }
 
     public class UserHistoryEntry
