@@ -111,7 +111,6 @@
             --bs-btn-disabled-color: #fff;
             --bs-btn-disabled-bg: #7a0505;
             --bs-btn-disabled-border-color: #7a0505;
-            border-radius: 170px !important;
         }
     </style>
 </head>
@@ -181,12 +180,18 @@
 
                     <br />
                     <br />
-                    <div class="row">
-                        <asp:Button CssClass="btn btn-light" ID="Button1" runat="server" Text="edit room" OnClick="edit_Click" />
-                        <asp:Button CssClass="btn btn-red" ID="delete" runat="server" Text="delete room" OnClientClick="return confirmDelete();" OnClick="delete_Click" />
+                    <div class="row w-100 justify-content-between m-0">
+                        <div class="col-md-4 p-0">
+                            <asp:Button CssClass="btn btn-light w-100" ID="Button1" runat="server" Text="edit room" OnClick="edit_Click" />
+                        </div>
+                        <div class="col-md-4 p-0">
+                            <asp:Button CssClass="btn btn-red w-100" ID="delete" runat="server" Text="delete room" OnClientClick="return confirmDelete();" OnClick="delete_Click" />
+                        </div>
                     </div>
-                    <asp:Label ID="res" runat="server" Visible="false"></asp:Label>
-                    <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3"></asp:Label>
+                    <div class="row">
+                        <asp:Label ID="res" runat="server" Visible="false"></asp:Label>
+                        <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3"></asp:Label>
+                    </div>
                 </div>
             </div>
         </div>
