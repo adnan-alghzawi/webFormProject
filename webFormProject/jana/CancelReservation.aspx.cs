@@ -31,7 +31,7 @@ namespace webFormProject.jana
                     // Update room availability in rooms.txt
                     for (int i = 0; i < rooms.Count; i++)
                     {
-                        string[] roomData = rooms[i].Split(',');
+                        string[] roomData = rooms[i].Split('|');
                         if (roomData[0] == roomID)
                         {
                             roomData[6] = "true"; // Set availability to true

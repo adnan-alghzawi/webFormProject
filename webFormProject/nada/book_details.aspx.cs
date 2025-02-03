@@ -37,7 +37,7 @@ namespace webFormProject.nada
                             <h1>{bookData[1]}</h1>
                             <p>{bookData[5]}</p>
                             <div class=""details"">
-                                <p><strong>Type:</strong>{bookData[2]}</p>
+                                <p><strong>Type:</strong> {bookData[2]}</p>
                                 <p><strong>First Publish:</strong> December 30th 2014</p>
                                 <p><strong>Language:</strong> English</p>
                                 <p><strong>Pages:</strong> 240</p>
