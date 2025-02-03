@@ -67,7 +67,6 @@
 
             <section class="cards-book">
                 <div class="mb-3 row" runat="server" id="booksContainer">
-                    
                 </div>
             </section>
         </div>
