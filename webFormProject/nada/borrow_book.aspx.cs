@@ -31,7 +31,7 @@ namespace webFormProject.nada
                     string[] bookData = book.Split('|');
                     if (bookData[0] == bookId)
                     {
-                        bool isAvailable = bookData[6].Equals("true", StringComparison.OrdinalIgnoreCase);
+                        bool isAvailable = bookData[6].Equals("Available", StringComparison.OrdinalIgnoreCase);
                         string buttonDisabled = isAvailable ? "" : "disabled style='cursor: not-allowed; background-color: #EAE0D6;padding: 10px 20px;border: none;border-radius: 5px;font-size: 0.9rem;'";
                         bookImage.ImageUrl = bookData[4].Replace("~","");
                         bookName.Text = bookData[1];

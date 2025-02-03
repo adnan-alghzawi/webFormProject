@@ -28,7 +28,7 @@ namespace webFormProject.nada
                 foreach (string book in books)
                 {
                     string[] bookData = book.Split('|');
-                    bool isAvailable = bookData[6].Equals("true", StringComparison.OrdinalIgnoreCase);
+                    bool isAvailable = bookData[6].Equals("Available", StringComparison.OrdinalIgnoreCase);
                     if (!string.IsNullOrEmpty(searchQuery) && bookData[1].IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase).Equals(-1))
                     {
                         continue;
