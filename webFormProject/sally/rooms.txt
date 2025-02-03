@@ -1,5 +1,5 @@
 1| LUMINA |Private room| 1 |privateRoom1.jpg|Private Room for one person |false
-2| LUMINA 2 |Meeting room | 12 |meetingRoom1.jpg|Meeting room can containe up to 12 students |true
-3| LUMINA 3 |Private room | 1 |privateRoom1.jpg|Private room for one person |false
+2| LUMINA 2 |Meeting room | 12 |meetingRoom1.jpg|Meeting room can containe up to 12 students |false
+3| LUMINA 3 |Private room | 1 |privateRoom1.jpg|Private room for one person |true
 4| LUMINA 4 |Meeting room | 12 |meetingRoom1.jpg|Meeting room can containe up to 12 students |true
-5|Lum|Private room|1||Private Room for one person|true
+6|LUMINA|Meeting room|12|meetingRoom1.jpg|trew|true

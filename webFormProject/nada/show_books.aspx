@@ -17,11 +17,11 @@
         <div>
             <nav class="navbar navbar-expand-lg navbar-light  bg-umber pb-0 pt-0">
                 <a class="navbar-brand ps-3 text-white  pb-0 pt-0" href="#">
-                    <img class="imglogo" src="./imgs/Lumina-removebg-preview.png"/></a>
+                    <img class="imglogo" src="./imgs/Lumina-removebg-preview.png" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav"> 
                     <ul class="navbar-nav ">
                         <li class="nav-item ">
                             <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
@@ -41,8 +41,15 @@
                     </ul>
                 </div>
                 <div>
-                    <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4"></asp:Button>
-                    <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4"></asp:Button>
+                    <div runat="server" id="buttons" visible="true">
+                        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
+                        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
+                    </div>
+
+                    <div runat="server" id="buttons2" visible="false">
+                        <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
+                        <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
+                    </div>
                 </div>
 
             </nav>

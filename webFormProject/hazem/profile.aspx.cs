@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace task1_webForm_27_1_2025
 {
@@ -18,6 +19,13 @@ namespace task1_webForm_27_1_2025
             {
                 LoadProfile();
             }
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
+            Response.Redirect("~jana/index.aspx");
         }
 
         private void LoadProfile()
@@ -39,29 +47,29 @@ namespace task1_webForm_27_1_2025
 
             foreach (string line in userData)
             {
-                string[] user = line.Split(',');
+                string[] user = line.Split(' ');
                 if (user.Length >= 6 && user[1].Trim() == email1)
                 {
                     name.Text = user[0];
                     email2.Text = user[1];
                     name2.Text = user[0];
                     dob2.Text = user[5];
-                    Male.Checked = user[4] == "Male";
-                    Female.Checked = user[4] == "Female";
+                   // user[4] = Male.Checked ? "Male" : "Female";
+                    if (user[4] == "Male")
+                    {
+                        Male.Checked = true;
+                    }
+                    else
+                    {
+                        Female.Checked = true;
+                    }
                     return;
                 }
             }
 
-            Response.Write("<script>alert('User not found, creating new profile.');</script>");
-            SaveNewUser(email1);
         }
+            
 
-        private void SaveNewUser(string email)
-        {
-            string defaultUser = $"New User,{email},,,,";
-            File.AppendAllText(filePath, defaultUser + Environment.NewLine);
-            LoadProfile();
-        }
 
         protected void Save_Click(object sender, EventArgs e)
         {
@@ -77,7 +85,7 @@ namespace task1_webForm_27_1_2025
 
             for (int i = 0; i < userData.Length; i++)
             {
-                string[] user = userData[i].Split(',');
+                string[] user = userData[i].Split(' ');
                 if (user.Length >= 6 && user[1].Trim() == email1)
                 {
                     user[0] = name.Text;
@@ -93,7 +101,7 @@ namespace task1_webForm_27_1_2025
             if (!userFound)
             {
                 Response.Write("<script>alert('User not found, creating new profile.');</script>");
-                SaveNewUser(email1);
+               
             }
             else
             {
@@ -112,38 +120,10 @@ namespace task1_webForm_27_1_2025
         {
             Response.Redirect("~/adnan/userHistory.aspx");
         }
-        protected void rigester_Click(object sender, EventArgs e)
+
+        protected void prof_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/hazem/registration.aspx");
-        }
-
-        protected void login_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/hazem/logIn.aspx");
-        }
-        protected void homeTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void aboutTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void contactTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void books_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void rooms_Click(object sender, EventArgs e)
-        {
-
+            Response.Redirect("~/hazem/profile.aspx");
         }
     }
 }
