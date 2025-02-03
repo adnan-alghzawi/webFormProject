@@ -18,7 +18,6 @@
             border-radius: 8px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
         }
-
         .gridview th {
             background-color: #007bff;
             color: white;
@@ -44,6 +43,7 @@
                     <asp:BoundField DataField="Status" HeaderText="Status" />
                     <asp:BoundField DataField="Email" HeaderText="Email" />
                     <asp:BoundField DataField="BookID" HeaderText="Book ID" />
+                    <asp:BoundField DataField="BookName" HeaderText="Book name" />
                 </Columns>
             </asp:GridView>
         </div>

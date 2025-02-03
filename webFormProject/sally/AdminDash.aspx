@@ -18,10 +18,11 @@
             padding: 0;
             background-color: #EAE0D6;
         }
-        .umber{
+
+        .umber {
             color: #22333B;
-            font-size:30px  ;         
-            text-align:right;
+            font-size: 30px;
+            text-align: right;
         }
 
         .sidebar {
@@ -205,19 +206,24 @@
                 transition: all 0.5s ease-out;
                 color: #ffffff;
             }
-            .umber:hover{
-                color:white;
-            }
+
+        .umber:hover {
+            color: white;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="sidebar animate hidden">
             <img src="imgs/Lumina__1_-removebg-preview.png" class="imglogo" />
+            <asp:Button ID="Dashboard" runat="server" Text="Dashboard" OnClick="Dashboard_Click" CssClass="abtn" />
+
             <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
             <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
             <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
             <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
+            <asp:Button ID="logout" runat="server" Text="logout" OnClick="logout_Click" CssClass="abtn" />
+
         </div>
 
         <div class="content animate2 hidden2 vh-100">

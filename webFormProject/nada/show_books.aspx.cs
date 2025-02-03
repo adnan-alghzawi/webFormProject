@@ -137,5 +137,14 @@ namespace webFormProject.nada
             rooms.Visible = false;
         }
 
+        protected void books_Click1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rooms_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

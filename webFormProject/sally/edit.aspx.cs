@@ -45,6 +45,19 @@ namespace webFormProject.sally
         {
             Response.Redirect("RoomAdmin.aspx");
         }
+        protected void logout_Click(object sender, EventArgs e)
+        {
+
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
+            Response.Redirect("~/jana/index.aspx");
+
+        }
+
+        protected void Dashboard_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/sally/AdminDash.aspx");
+        }
 
         protected void SearchRoom_Click(object sender, EventArgs e)
         {
@@ -74,7 +87,7 @@ namespace webFormProject.sally
                     description.Text = details[5];
                     Available.SelectedValue = details[6];
                     roomFound = true;
-                    lblMessage2.Visible=false;
+                    lblMessage2.Visible = false;
                     break;
                 }
 
@@ -133,9 +146,9 @@ namespace webFormProject.sally
             {
                 string[] rooms = File.ReadAllLines(filePath);
                 List<string> list = new List<string>();
-               
+
                 for (int i = 0; i < rooms.Length; i++)
-                { 
+                {
                     string[] room = rooms[i].Split('|');
                     if (room[0].Trim() == search.Text.Trim())
                     {

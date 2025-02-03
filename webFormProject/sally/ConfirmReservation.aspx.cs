@@ -13,11 +13,13 @@ namespace webFormProject.sally
         private string requestsFilePath;
         private string notificationsFilePath;
         private string roomFilePath;
+        private string historyFilePath = HttpContext.Current.Server.MapPath("~/adnan/App_Data/UserHistory.txt");
         protected void Page_Load(object sender, EventArgs e)
         {
             requestsFilePath = Server.MapPath("~/jana/reservations.txt");
             notificationsFilePath = Server.MapPath("~/adnan/App_Data/UserNotifications.txt");
             roomFilePath = Server.MapPath("rooms.txt");
+
             
 
             if (!IsPostBack)
@@ -59,9 +61,11 @@ namespace webFormProject.sally
             string[] args = btnApprove.CommandArgument.Split('|');
             string email = args[0];
             string RoomID = args[1];
+            string RoomType = args[2];
 
-            UpdateRequestStatus(email, RoomID, "Approved");
-            SendNotification(email, "✅ Your borrow request has been approved!");
+
+            UpdateRequestStatus(RoomType,email, RoomID, "Approved");
+            SendNotification(RoomType,RoomID, email, "✅ Your borrow request has been approved!");
             string[] rooms = File.ReadAllLines(roomFilePath);
             for (int i = 0; i < rooms.Length; i++)
             {
@@ -83,13 +87,27 @@ namespace webFormProject.sally
             string[] args = btnReject.CommandArgument.Split('|');
             string email = args[0];
             string RoomID = args[1];
+            string RoomType = args[2];
 
-            UpdateRequestStatus(email, RoomID, "Rejected");
-            SendNotification(email, "❌ Your borrow request has been rejected.");
+            UpdateRequestStatus(RoomType, email, RoomID, "Rejected");
+            SendNotification(RoomType,RoomID, email, "❌ Your borrow request has been rejected.");
 
             LoadRequests();
         }
-        private void UpdateRequestStatus(string email, string RoomID, string status)
+        protected void logout_Click(object sender, EventArgs e)
+        {
+
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
+            Response.Redirect("~/jana/index.aspx");
+
+        }
+
+        protected void Dashboard_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/sally/AdminDash.aspx");
+        }
+        private void UpdateRequestStatus(string RoomType,string email, string RoomID, string status)
         {
             if (!File.Exists(requestsFilePath)) return;
 
@@ -104,6 +122,7 @@ namespace webFormProject.sally
                 if (details[3] == email && details[0] == RoomID)
                 {
                     details[8] = status;
+                    LogHistory(RoomType,email,RoomID , status);
                 }
 
                 updatedLines.Add(string.Join("|", details));
@@ -111,10 +130,15 @@ namespace webFormProject.sally
 
             File.WriteAllLines(requestsFilePath, updatedLines);
         }
-        private void SendNotification(string email, string message)
+        private void SendNotification(string RoomType,string RoomID , string email, string message)
         {
-            string notification = email + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            string notification = RoomType+"|"+ email + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
+        }
+        private void LogHistory(string RoomType, string email, string RoomID, string status)
+        {
+            string logEntry = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - Status: {status} | Email: {email} | Room ID: {RoomID}| Room Name: {RoomType}";
+            File.AppendAllText(historyFilePath, logEntry + Environment.NewLine);
         }
 
         protected void back_Click(object sender, EventArgs e)

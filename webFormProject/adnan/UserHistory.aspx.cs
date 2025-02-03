@@ -33,12 +33,13 @@ namespace LibraryManagement
                         string[] parts = line.Split(new string[] { "|", " - " }, StringSplitOptions.RemoveEmptyEntries);
                         if (parts[2].Trim() == "Email: "+emailUser.Trim())
                         {
-                            if (parts.Length >= 4)
+                            if (parts.Length >= 5)
                             {
                                 string datePart = parts[0].Trim();
                                 string statusPart = parts[1].Trim().Replace("Status:", "").Replace("Approved", "Approved ✅").Replace("Rejected", "Rejected ❌");
                                 string emailPart = parts[2].Trim().Replace("Email:", "");
                                 string bookIdPart = parts[3].Trim().Replace("Book ID:", "");
+                                string bookNamePart = parts[4].Trim().Replace("Book name:", "");
 
                                 // Add extracted data to the list
                                 historyList.Add(new UserHistoryEntry
@@ -46,7 +47,8 @@ namespace LibraryManagement
                                     Date = datePart,
                                     Status = statusPart,
                                     Email = emailPart,
-                                    BookID = bookIdPart
+                                    BookID = bookIdPart,
+                                    BookName = bookNamePart
                                 });
                             }
                             else
@@ -81,5 +83,6 @@ namespace LibraryManagement
         public string Status { get; set; }
         public string Email { get; set; }
         public string BookID { get; set; }
+        public string BookName { get; set; }
     }
 }

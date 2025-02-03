@@ -1,17 +1,17 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.IO;
 
-namespace webFormProject.suleiman
+namespace webFormProject.sally
 {
-    public partial class contactUs : Page
+    public partial class about : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                pnlSuccess.Visible = false;
-            }
             string filepath = Server.MapPath("~/hazem/data/logged.txt");
             string s = File.ReadAllText(filepath);
             if (s == "\"\"")
@@ -30,31 +30,6 @@ namespace webFormProject.suleiman
             }
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                try
-                {
-                    string feedbackEntry = $"{txtName.Text},{txtEmail.Text},{txtMessage.Text},{DateTime.Now:yyyy-MM-dd}";
-                    string filePath = Server.MapPath("feedback.txt");
-
-                    File.AppendAllText(filePath, feedbackEntry + Environment.NewLine);
-
-                    // Clear form and show success message
-                    txtName.Text = string.Empty;
-                    txtEmail.Text = string.Empty;
-                    txtMessage.Text = string.Empty;
-                    pnlSuccess.Visible = true;
-                }
-                catch (Exception ex)
-                {
-                    Response.Write($"<script>alert('Error submitting form: {ex.Message}');</script>");
-                }
-            }
-        }
-
-        // Navigation methods matching feedbackAdmin.aspx
         protected void login_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/hazem/LogIn.aspx");
@@ -63,7 +38,14 @@ namespace webFormProject.suleiman
         protected void rigester_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/hazem/registration.aspx");
+
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         protected void logout_Click(object sender, EventArgs e)
         {
             string filepath = Server.MapPath("~/hazem/data/logged.txt");

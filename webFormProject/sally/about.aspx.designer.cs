@@ -11,7 +11,7 @@ namespace webFormProject.sally
 {
 
 
-    public partial class reset_password
+    public partial class about
     {
 
         /// <summary>
@@ -42,111 +42,57 @@ namespace webFormProject.sally
         protected global::System.Web.UI.HtmlControls.HtmlAnchor rooms;
 
         /// <summary>
-        /// back control.
+        /// buttons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button back;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttons;
 
         /// <summary>
-        /// Email control.
+        /// login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.WebControls.Button login;
 
         /// <summary>
-        /// check control.
+        /// rigester control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button check;
+        protected global::System.Web.UI.WebControls.Button rigester;
 
         /// <summary>
-        /// EmailLabel control.
+        /// buttons2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl buttons2;
 
         /// <summary>
-        /// resetForm control.
+        /// logout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resetForm;
+        protected global::System.Web.UI.WebControls.Button logout;
 
         /// <summary>
-        /// oldpass control.
+        /// prof control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox oldpass;
-
-        /// <summary>
-        /// oldPassLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label oldPassLabel;
-
-        /// <summary>
-        /// newPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox newPass;
-
-        /// <summary>
-        /// Confirm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Confirm;
-
-        /// <summary>
-        /// pass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pass;
-
-        /// <summary>
-        /// cancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cancel;
-
-        /// <summary>
-        /// saveCanghes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button saveCanghes;
+        protected global::System.Web.UI.WebControls.Button prof;
     }
 }

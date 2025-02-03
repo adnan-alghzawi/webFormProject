@@ -66,6 +66,7 @@ namespace webFormProject.adnan
             string[] args = commandArgs.Split('|');
             string email = args[0];
             string bookId = args[1];
+            string BookName = args[2];
 
             string[] lines = File.ReadAllLines(requestsFilePath);
             for (int i = 0; i < lines.Length; i++)
@@ -75,24 +76,24 @@ namespace webFormProject.adnan
                 {
                     details[9] = $"\"{newStatus}\""; // Update the status, ensuring to maintain the format
                     lines[i] = string.Join("|", details);
-                    LogHistory(email, bookId, newStatus); // Log the action in the history file
+                    LogHistory(BookName,email, bookId, newStatus); // Log the action in the history file
                 }
             }
 
             File.WriteAllLines(requestsFilePath, lines);
             LoadRequests(); // Refresh the GridView
-            SendNotification(email, newStatus == "Approved" ? "✅ Your borrow request has been approved!" : "❌ Your borrow request has been rejected.");
+            SendNotification(BookName, email, newStatus == "Approved" ? "✅ Your reservation request has been approved!" : "❌ Your reservation request has been rejected.");
         }
 
-        private void LogHistory(string email, string bookId, string status)
+        private void LogHistory(string BookName,string email, string bookId, string status)
         {
-            string logEntry = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - Status: {status} | Email: {email} | Book ID: {bookId}";
+            string logEntry = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - Status: {status} | Email: {email} | Book ID: {bookId}| Book Name: {BookName}";
             File.AppendAllText(historyFilePath, logEntry + Environment.NewLine);
         }
 
-        private void SendNotification(string email, string message)
+        private void SendNotification(string BookName,string email, string message )
         {
-            string notification = $"{email}|{message}|{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
+            string notification = $"{BookName}|{email}|{message}|{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
         }
         protected void editB_Click(object sender, EventArgs e)
@@ -102,12 +103,12 @@ namespace webFormProject.adnan
 
         protected void editR_Click(object sender, EventArgs e)
         {
-            Response.Redirect("edit.aspx");
+            Response.Redirect("~/sally/edit.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ConfirmReservation.aspx");
+            Response.Redirect("~/sally/ConfirmReservation.aspx");
         }
 
         protected void Borrow_Click(object sender, EventArgs e)
