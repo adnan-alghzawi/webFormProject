@@ -80,5 +80,15 @@ namespace webFormProject.nada
         {
 
         }
+
+        protected void login_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rigester_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

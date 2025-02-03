@@ -95,5 +95,24 @@ namespace webFormProject.adnan
             string notification = $"{email}|{message}|{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
         }
+        protected void editB_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/adnan/EditBook.aspx");
+        }
+
+        protected void editR_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("edit.aspx");
+        }
+
+        protected void Reservations_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ConfirmReservation.aspx");
+        }
+
+        protected void Borrow_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/adnan/ConfirmBorrow.aspx");
+        }
     }
 }

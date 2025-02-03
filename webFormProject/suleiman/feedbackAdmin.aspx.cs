@@ -64,5 +64,25 @@ namespace webFormProject.suleiman
         {
 
         }
+
+        protected void editB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void editR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Reservations_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Borrow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

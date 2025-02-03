@@ -40,5 +40,38 @@ namespace task1_webForm_27_1_2025
 
             Response.Redirect("login.aspx");
         }
+        protected void rigester_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/registration.aspx");
+        }
+
+        protected void login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/logIn.aspx");
+        }
+        protected void homeTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void aboutTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void contactTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void books_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rooms_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
