@@ -58,7 +58,7 @@ namespace webFormProject.hazem
                 }
             }
 
-            Response.Write("<script>alert('User profile not found.');</script>");
+            //Response.Write("<script>alert('User profile not found.');</script>");
         }
 
         protected void save_Click(object sender, EventArgs e)

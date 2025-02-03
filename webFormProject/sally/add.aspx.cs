@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -118,6 +119,20 @@ namespace webFormProject.sally
             {
                 type.SelectedIndex = 1;
             }
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+        
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
+            Response.Redirect("~/jana/index.aspx");
+        
+        }
+
+        protected void Dashboard_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/sally/AdminDash.aspx");
         }
     }
 }

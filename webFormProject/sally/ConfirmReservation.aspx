@@ -119,10 +119,14 @@
 <form id="form1" runat="server">
     <div class="sidebar">
         <img src="imgs/Lumina__1_-removebg-preview.png" class="imglogo" />
+                        <asp:Button ID="Dashboard" runat="server" Text="dashboard" OnClick="Dashboard_Click" CssClass="abtn" />
+
         <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
         <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
         <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
         <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
+                        <asp:Button ID="logout" runat="server" Text="logout" OnClick="logout_Click" CssClass="abtn" />
+
     </div>
 
 

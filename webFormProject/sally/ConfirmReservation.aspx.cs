@@ -89,6 +89,19 @@ namespace webFormProject.sally
 
             LoadRequests();
         }
+        protected void logout_Click(object sender, EventArgs e)
+        {
+
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
+            Response.Redirect("~/jana/index.aspx");
+
+        }
+
+        protected void Dashboard_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/sally/AdminDash.aspx");
+        }
         private void UpdateRequestStatus(string email, string RoomID, string status)
         {
             if (!File.Exists(requestsFilePath)) return;
