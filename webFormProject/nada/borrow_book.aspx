@@ -52,7 +52,7 @@
                     <div class="row">
                         <!-- Book Image -->
                         <div class="col-md-3">
-                            <asp:Image ID="bookImage" runat="server" ImageUrl=".\imgs\book1.jpg" CssClass="img-fluid" />
+                            <asp:Image ID="bookImage" runat="server" ImageUrl="" CssClass="img-fluid" />
                         </div>
 
                         <!-- Book Details -->

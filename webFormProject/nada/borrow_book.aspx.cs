@@ -21,7 +21,7 @@ namespace webFormProject.nada
 
         private void LoadBookDetails(string bookId)
         {
-            string file = Server.MapPath("books.txt");
+            string file = Server.MapPath("~/adnan/App_Data/Books.txt");
             if (File.Exists(file))
             {
 
@@ -33,7 +33,7 @@ namespace webFormProject.nada
                     {
                         bool isAvailable = bookData[6].Equals("true", StringComparison.OrdinalIgnoreCase);
                         string buttonDisabled = isAvailable ? "" : "disabled style='cursor: not-allowed; background-color: #EAE0D6;padding: 10px 20px;border: none;border-radius: 5px;font-size: 0.9rem;'";
-                        bookImage.ImageUrl = bookData[4];
+                        bookImage.ImageUrl = bookData[4].Replace("~","");
                         bookName.Text = bookData[1];
                         bookType.Text = bookData[2];
                         bookLevel.Text = bookData[3];
@@ -50,7 +50,7 @@ namespace webFormProject.nada
             string name="";
             string phone= "079777777777";
             string bookId = Request.QueryString["bookId"];
-            string file = Server.MapPath("books.txt");
+            string file = Server.MapPath("~/adnan/App_Data/Books.txt");
             string loggedfile = Server.MapPath("~/hazem/data/logged.txt");
             string users_file = Server.MapPath("~/hazem/data/Hazem.txt");
 

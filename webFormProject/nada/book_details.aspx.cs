@@ -20,7 +20,7 @@ namespace webFormProject.nada
         }
         private void LoadBookDetails(string bookId)
         {
-            string file = Server.MapPath("books.txt");
+            string file = Server.MapPath("~/adnan/App_Data/Books.txt");
             if (File.Exists(file))
             {
                 string[] books = File.ReadAllLines(file);
@@ -32,7 +32,7 @@ namespace webFormProject.nada
                         bool isAvailable = bookData[6].Equals("true", StringComparison.OrdinalIgnoreCase);
                         string buttonDisabled = isAvailable ? "" : "disabled style='cursor: not-allowed; background-color: #EAE0D6;padding: 10px 20px;border: none;border-radius: 5px;font-size: 0.9rem;'onclick='return false;'";
                         div_book_details.InnerHtml = $@"
-                        <img src={bookData[4]} alt=""Book Cover"">
+                        <img src={bookData[4].Replace("~","")} alt=""Book Cover"">
                         <div class=""book-content"">
                             <h1>{bookData[1]}</h1>
                             <p>{bookData[5]}</p>
