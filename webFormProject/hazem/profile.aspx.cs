@@ -85,7 +85,7 @@ namespace task1_webForm_27_1_2025
 
             for (int i = 0; i < userData.Length; i++)
             {
-                string[] user = userData[i].Split(',');
+                string[] user = userData[i].Split(' ');
                 if (user.Length >= 6 && user[1].Trim() == email1)
                 {
                     user[0] = name.Text;
