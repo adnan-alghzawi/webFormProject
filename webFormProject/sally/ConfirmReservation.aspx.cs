@@ -59,9 +59,11 @@ namespace webFormProject.sally
             string[] args = btnApprove.CommandArgument.Split('|');
             string email = args[0];
             string RoomID = args[1];
+            string RoomType = args[2];
 
-            UpdateRequestStatus(email, RoomID, "Approved");
-            SendNotification(email, "✅ Your borrow request has been approved!");
+
+            UpdateRequestStatus(RoomType,email, RoomID, "Approved");
+            SendNotification(RoomType,RoomID, email, "✅ Your borrow request has been approved!");
             string[] rooms = File.ReadAllLines(roomFilePath);
             for (int i = 0; i < rooms.Length; i++)
             {
@@ -83,13 +85,14 @@ namespace webFormProject.sally
             string[] args = btnReject.CommandArgument.Split('|');
             string email = args[0];
             string RoomID = args[1];
+            string RoomType = args[2];
 
-            UpdateRequestStatus(email, RoomID, "Rejected");
-            SendNotification(email, "❌ Your borrow request has been rejected.");
+            UpdateRequestStatus(RoomType, email, RoomID, "Rejected");
+            SendNotification(RoomType,RoomID, email, "❌ Your borrow request has been rejected.");
 
             LoadRequests();
         }
-        private void UpdateRequestStatus(string email, string RoomID, string status)
+        private void UpdateRequestStatus(string RoomType ,string email, string RoomID, string status)
         {
             if (!File.Exists(requestsFilePath)) return;
 
@@ -111,9 +114,9 @@ namespace webFormProject.sally
 
             File.WriteAllLines(requestsFilePath, updatedLines);
         }
-        private void SendNotification(string email, string message)
+        private void SendNotification(string RoomType,string RoomID , string email, string message)
         {
-            string notification = email + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            string notification = RoomType+"|"+ email + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
         }
 
