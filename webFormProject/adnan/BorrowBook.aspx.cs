@@ -45,5 +45,24 @@ namespace webFormProject.adnan
             File.AppendAllText(filePath, request + Environment.NewLine);
             Response.Write("<script>alert('✅ Your request has been sent!');</script>");
         }
+        protected void editB_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/adnan/EditBook.aspx");
+        }
+
+        protected void editR_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("edit.aspx");
+        }
+
+        protected void Reservations_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ConfirmReservation.aspx");
+        }
+
+        protected void Borrow_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/adnan/ConfirmBorrow.aspx");
+        }
     }
 }
