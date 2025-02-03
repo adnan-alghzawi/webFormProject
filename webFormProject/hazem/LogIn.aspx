@@ -144,12 +144,6 @@
                 <div class="col-md-8 col-lg-6 mx-auto">
                     <div class="card text-center">
                         <h2 class="fw-bold" style="color: #EAE0D6">Login</h2>
-                        <div class="social-icons my-3">
-                            <button class="btn btn-primary mx-1"><i class="fab fa-facebook-f"></i></button>
-                            <button class="btn btn-primary mx-1"><i class="fab fa-twitter"></i></button>
-                            <button class="btn btn-primary mx-1"><i class="fab fa-linkedin-in"></i></button>
-                        </div>
-                        <p class="fw-bold">Or</p>
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
                             <asp:TextBox ID="email_address" runat="server" CssClass="form-control" TextMode="Email" placeholder="Enter a valid email address" Style="background-color: #EAE0D6;" />
