@@ -126,7 +126,7 @@ namespace webFormProject.sally
         }
         private void SendNotification(string email, string message)
         {
-            string notification = email + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            string notification = email + "|"  + message + "|" + message + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
         }
 

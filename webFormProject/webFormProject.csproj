@@ -128,6 +128,7 @@
     <Content Include="nada\show_books.aspx" />
     <Content Include="nada\StyleSheet1.css" />
     <Content Include="nada\WebForm1.aspx" />
+    <Content Include="sally\about.aspx" />
     <Content Include="sally\add.aspx" />
     <Content Include="sally\AdminDash.aspx" />
     <Content Include="sally\ConfirmReservation.aspx" />
@@ -316,6 +317,13 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sally\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sally\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sally\add.aspx.cs">
       <DependentUpon>add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
