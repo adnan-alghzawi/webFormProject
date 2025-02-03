@@ -104,6 +104,7 @@
         <form id="form1" runat="server">
             <div class="sidebar animate hidden">
                 <img src="Images/Books/Lumina-removebg-preview.png" class="imglogo" />
+                 <asp:Button ID="dash" runat="server" Text="Dashboard" OnClick="dash_Click" CssClass="abtn" />
                 <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
                 <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
                 <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />

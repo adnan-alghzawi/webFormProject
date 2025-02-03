@@ -13,6 +13,24 @@ namespace webFormProject.jana
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            string s = File.ReadAllText(filepath);
+            if (s == "\"\"")
+            {
+                buttons.Visible = true;
+                buttons2.Visible = false;
+                books.Visible = false;
+                rooms.Visible = false;
+            }
+            else
+            {
+                buttons.Visible = false;
+                buttons2.Visible = true;
+                books.Visible = true;
+                rooms.Visible = true;
+            }
+
             if (!IsPostBack) // فقط عند تحميل الصفحة لأول مرة
             {
                 if (Request.QueryString["roomID"] != null)
@@ -95,7 +113,7 @@ namespace webFormProject.jana
             {
                 ShowAlert("The selected time is already booked. Please choose another time.");
             }
-            //Response.Redirect("ViewRooms.aspx");
+            Response.Redirect("ViewRooms.aspx");
             
         }
 
@@ -156,27 +174,54 @@ namespace webFormProject.jana
 
         protected void homeTab_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../jana/index.aspx");
         }
 
         protected void aboutTab_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../sally/aboutUs.aspx");
         }
 
         protected void contactTab_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../suleiman/contactUs.aspx");
         }
 
         protected void books_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../nada/show_books.aspx");
         }
 
         protected void rooms_Click(object sender, EventArgs e)
         {
+            Response.Redirect("../jana/ViewRooms.aspx");
+        }
+
+        protected void login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/LogIn.aspx");
+        }
+
+        protected void rigester_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/registration.aspx");
 
         }
+        protected void prof_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/profile.aspx");
+
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
+            buttons.Visible = true;
+            buttons2.Visible = false;
+            books.Visible = false;
+            rooms.Visible = false;
+        }
+
     }
 }

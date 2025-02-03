@@ -64,5 +64,9 @@ namespace webFormProject.adnan
         {
             Response.Redirect("~/adnan/ConfirmBorrow.aspx");
         }
+        protected void dash_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/sally/AdminDash.aspx");
+        }
     }
 }

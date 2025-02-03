@@ -88,27 +88,27 @@ namespace webFormProject.nada
 
         protected void homeTab_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../jana/index.aspx");
         }
 
         protected void aboutTab_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../sally/aboutUs.aspx");
         }
 
         protected void contactTab_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../suleiman/contactUs.aspx");
         }
 
         protected void books_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../nada/show_books.aspx");
         }
 
         protected void rooms_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../jana/ViewRooms.aspx");
         }
 
         protected void login_Click(object sender, EventArgs e)
@@ -137,5 +137,14 @@ namespace webFormProject.nada
             rooms.Visible = false;
         }
 
+        protected void books_Click1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rooms_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
