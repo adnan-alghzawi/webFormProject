@@ -148,13 +148,8 @@
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
         }
 
-
-.cards-book {
-    margin: 0px 65px;
-}
-
     .cards-book .row {
-        justify-content: flex-start;
+        justify-content: center;
         gap: 12px;
     }
 

@@ -82,16 +82,40 @@
                     <img class="imglogo" src="imgs/Lumina__1_-removebg-preview.png" />
 
                 </a>
-                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item ">
+
+                            <a class="nav-link active text-white" id="homeTab" href="../jana/index.aspx">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" id="aboutTab" href="../jana/about.aspx">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" runat="server" id="books" href="../nada/show_books.aspx">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" runat="server" id="rooms" href="../jana/ViewRooms.aspx">Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" id="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
+
+                        </li>
+                    </ul>
+                </div>
+
             </nav>
 
 
 
             <div class="container d-flex justify-content-center align-items-start mt-5">
-                 <asp:Button ID="back" runat="server" class="btn btn-green1 mt-5 me-3" OnClick="back_Click" Text="Back"></asp:Button>
+                <asp:Button ID="back" runat="server" class="btn btn-green1 mt-5 me-3" OnClick="back_Click" Text="Back"></asp:Button>
                 <div class=" row w-100 same-height gap-2">
                     <!-- زر Back -->
-                   
+
 
                     <!-- الفورم -->
                     <div class="col-md-5 p-5 rounded border bg-umber text-white equal-height">
@@ -110,7 +134,7 @@
                         <div class="mb-3">
                             <label for="oldpass" class="form-label">Old Password</label>
                             <asp:TextBox runat="server" ID="oldpass" CssClass="form-control" AutoPostBack="True" OnTextChanged="oldpass_TextChanged"></asp:TextBox>
-                             <asp:Label ID="oldPassLabel" runat="server" Visible="false" CssClass="text-danger"></asp:Label>
+                            <asp:Label ID="oldPassLabel" runat="server" Visible="false" CssClass="text-danger"></asp:Label>
                         </div>
                         <div class="mb-3">
                             <label for="newpass" class="form-label">New Password</label>
