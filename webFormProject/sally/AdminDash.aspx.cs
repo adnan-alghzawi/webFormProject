@@ -124,5 +124,10 @@ namespace webFormProject.sally
         {
             Response.Redirect("RoomAdmin.aspx");
         }
+
+        protected void feedbacks_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/suleiman/feedbackAdmin.aspx");
+        }
     }
 }
