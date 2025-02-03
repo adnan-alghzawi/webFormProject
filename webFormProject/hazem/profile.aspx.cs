@@ -46,8 +46,15 @@ namespace task1_webForm_27_1_2025
                     email2.Text = user[1];
                     name2.Text = user[0];
                     dob2.Text = user[5];
-                    Male.Checked = user[4] == "Male";
-                    Female.Checked = user[4] == "Female";
+                   // user[4] = Male.Checked ? "Male" : "Female";
+                    if (user[4] == "Male")
+                    {
+                        Male.Checked = true;
+                    }
+                    else
+                    {
+                        Female.Checked = true;
+                    }
                     return;
                 }
             }

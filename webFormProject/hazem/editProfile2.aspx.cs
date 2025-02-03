@@ -33,7 +33,7 @@ namespace webFormProject.hazem
             {
                 if (string.IsNullOrWhiteSpace(line)) continue; // تخطي الأسطر الفارغة
 
-                string[] user = line.Split(',');
+                string[] user = line.Split(' ');
 
                 if (user.Length < 6) continue; // التأكد أن السطر يحتوي على البيانات المطلوبة
 
@@ -41,6 +41,17 @@ namespace webFormProject.hazem
                 {
                     name.Text = user[0];
                     name2.Text = user[0];
+                    if (user[4]== "Male")
+                    {
+                        Male.Text = "Male";
+                        Male.Checked = true;
+
+                    }
+                    else
+                    {
+                        Female.Text = "FeMale";
+                        Female.Checked = true;
+                    }
                     email2.Text = user[1];
                     dob2.Text = user[5];
                     return;
@@ -52,7 +63,41 @@ namespace webFormProject.hazem
 
         protected void save_Click(object sender, EventArgs e)
         {
-            Response.Write("<script>alert('Profile updated successfully!');</script>");
+            string filePath = Server.MapPath("~/hazem/data/Hazem.txt");
+            if (File.Exists(filePath))
+            {
+                string[] content = File.ReadAllLines(filePath);
+                string fileLoged = Server.MapPath("~/hazem/data/logged.txt");
+                string userEmail = File.ReadAllText(fileLoged);
+
+                for (int i = 0; i < content.Length; i++)
+                {
+                    string[] user = content[i].Split(' ');
+                    if (user[1] == userEmail)
+                    {
+                        user[0] = name2.Text;
+                        user[1] = email2.Text;
+                        if (Male.Checked)
+                        {
+                            user[4] = Male.Text;
+                        }
+                        else
+                        {
+                            user[4] = Female.Text;
+                        }
+                      //  user[3] = gender.SelectedValue;
+                        user[5] = dob2.Text;
+                        File.WriteAllText(fileLoged, email2.Text);
+                        content[i] = $"{user[0]} {user[1]} {user[2]} {user[3]} {user[4]} {user[5]}";
+
+                        Response.Write("<script>alert('information changed!');</script>");
+
+                        break;
+                    }
+                }
+                File.WriteAllLines(filePath, content);
+            }
+            Response.Redirect("profile.aspx");
         }
 
         protected void UploadImage_Click(object sender, EventArgs e)
