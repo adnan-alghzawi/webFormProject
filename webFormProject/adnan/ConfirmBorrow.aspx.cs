@@ -90,7 +90,7 @@ namespace webFormProject.adnan
             File.AppendAllText(historyFilePath, logEntry + Environment.NewLine);
         }
 
-        private void SendNotification(string email, string message)
+        private void SendNotification(string email, string message )
         {
             string notification = $"{email}|{message}|{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
             File.AppendAllText(notificationsFilePath, notification + Environment.NewLine);
