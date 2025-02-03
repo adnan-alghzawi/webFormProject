@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
@@ -24,62 +26,68 @@
      }
 
      body {
-         background-color: #EAE0D6;
-     }
+    background-color: #EAE0D6;
+}
 
-     .imglogo {
-         width: 20%;
-     }
+.bg-umber {
+    background-color: #22333B;
+}
 
-     .btn-green {
-         --bs-btn-color: #22333B !important;
-         --bs-btn-bg: #EAE0D6 !important;
-         --bs-btn-border-color: #EAE0D6;
-         --bs-btn-hover-color: #EAE0D6;
-         --bs-btn-hover-bg: #22333B;
-         --bs-btn-hover-border-color: #EAE0D6 !important;
-         --bs-btn-focus-shadow-rgb: 49, 132, 253;
-         --bs-btn-active-color: #22333B;
-         --bs-btn-active-bg: #EAE0D6;
-         --bs-btn-active-border-color: #EAE0D6;
-         --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-         --bs-btn-disabled-color: #22333B;
-         --bs-btn-disabled-bg: #EAE0D6;
-         --bs-btn-disabled-border-color: #EAE0D6;
-         border-radius: 170px !important;
-         margin-right: 5px;
-     }
+.imglogo {
+    width: 20%;
+}
 
-     .btn-green1 {
-         --bs-btn-color: #EAE0D6 !important;
-         --bs-btn-bg: #22333B !important;
-         --bs-btn-border-color: #22333B;
-         --bs-btn-hover-color: #22333B;
-         --bs-btn-hover-bg: #EAE0D6;
-         --bs-btn-hover-border-color: #22333B !important;
-         --bs-btn-focus-shadow-rgb: 49, 132, 253;
-         --bs-btn-active-color: #EAE0D6;
-         --bs-btn-active-bg: #22333B;
-         --bs-btn-active-border-color: #22333B;
-         --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-         --bs-btn-disabled-color: #EAE0D6;
-         --bs-btn-disabled-bg: #22333B;
-         --bs-btn-disabled-border-color: #22333B;
-         border-radius: 170px !important;
-         margin-right: 5px;
-         width: 10% !important;
-     }
+.btn-green {
+    --bs-btn-color: #22333B !important;
+    --bs-btn-bg: #EAE0D6 !important;
+    --bs-btn-border-color: #EAE0D6;
+    --bs-btn-hover-color: #22333B;
+    --bs-btn-hover-bg: #C6AD8F;
+    --bs-btn-hover-border-color: #C6AD8F !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #22333B;
+    --bs-btn-active-bg: #EAE0D6;
+    --bs-btn-active-border-color: #EAE0D6;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #22333B;
+    --bs-btn-disabled-bg: #EAE0D6;
+    --bs-btn-disabled-border-color: #EAE0D6;
+    border-radius: 20px !important;
+    margin-right: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),inset 3px 3px 6px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+.btn-green1 {
+    --bs-btn-color: #EAE0D6 !important;
+    --bs-btn-bg: #22333B !important;
+    --bs-btn-border-color: #22333B;
+    --bs-btn-hover-color: #22333B;
+    --bs-btn-hover-bg: #EAE0D6;
+    --bs-btn-hover-border-color: #22333B !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #EAE0D6;
+    --bs-btn-active-bg: #22333B;
+    --bs-btn-active-border-color: #22333B;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #EAE0D6;
+    --bs-btn-disabled-bg: #22333B;
+    --bs-btn-disabled-border-color: #22333B;
+    border-radius: 170px !important;
+    margin-right: 5px;
+    width: 10% !important;
+}
 
     </style>
 
-
+   
 </head>
 <body>
     <form id="form1" runat="server">
                     <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light  bg-umber">
-    <a class="navbar-brand ps-3 text-white" href="#">
-        <img class="imglogo" src="../sally/imgs/Lumina_1-removebg-preview.png" /></a>
+<nav class="navbar navbar-expand-lg navbar-light  bg-umber pb-0 pt-0">
+    <a class="navbar-brand ps-3 text-white  pb-0 pt-0" href="#">
+        <img class="imglogo" src="Lumina-removebg-preview1.png" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -101,12 +109,13 @@
                 <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="rooms_Click" Text="Meeting Rooms"></asp:LinkButton>
             </li>
         </ul>
-        <div>
-            <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0"></asp:Button>
-            <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0"></asp:Button>
-        </div>
+    </div>
+    <div>
+        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4"></asp:Button>
+        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4"></asp:Button>
     </div>
 </nav>
+
         <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
