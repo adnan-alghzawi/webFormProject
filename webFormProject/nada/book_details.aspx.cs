@@ -103,27 +103,27 @@ namespace webFormProject.nada
 
         protected void homeTab_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./jana/index.aspx");
+            Response.Redirect("~/jana/index.aspx");
         }
 
         protected void aboutTab_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../sally/aboutUs.aspx");
+            Response.Redirect("~/sally/about.aspx");
         }
 
         protected void contactTab_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../suleiman/contactUs.aspx");
+            Response.Redirect("~/suleiman/contactUs.aspx");
         }
 
         protected void books_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../nada/show_books.aspx");
+            Response.Redirect("~/nada/show_books.aspx");
         }
 
         protected void rooms_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../jana/ViewRooms.aspx");
+            Response.Redirect("~/jana/ViewRooms.aspx");
         }
 
         protected void login_Click(object sender, EventArgs e)

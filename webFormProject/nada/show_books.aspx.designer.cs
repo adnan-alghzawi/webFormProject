@@ -42,15 +42,6 @@ namespace webFormProject.nada
         protected global::System.Web.UI.WebControls.LinkButton aboutTab;
 
         /// <summary>
-        /// contactTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton contactTab;
-
-        /// <summary>
         /// books control.
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace webFormProject.nada
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton rooms;
+
+        /// <summary>
+        /// contactTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton contactTab;
 
         /// <summary>
         /// buttons control.
