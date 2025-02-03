@@ -10,6 +10,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+      <script src="https://kit.fontawesome.com/501a070fcb.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css" />
@@ -119,7 +120,7 @@ body {
 }
 
 .header {
-  background-image: url("assets/uni.jpg");
+  background-image: url("assets/homephoto2.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -342,7 +343,7 @@ body {
 }
 
 .service {
-  background-image: url("assets/service.jpg");
+  background-image: url("assets/services1.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -579,7 +580,13 @@ body {
     flex-direction: row;
     background-color: transparent;
   }
+   .room__grid {
+         display: flex;
+        justify-content: center;
+        align-items: center;
+       
 
+    }
   .nav__btn {
     display: block;
   }
@@ -644,10 +651,10 @@ body {
       <ul class="navbar-nav ">
           <li class="nav-item ">
               
-              <a class="nav-link active text-white" id="homeTab" href="../jana/index.aspx">Home</a>
+              <a class="nav-link active text-white"  runat="server" id="homeTab" href="../jana/index.aspx">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" ID="aboutTab" href="../jana/about.aspx">About</a>
+            <a class="nav-link text-white"  runat="server" ID="aboutTab" href="../sally/about.aspx">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link  text-white" runat="server" ID="books" href="../nada/show_books.aspx">Books</a>
@@ -656,7 +663,7 @@ body {
             <a class="nav-link  text-white" runat="server" ID="rooms" href="../jana/ViewRooms.aspx">Rooms</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  text-white" ID="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
+            <a class="nav-link  text-white"  runat="server" ID="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
 
           </li>
       </ul>
@@ -673,7 +680,7 @@ body {
 </nav>
       <div class="section__container header__container" id="home">
         <p>Explore, Borrow, Reserve</p>
-        <h1>Your University Library <br />at Your <span>Fingertips!</span>.</h1>
+        <h1>Your University Library <br />at Your <span>Fingertips!</span></h1>
       </div>
     </header>
 
@@ -725,7 +732,7 @@ body {
 
     <section class="section__container about__container" id="about">
       <div class="about__image">
-        <img src="assets/about.jpg" alt="about" />
+        <img src="assets/about2.jpg" alt="about" />
       </div>
       <div class="about__content">
         <p class="section__subheader">ABOUT US</p>
@@ -742,42 +749,38 @@ body {
 
     
     <section class="section__container room__container">
-      <p class="section__subheader">OUR ROOM</p>
-      <h2 class="section__header">Perfect Space for Your Meetings & Study Sessions!</h2>
+      <p class="section__subheader">OUR Services</p>
+      <h2 class="section__header">Find Your Perfect Study Space & Discover Your Next Great Read!</h2>
       <div class="room__grid">
         <div class="room__card">
           <div class="room__card__image">
-            <img src="assets/MeetingRoom1.jpg" alt="room" />
+            <img src="assets/MeetingRoom.jpg" alt="room" />
             
           </div>
-          <br>
+        
           <div class="room__card__details">
             <h4>Meeting Rooms</h4>
             <p>
               A quiet and comfortable space equipped for group discussions, study sessions, and meetings.
             </p>
-            <h5><span>+2 Person</span></h5>
+                <br />
             <button class="btn">Reserve Now</button>
           </div>
         </div>
         <div class="room__card">
           <div class="room__card__image">
-            <img src="assets/MeetingRoom2.jpg" alt="room" />
-            <div class="room__card__icons">
-              <span><i class="ri-heart-fill"></i></span>
-              <span><i class="ri-paint-fill"></i></span>
-              <span><i class="ri-shield-star-line"></i></span>
-            </div>
+            <img src="assets/book1.jpg" alt="room" />
+          
           </div>
-          <br>
-              
+         
+            
           <div class="room__card__details">
             <h4>Books</h4>
             <p>
               
-              A quiet and comfortable space equipped for group discussions, study sessions, and meetings.
+             A must-read! Explore this book to gain knowledge, inspiration, and new perspectives.   
             </p>
-            <h5><span>1 Person</span></h5>
+            <br />
             <button class="btn">Reserve Now</button>
           </div>
         </div>
@@ -792,20 +795,20 @@ body {
           <h2 class="section__header">Strive Only For The Best.</h2>
           <ul class="service__list">
             <li>
-              <span><i class="ri-shield-star-line"></i></span>
-              High Class Security
+              <span><i class="fa-solid fa-book"></i></span>
+            Seamless Book Borrowing 
             </li>
             <li>
               <span><i class="ri-24-hours-line"></i></span>
-              24 Hours Room Service
+             24 Hours Room Service
             </li>
             <li>
-              <span><i class="ri-headphone-line"></i></span>
-              Conference Room
+              <span><i class="fa-solid fa-people-group"></i></i></span>
+              Convenient Meeting Room  
             </li>
             <li>
-              <span><i class="ri-map-2-line"></i></span>
-              Tourist Guide Support
+              <span><i class="fa-solid fa-user"></i></span>
+              User-Friendly Experience
             </li>
           </ul>
         </div>
@@ -842,55 +845,121 @@ body {
     </section> -->
   </br>
 </br>
-    <footer class="footer" id="contact">
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <div class="logo">
-            <a href="#home"><img src="assets/logo.png" alt="logo" /></a>
+     <!-- Footer -->
+  <footer class="text-center text-lg-start bg-umber text-white">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <!-- Left -->
+          <div class="me-5 d-none d-lg-block">
+              <span>Get connected with us on social networks:</span>
           </div>
-          <p class="section__description">
-            Discover a world of comfort, luxury, and adventure as you explore
-            our curated selection of hotels, making every moment of your getaway
-            truly extraordinary.
-          </p>
-          <button class="btn">Book Now</button>
-        </div>
-        <div class="footer__col">
-          <h4>QUICK LINKS</h4>
-          <ul class="footer__links">
-            <li><a href="#">Browse Destinations</a></li>
-            <li><a href="#">Special Offers & Packages</a></li>
-            <li><a href="#">Room Types & Amenities</a></li>
-            <li><a href="#">Customer Reviews & Ratings</a></li>
-            <li><a href="#">Travel Tips & Guides</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>OUR SERVICES</h4>
-          <ul class="footer__links">
-            <li><a href="#">Concierge Assistance</a></li>
-            <li><a href="#">Flexible Booking Options</a></li>
-            <li><a href="#">Airport Transfers</a></li>
-            <li><a href="#">Wellness & Recreation</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>CONTACT US</h4>
-          <ul class="footer__links">
-            <li><a href="#">rayalpark@info.com</a></li>
-          </ul>
-          <div class="footer__socials">
-            <a href="#"><img src="assets/facebook.png" alt="facebook" /></a>
-            <a href="#"><img src="assets/instagram.png" alt="instagram" /></a>
-            <a href="#"><img src="assets/youtube.png" alt="youtube" /></a>
-            <a href="#"><img src="assets/twitter.png" alt="twitter" /></a>
+          <!-- Left -->
+
+          <!-- Right -->
+          <div>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-twitter"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-google"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-instagram"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-github"></i>
+              </a>
           </div>
-        </div>
+          <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+          <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                      <!-- Content -->
+                      <img src="../sally/imgs/Lumina__1_-removebg-preview.png" style="width:70%" />
+                      <p>
+                         University Library System
+                      </p>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4">Services
+</h6>
+                      <p>
+                          <a href="#!" class="text-reset">Books</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">Meeting rooms</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">Private rooms</a>
+                      </p>
+                      
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4">Useful links
+</h6>
+                      <p>
+                          <a href="#!" class="text-reset">Home</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">About us</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">Contact Us</a>
+                      </p>
+                     
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                      <p><i class="fas fa-home me-3"></i>New York, NY 10012, US</p>
+                      <p>
+                          <i class="fas fa-envelope me-3"></i>
+                          LUMINA@gmail.com
+         
+                      </p>
+                      <p><i class="fas fa-phone me-3"></i>+ 01 234 567 88</p>
+                      <p><i class="fas fa-print me-3"></i>+ 01 234 567 89</p>
+                  </div>
+                  <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+          </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2025 Copyright:
+   
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">LUMINA.com</a>
       </div>
-      <div class="footer__bar">
-        Copyright © 2023 Web Design Mastery. All rights reserved.
-      </div>
-    </footer>
+      <!-- Copyright -->
+  </footer>
+  <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
