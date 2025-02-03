@@ -24,40 +24,13 @@ namespace task1_webForm_27_1_2025
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// homeTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton homeTab;
-
-        /// <summary>
-        /// aboutTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton aboutTab;
-
-        /// <summary>
-        /// contactTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton contactTab;
-
-        /// <summary>
         /// books control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton books;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor books;
 
         /// <summary>
         /// rooms control.
@@ -66,7 +39,7 @@ namespace task1_webForm_27_1_2025
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton rooms;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor rooms;
 
         /// <summary>
         /// login control.

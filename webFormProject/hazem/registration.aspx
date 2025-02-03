@@ -13,17 +13,20 @@
             background-color: #EAE0D6;
             color: #22333B;
         }
+
         .card {
             border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color: #22333B;
         }
+
         .form-control {
             border-radius: 10px;
             background-color: #EAE0D6;
             color: #22333B;
             border: none;
         }
+
         .btn-primary {
             background-color: #EAE0D6;
             border: none;
@@ -31,111 +34,118 @@
             transition: 0.3s;
             color: #22333B;
         }
-        .btn-primary:hover {
-            background-color: #22333B;
-            color: #EAE0D6;
-        }
+
+            .btn-primary:hover {
+                background-color: #22333B;
+                color: #EAE0D6;
+            }
+
         .img-fluid {
             border-radius: 20px;
         }
+
         label, .form-check-label {
             color: #EAE0D6;
         }
+
         .img-fluid {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10%;
-}
+            max-width: 100%;
+            height: auto;
+            margin-top: 10%;
+        }
+
         .bg-umber {
-    background-color: #22333B;
-}
+            background-color: #22333B;
+        }
 
-.imglogo {
-    width: 20%;
-}
+        .imglogo {
+            width: 20%;
+        }
 
-.btn-green {
-    --bs-btn-color: #22333B !important;
-    --bs-btn-bg: #EAE0D6 !important;
-    --bs-btn-border-color: #EAE0D6;
-    --bs-btn-hover-color: #22333B;
-    --bs-btn-hover-bg: #C6AD8F;
-    --bs-btn-hover-border-color: #C6AD8F !important;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #22333B;
-    --bs-btn-active-bg: #EAE0D6;
-    --bs-btn-active-border-color: #EAE0D6;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #22333B;
-    --bs-btn-disabled-bg: #EAE0D6;
-    --bs-btn-disabled-border-color: #EAE0D6;
-    border-radius: 20px !important;
-    margin-right: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),inset 3px 3px 6px rgba(0, 0, 0, 0.3);
-    border: none;
-}
+        .btn-green {
+            --bs-btn-color: #22333B !important;
+            --bs-btn-bg: #EAE0D6 !important;
+            --bs-btn-border-color: #EAE0D6;
+            --bs-btn-hover-color: #22333B;
+            --bs-btn-hover-bg: #C6AD8F;
+            --bs-btn-hover-border-color: #C6AD8F !important;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #22333B;
+            --bs-btn-active-bg: #EAE0D6;
+            --bs-btn-active-border-color: #EAE0D6;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #22333B;
+            --bs-btn-disabled-bg: #EAE0D6;
+            --bs-btn-disabled-border-color: #EAE0D6;
+            border-radius: 20px !important;
+            margin-right: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),inset 3px 3px 6px rgba(0, 0, 0, 0.3);
+            border: none;
+        }
 
-.btn-green1 {
-    --bs-btn-color: #EAE0D6 !important;
-    --bs-btn-bg: #22333B !important;
-    --bs-btn-border-color: #22333B;
-    --bs-btn-hover-color: #22333B;
-    --bs-btn-hover-bg: #EAE0D6;
-    --bs-btn-hover-border-color: #22333B !important;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #EAE0D6;
-    --bs-btn-active-bg: #22333B;
-    --bs-btn-active-border-color: #22333B;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #EAE0D6;
-    --bs-btn-disabled-bg: #22333B;
-    --bs-btn-disabled-border-color: #22333B;
-    border-radius: 170px !important;
-    margin-right: 5px;
-    width: 10% !important;
-}
+        .btn-green1 {
+            --bs-btn-color: #EAE0D6 !important;
+            --bs-btn-bg: #22333B !important;
+            --bs-btn-border-color: #22333B;
+            --bs-btn-hover-color: #22333B;
+            --bs-btn-hover-bg: #EAE0D6;
+            --bs-btn-hover-border-color: #22333B !important;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #EAE0D6;
+            --bs-btn-active-bg: #22333B;
+            --bs-btn-active-border-color: #22333B;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #EAE0D6;
+            --bs-btn-disabled-bg: #22333B;
+            --bs-btn-disabled-border-color: #22333B;
+            border-radius: 170px !important;
+            margin-right: 5px;
+            width: 10% !important;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-lg navbar-light  bg-umber pb-0 pt-0">
-    <a class="navbar-brand ps-3 text-white  pb-0 pt-0" href="#">
-        <img class="imglogo" src="../adnan/Images/Books/Lumina-removebg-preview.png" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ">
-            <li class="nav-item ">
-                <asp:LinkButton CssClass="nav-link active text-white" ID="homeTab" runat="server" OnClick="homeTab_Click" Text="Home"></asp:LinkButton>
-            </li>
-            <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
-            </li>
-            <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
-            </li>
-            <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="books_Click" Text="Books"></asp:LinkButton>
-            </li>
-            <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="rooms_Click" Text="Meeting Rooms"></asp:LinkButton>
-            </li>
-        </ul>
-    </div>
-    <div>
-        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click" />
-        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click" />
-    </div>
+            <a class="navbar-brand ps-3 text-white  pb-0 pt-0" href="#">
+                <img class="imglogo" src="../adnan/Images/Books/Lumina-removebg-preview.png" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item ">
 
-</nav>
+                        <a class="nav-link active text-white" id="homeTab" href="../jana/index.aspx">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" id="aboutTab" href="../jana/about.aspx">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" runat="server" id="books" href="../nada/show_books.aspx">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" runat="server" id="rooms" href="../jana/ViewRooms.aspx">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" id="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
+
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click" />
+                <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click" />
+            </div>
+
+        </nav>
         <div class="container d-flex justify-content-center align-items-center vh-100">
             <div class="row w-100">
                 <div class="col-md-10 col-lg-8 mx-auto">
                     <div class="card p-4">
                         <div class="row">
                             <div class="col-md-6 d-flex flex-column justify-content-center">
-                                <h2 class="text-center fw-bold" style="color:#EAE0D6">Sign Up</h2>
+                                <h2 class="text-center fw-bold" style="color: #EAE0D6">Sign Up</h2>
                                 <div class="mb-3">
                                     <label class="form-label">Your Name</label>
                                     <asp:TextBox ID="name" runat="server" CssClass="form-control" />

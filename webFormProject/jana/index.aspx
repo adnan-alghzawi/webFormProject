@@ -653,7 +653,7 @@ body {
             <a class="nav-link  text-white" runat="server" ID="books" href="../nada/show_books.aspx">Books</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  text-white" runat="server" ID="rooms" href="../sally/RoomAdmin.aspx">Rooms</a>
+            <a class="nav-link  text-white" runat="server" ID="rooms" href="../jana/ViewRooms.aspx">Rooms</a>
           </li>
           <li class="nav-item">
             <a class="nav-link  text-white" ID="contact" href="../suleiman/contactUs.aspx">Contact Us</a>

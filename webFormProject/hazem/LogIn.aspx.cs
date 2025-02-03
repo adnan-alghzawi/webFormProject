@@ -50,31 +50,8 @@ namespace task1_webForm_27_1_2025
 
         protected void login_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/jana/index.aspx");
+            
         }
-        protected void homeTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void aboutTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void contactTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void books_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void rooms_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
