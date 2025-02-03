@@ -1,3 +1,3 @@
 # webFormProject
 https://trello.com/b/58AjgMmE/project-4
-https://discord.com/channels/1334621311846187020/1334621311846187023/1336076413832396841
+https://www.figma.com/design/5SFNDYBwxGvsziHfg5f3NT/Untitled?node-id=492-105&p=f&t=eE52t776uGXKfCDe-0
