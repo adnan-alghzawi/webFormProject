@@ -45,7 +45,7 @@ namespace webFormProject.nada
                     }
                     booksContainer.InnerHtml += $@"
                         <div class='card p-2 mb-3' style='width: 14rem;'>
-                            <img src='{bookData[4]}' class='card-img-top' alt='Book Image' height='280' />
+                            <img src='{bookData[4].Replace("~","")}' class='card-img-top' alt='Book Image' height='280' />
                             <div class='card-body'>
                                 <h5 class='card-title'>{bookData[1]}</h5>
                                 <p class='card-text'>{bookData[2]}</p>
