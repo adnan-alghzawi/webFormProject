@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adnan\Images\Books\contact.png" />
     <Content Include="adnan\Images\Books\Lumina-removebg-preview.png" />
     <Content Include="adnan\UserHistory.aspx" />
     <Content Include="adnan\App_Data\UserHistory.txt" />

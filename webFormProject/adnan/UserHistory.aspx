@@ -18,7 +18,6 @@
             border-radius: 8px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
         }
-
         .gridview th {
             background-color: #007bff;
             color: white;
