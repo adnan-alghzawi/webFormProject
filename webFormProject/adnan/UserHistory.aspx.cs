@@ -19,39 +19,45 @@ namespace LibraryManagement
         {
             string filePath = Server.MapPath("~/adnan/App_Data/UserHistory.txt"); // Ensure the file exists in this directory
             List<UserHistoryEntry> historyList = new List<UserHistoryEntry>();
-
+            string filepath2 = Server.MapPath("~/hazem/data/logged.txt");
+            string emailUser = File.ReadAllText(filepath2);
             if (File.Exists(filePath))
             {
                 string[] lines = File.ReadAllLines(filePath);
                 foreach (string line in lines)
                 {
+                    
                     try
                     {
                         // Split data based on provided delimiters
                         string[] parts = line.Split(new string[] { "|", " - " }, StringSplitOptions.RemoveEmptyEntries);
-
-                        // Ensure each line has at least 4 elements to avoid index errors
-                        if (parts.Length >= 4)
+                        if (parts[2].Trim() == "Email: "+emailUser.Trim())
                         {
-                            string datePart = parts[0].Trim();
-                            string statusPart = parts[1].Trim().Replace("Status:", "").Replace("Approved", "Approved ✅").Replace("Rejected", "Rejected ❌");
-                            string emailPart = parts[2].Trim().Replace("Email:", "");
-                            string bookIdPart = parts[3].Trim().Replace("Book ID:", "");
-
-                            // Add extracted data to the list
-                            historyList.Add(new UserHistoryEntry
+                            if (parts.Length >= 4)
                             {
-                                Date = datePart,
-                                Status = statusPart,
-                                Email = emailPart,
-                                BookID = bookIdPart
-                            });
+                                string datePart = parts[0].Trim();
+                                string statusPart = parts[1].Trim().Replace("Status:", "").Replace("Approved", "Approved ✅").Replace("Rejected", "Rejected ❌");
+                                string emailPart = parts[2].Trim().Replace("Email:", "");
+                                string bookIdPart = parts[3].Trim().Replace("Book ID:", "");
+
+                                // Add extracted data to the list
+                                historyList.Add(new UserHistoryEntry
+                                {
+                                    Date = datePart,
+                                    Status = statusPart,
+                                    Email = emailPart,
+                                    BookID = bookIdPart
+                                });
+                            }
+                            else
+                            {
+                                // Log warning for inconsistent lines (helps debugging)
+                                System.Diagnostics.Debug.WriteLine($"[WARNING] Inconsistent line ignored: {line}");
+                            }
+
                         }
-                        else
-                        {
-                            // Log warning for inconsistent lines (helps debugging)
-                            System.Diagnostics.Debug.WriteLine($"[WARNING] Inconsistent line ignored: {line}");
-                        }
+                        // Ensure each line has at least 4 elements to avoid index errors
+                        
                     }
                     catch (Exception ex)
                     {

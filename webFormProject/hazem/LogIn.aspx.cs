@@ -23,7 +23,7 @@ namespace task1_webForm_27_1_2025
             {
                 string logged = Server.MapPath("~/hazem/data/logged.txt");
                 File.WriteAllText(logged, email_address.Text);
-                Response.Redirect("admin_page.aspx");
+                Response.Redirect("~/sally/AdminDash.aspx");
             }
 
             string[] users = File.ReadAllLines(file); //["user1","user2","user3",....] array of objects
