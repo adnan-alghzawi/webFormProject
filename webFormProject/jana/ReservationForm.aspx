@@ -13,7 +13,8 @@
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
-            background-image: url('FormPhoto.jpg'); /* Path to your image */
+            background-color: #EAE0D6;
+            /*background-image: url('FormPhoto.jpg');*/ /* Path to your image */
             background-size: cover; /* Make the image cover the entire page */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Prevent repeating */
@@ -99,14 +100,15 @@
             <li class="nav-item">
                 <asp:LinkButton CssClass="nav-link text-white" ID="aboutTab" runat="server" OnClick="aboutTab_Click" Text="About Us"></asp:LinkButton>
             </li>
-            <li class="nav-item">
-                <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
-            </li>
+            
             <li class="nav-item">
     <asp:LinkButton CssClass="nav-link text-white" ID="books" runat="server" OnClick="books_Click" Text="Books"></asp:LinkButton>
 </li>
 <li class="nav-item">
-    <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="rooms_Click" Text="Meeting Rooms"></asp:LinkButton>
+    <asp:LinkButton CssClass="nav-link text-white" ID="rooms" runat="server" OnClick="rooms_Click" Text="Rooms"></asp:LinkButton>
+</li>
+            <li class="nav-item">
+    <asp:LinkButton CssClass="nav-link text-white" ID="contactTab" runat="server" OnClick="contactTab_Click" Text="Contact Us"></asp:LinkButton>
 </li>
         </ul>
     </div>
@@ -185,6 +187,126 @@
 
         </div>
     </div>
+            </div>
+        <br />
+        <br />
+        <br />
+        <br />
+             <!-- Footer -->
+  <footer class="text-center text-lg-start bg-umber text-white">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <!-- Left -->
+          <div class="me-5 d-none d-lg-block">
+              <span>Get connected with us on social networks:</span>
+          </div>
+          <!-- Left -->
+
+          <!-- Right -->
+          <div>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-twitter"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-google"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-instagram"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="" class="me-4 text-reset">
+                  <i class="fab fa-github"></i>
+              </a>
+          </div>
+          <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+          <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                      <!-- Content -->
+                      <img src="../sally/imgs/Lumina__1_-removebg-preview.png" style="width:70%" />
+                      <p>
+                         University Library System
+                      </p>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4">Services
+</h6>
+                      <p>
+                          <a href="#!" class="text-reset">Books</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">Meeting rooms</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">Private rooms</a>
+                      </p>
+                      
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4">Useful links
+</h6>
+                      <p>
+                          <a href="#!" class="text-reset">Home</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">About us</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-reset">Contact Us</a>
+                      </p>
+                     
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                      <p><i class="fas fa-home me-3"></i>New York, NY 10012, US</p>
+                      <p>
+                          <i class="fas fa-envelope me-3"></i>
+                          LUMINA@gmail.com
+         
+                      </p>
+                      <p><i class="fas fa-phone me-3"></i>+ 01 234 567 88</p>
+                      <p><i class="fas fa-print me-3"></i>+ 01 234 567 89</p>
+                  </div>
+                  <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+          </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2025 Copyright:
+   
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">LUMINA.com</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
+  <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
     </form>
 </body>
 </html>
