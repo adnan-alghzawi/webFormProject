@@ -12,45 +12,77 @@ namespace webFormProject.jana
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string reservationsPath = Server.MapPath("reservations.txt");
-            string roomsPath = Server.MapPath("../sally/rooms.txt");
+            string filePath = Server.MapPath("~/jana/reservations.txt");
 
-            string roomID = Request.QueryString["roomID"];
-            string email = Request.QueryString["email"];
-
-            if (!string.IsNullOrEmpty(roomID) && !string.IsNullOrEmpty(email))
+            string roomId = "";
+            if (!IsPostBack) // فقط عند تحميل الصفحة لأول مرة
             {
-                if (File.Exists(reservationsPath) && File.Exists(roomsPath))
+                if (Request.QueryString["roomID"] != null)
                 {
-                    var reservations = File.ReadAllLines(reservationsPath).ToList();
-                    var rooms = File.ReadAllLines(roomsPath).ToList();
+                    roomId = Request.QueryString["roomID"].Trim(); // إزالة المسافات الزائدة
+                }
+            }
 
-                    // Remove reservation
-                    reservations.RemoveAll(r => r.StartsWith(roomID + "|") && r.Contains(email));
+            bool isAvailable = false;
+            if (File.Exists(filePath))
+            {
+                string[] reservations = File.ReadAllLines(filePath);
 
-                    // Update room availability in rooms.txt
-                    for (int i = 0; i < rooms.Count; i++)
+                for (var i = 0; i < reservations.Length; i++)
+                {
+                    string[] details = reservations[i].Split('|');
+
+                    if (details.Length >= 9) // تأكد أن الفهرس 8 موجود
                     {
-                        string[] roomData = rooms[i].Split('|');
-                        if (roomData[0] == roomID)
+                        string existingRoomId = details[0].Trim();
+
+                        if (existingRoomId == roomId)
                         {
-                            roomData[6] = "true"; // Set availability to true
-                            rooms[i] = string.Join(",", roomData);
-                            break;
+                            details[8] = "Pending"; // تحديث الحالة إلى Pending
+                            reservations[i] = string.Join("|", details); // حفظ التحديث في الصف
+
+                            isAvailable = true;
+                            break; // إنهاء الحلقة بمجرد العثور على الغرفة المطلوبة
                         }
                     }
+                }
 
-                    // Save updated files
-                    File.WriteAllLines(reservationsPath, reservations);
-                    File.WriteAllLines(roomsPath, rooms);
-
-                    Response.Redirect("ViewAndCancelReservation.aspx"); // Refresh reservations page
+                if (isAvailable)
+                {
+                    File.WriteAllLines(filePath, reservations); // حفظ التغييرات في الملف
+                    ShowAlert("Reservation status updated to Pending!", true);
+                }
+                else
+                {
+                    ShowAlert("Room not found or already updated.");
                 }
             }
             else
             {
-                Response.Write("<p>Invalid request.</p>");
+                ShowAlert("Reservation file not found.");
             }
+
+            Response.Redirect("ViewRooms.aspx");
         }
+
+        private void ShowAlert(string message, bool isSuccess = false)
+        {
+            string script = $@"
+        Swal.fire({{
+            title: '{(isSuccess ? "Success!" : "Error!")}',
+            text: '{message}',
+            icon: '{(isSuccess ? "success" : "error")}',
+            confirmButtonText: 'OK'
+        }});
+    ";
+
+            if (isSuccess)
+            {
+                script += "setTimeout(function(){ window.location.href=window.location.href; }, 2000);"; // Reload page after 2 seconds
+            }
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", script, true);
+        }
+
     }
 }
