@@ -218,7 +218,7 @@
                 </div>
             <br />             
             <br />
-            <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
+            <div class="container pt-3 d-flex gap-2 flex-wrap justify-content-center" id="Cards" runat="server">
         </div>
             <br />
             <br />

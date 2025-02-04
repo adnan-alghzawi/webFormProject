@@ -132,9 +132,8 @@
 
     <div class="content">
         <div class="container mt-5">
-            <h2 class="text-center">Confirm Borrow Requests</h2>
+            <h2 class="text-center">Confirm Reservation Requests</h2>
             
-                <asp:Button ID="back" runat="server" class="btn btn-green1 mt-5 me-3" OnClick="back_Click" Text="Back"></asp:Button>
                 <asp:GridView ID="gvRequests" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered mt-3">
                     <Columns>
                         <asp:BoundField DataField="Email" HeaderText="Email" />
