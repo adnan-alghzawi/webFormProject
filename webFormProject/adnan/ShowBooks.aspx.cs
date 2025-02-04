@@ -25,8 +25,8 @@ namespace webFormProject.adnan
         private void BindBooks(string filter)
         {
             var booksData = LoadBooksData(filter);
-            rptBooks.DataSource = booksData;
-            rptBooks.DataBind();
+            gvBooks.DataSource = booksData;
+            gvBooks.DataBind();
         }
 
         private List<dynamic> LoadBooksData(string filter)
@@ -89,6 +89,39 @@ namespace webFormProject.adnan
             Response.Write(html);
             Response.End();
         }
+
+        protected void gvBooks_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string bookID = e.CommandArgument.ToString();
+
+            if (e.CommandName == "EditBook")
+            {
+                Response.Redirect($"EditBook.aspx?BookID={bookID}");
+            }
+            else if (e.CommandName == "DeleteBook")
+            {
+                DeleteBook(bookID);
+                BindBooks("All"); // Rebind to refresh the data
+            }
+        }
+
+
+
+        private void DeleteBook(string bookID)
+        {
+            string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
+            if (!File.Exists(filePath))
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alert('File not found.');", true);
+                return;
+            }
+
+            var lines = File.ReadAllLines(filePath).ToList();
+            var updatedLines = lines.Where(line => !line.StartsWith(bookID + "|")).ToList();
+
+            File.WriteAllLines(filePath, updatedLines);
+        }
+
 
         protected void edit_Click(object sender, EventArgs e)
         {

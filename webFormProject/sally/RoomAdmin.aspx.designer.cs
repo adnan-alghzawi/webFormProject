@@ -78,22 +78,13 @@ namespace webFormProject.sally
         protected global::System.Web.UI.WebControls.Button logout;
 
         /// <summary>
-        /// backtodash control.
+        /// ddlSearchRoom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button backtodash;
-
-        /// <summary>
-        /// EditRooms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditRooms;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSearchRoom;
 
         /// <summary>
         /// AddRooms control.
@@ -105,15 +96,6 @@ namespace webFormProject.sally
         protected global::System.Web.UI.WebControls.Button AddRooms;
 
         /// <summary>
-        /// ReservationConfirm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ReservationConfirm;
-
-        /// <summary>
         /// Export control.
         /// </summary>
         /// <remarks>
@@ -123,21 +105,12 @@ namespace webFormProject.sally
         protected global::System.Web.UI.WebControls.Button Export;
 
         /// <summary>
-        /// ddlSearchRoom control.
+        /// gvRooms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSearchRoom;
-
-        /// <summary>
-        /// Cards control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cards;
+        protected global::System.Web.UI.WebControls.GridView gvRooms;
     }
 }

@@ -72,7 +72,6 @@
             --bs-btn-disabled-color: #22333B;
             --bs-btn-disabled-bg: #EAE0D6;
             --bs-btn-disabled-border-color: #EAE0D6;
-            border-radius: 170px !important;
             margin-right: 5px;
         }
 
@@ -134,7 +133,6 @@
                     <div class="row d-flex w-100">
                         <label>Search by ID:</label>
                         <asp:TextBox CssClass="form-control mr-sm-2 w-25 me-1" ID="search" runat="server"></asp:TextBox>
-                        <asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>
 
                         <asp:Button ID="back" runat="server" Text="bcak" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="Back_Click"></asp:Button>
                     </div>
@@ -165,7 +163,7 @@
                     <div class="row w-100">
                         <div class="col-md-6">
                             <label class="form-label">Capacity:</label>
-                            <asp:TextBox ID="Capacity" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="Capacity" runat="server" CssClass="form-control" OnTextChanged="Capacity_TextChanged" AutoPostBack="true"></asp:TextBox>
                         </div>
                         <div class="col-md-6">
 
@@ -184,14 +182,14 @@
 
                     <br />
                     <br />
-                    <div class="row w-100 justify-content-between m-0">
-                        <div class="col-md-4 p-0">
-                            <asp:Button CssClass="btn btn-light w-100" ID="Button1" runat="server" Text="edit room" OnClick="edit_Click" />
-                        </div>
-                        <div class="col-md-4 p-0">
-                            <asp:Button CssClass="btn btn-red w-100" ID="delete" runat="server" Text="delete room" OnClientClick="return confirmDelete();" OnClick="delete_Click" />
-                        </div>
-                    </div>
+                    <asp:TemplateField HeaderText="Action">
+                        <itemtemplate>
+                            <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="btn btn-green btn-sm"
+                                CommandArgument='<%# Eval("RoomID") %>' OnClick="edit_Click" />
+                            <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-red btn-sm"
+                                CommandArgument='<%# Eval("RoomID") %>' OnClick="delete_Click" />
+                        </itemtemplate>
+                    </asp:TemplateField>
                     <div class="row">
                         <asp:Label ID="res" runat="server" Visible="false"></asp:Label>
                         <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3"></asp:Label>
@@ -215,7 +213,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // إذا أكد المستخدم الحذف، نسمح بإرسال الطلب إلى الخادم
-                    __doPostBack('<%= delete.ClientID %>', '');
+                    __doPostBack('<%= btnDelete.ClientID %>', '');
                 }
             });
             return false; // منع إرسال النموذج مباشرة

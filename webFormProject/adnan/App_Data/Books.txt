@@ -1,3 +1,2 @@
 1|a|a|a|~/adnan/Images/Books/Lumina-removebg-preview.png|a|Available
-2|aa|aa|aa|~/adnan/Images/Books/math.jpg|aa|Available
-3|aaaa|Basic Mathematics|7 class|~/adnan/Images/Books/math.jpg|fghjkl|Available
+2|aaa|aaaaa|aaa|~/adnan/Images/Books/math.jpg|aa123|Available

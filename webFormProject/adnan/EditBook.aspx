@@ -158,7 +158,7 @@
                     <!-- Buttons Container -->
                     <div class="btn-group" role="group">
                         <asp:Button ID="btnUpdateBook" runat="server" Text="Update Book" CssClass="btn btn-primary px-4" OnClick="btnUpdateBook_Click" Style="background-color:#22333B;" />
-                        <asp:Button ID="show" runat="server" Text="Show Books" CssClass="btn btn-info px-4" OnClick="show_Click" />
+<%--                        <asp:Button ID="show" runat="server" Text="Show Books" CssClass="btn btn-info px-4" OnClick="show_Click" />--%>
                         <asp:Button ID="delete" runat="server" Text="Delete Book" CssClass="btn btn-danger px-4" OnClick="delete_Click" />
                     </div>
 
