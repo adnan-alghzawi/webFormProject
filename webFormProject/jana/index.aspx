@@ -742,7 +742,8 @@ body {
           Explore, borrow, and reserve with just a few clicks!
         </p>
         <div class="about__btn">
-          <button class="btn">Read More</button>
+          
+            <asp:Button ID="read" runat="server" Text="Read More"  class="btn" Onclick="read_Click"/>
         </div>
       </div>
     </section>
@@ -764,7 +765,8 @@ body {
               A quiet and comfortable space equipped for group discussions, study sessions, and meetings.
             </p>
                 <br />
-            <button class="btn">Reserve Now</button>
+            
+              <asp:Button ID="Button1" runat="server" Text="Reserve Now"  class="btn" Onclick="Button1_Click" />
           </div>
         </div>
         <div class="room__card">
@@ -781,7 +783,7 @@ body {
              A must-read! Explore this book to gain knowledge, inspiration, and new perspectives.   
             </p>
             <br />
-            <button class="btn">Reserve Now</button>
+             <asp:Button ID="Button2" runat="server" Text="Borrow Now"  class="btn" Onclick="Button2_Click1" />
           </div>
         </div>
         

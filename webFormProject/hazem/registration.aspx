@@ -178,7 +178,7 @@
                                     </label>
                                 </div>
                                 <div class="text-center">
-                                    <asp:Button ID="register" runat="server" Text="Register" OnClick="register_Click" CssClass="btn btn-primary w-100" />
+                                    <asp:Button ID="register" runat="server" Text="Register" OnClick="register_Click" CssClass="btn btn-green w-50" />
                                 </div>
                             </div>
                             <div class="col-md-6 d-none d-md-block">
