@@ -187,12 +187,12 @@ namespace webFormProject.adnan
         }
         protected void editB_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/adnan/EditBook.aspx");
+            Response.Redirect("~/adnan/ShowBooks.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/sally/edit.aspx");
+            Response.Redirect("~/sally/RoomAdmin.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)

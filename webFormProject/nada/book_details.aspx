@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg navbar-light  bg-umber pb-0 pt-0">
@@ -61,7 +61,7 @@
         </div>
     </form>
       <!-- Footer -->
-  <footer class="text-center text-lg-start bg-umber text-white fixed-bottom">
+  <footer class="text-center text-lg-start bg-umber text-white mt-auto">
       <!-- Section: Social media -->
       <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <!-- Left -->

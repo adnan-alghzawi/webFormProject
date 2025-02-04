@@ -111,12 +111,12 @@ namespace webFormProject.sally
 
         protected void editB_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/adnan/EditBook.aspx");
+            Response.Redirect("~/adnan/ShowBooks.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-            Response.Redirect("edit.aspx");
+            Response.Redirect("RoomAdmin.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)
