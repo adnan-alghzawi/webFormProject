@@ -14,7 +14,7 @@ namespace webFormProject.sally
         {
             string filepath = Server.MapPath("~/hazem/data/logged.txt");
             string s = File.ReadAllText(filepath);
-            if (s == "\"\"")
+            if (s == "\"\"" || s=="")
             {
                 buttons.Visible = true;
                 buttons2.Visible = false;
@@ -30,22 +30,11 @@ namespace webFormProject.sally
             }
         }
 
-        protected void login_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/hazem/LogIn.aspx");
-        }
-
-        protected void rigester_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/hazem/registration.aspx");
-
-        }
-
+       
         protected void Button2_Click(object sender, EventArgs e)
         {
 
         }
-
         protected void logout_Click(object sender, EventArgs e)
         {
             string filepath = Server.MapPath("~/hazem/data/logged.txt");
@@ -61,5 +50,16 @@ namespace webFormProject.sally
             Response.Redirect("~/hazem/profile.aspx");
 
         }
+        protected void login_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/LogIn.aspx");
+        }
+
+        protected void rigester_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/hazem/registration.aspx");
+
+        }
+
     }
 }

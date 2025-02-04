@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg navbar-light  bg-umber pb-0 pt-0">

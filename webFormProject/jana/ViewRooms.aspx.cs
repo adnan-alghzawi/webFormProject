@@ -221,10 +221,8 @@ namespace webFormProject.jana
         {
             string filepath = Server.MapPath("~/hazem/data/logged.txt");
             File.WriteAllText(filepath, "");
-            buttons.Visible = true;
-            buttons2.Visible = false;
-            books.Visible = false;
-            rooms.Visible = false;
+            Response.Redirect("~/jana/index.aspx");
+
         }
 
 

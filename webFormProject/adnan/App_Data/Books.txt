@@ -1,2 +1,1 @@
-1|a|a|a|~/adnan/Images/Books/Lumina-removebg-preview.png|a|Available
-2|aaa|aaaaa|aaa|~/adnan/Images/Books/math.jpg|aa123|Available
+1|rr|a|a|~/adnan/Images/Books/Lumina-removebg-preview.png|a|Available

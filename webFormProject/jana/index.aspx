@@ -670,7 +670,7 @@ body {
   </div>
   <div runat="server" id="buttons" visible="true">
       <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
-      <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
+      <asp:Button ID="rigester" runat="server" Text="register" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
   </div>
 
      <div runat="server" id="buttons2" visible="false">
@@ -924,7 +924,7 @@ body {
                           <a href="#!" class="text-reset">Home</a>
                       </p>
                       <p>
-                          <a href="#!" class="text-reset">About us</a>
+                          <a href="../sally/about.aspx" class="text-reset">About us</a>
                       </p>
                       <p>
                           <a href="#!" class="text-reset">Contact Us</a>
