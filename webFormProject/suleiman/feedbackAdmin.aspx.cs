@@ -91,5 +91,10 @@ namespace webFormProject.suleiman
             string filepath = Server.MapPath("~/hazem/data/logged.txt");
             File.WriteAllText(filepath, "");
         }
+
+        protected void dash_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/sally/AdminDash.aspx");
+        }
     }
 }

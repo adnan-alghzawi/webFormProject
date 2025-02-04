@@ -25,7 +25,7 @@ namespace task1_webForm_27_1_2025
         {
             string filepath = Server.MapPath("~/hazem/data/logged.txt");
             File.WriteAllText(filepath, "");
-            Response.Redirect("~jana/index.aspx");
+            Response.Redirect("~/jana/index.aspx");
         }
 
         private void LoadProfile()
