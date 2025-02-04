@@ -103,42 +103,54 @@
             width: 10% !important;
         }
     </style>
+<script>
+    function validateForm() {
+        // Name validation
+        var name = document.getElementById("name").value;
+        if (name == "") {
+            alert("Name is required");
+            return false;
+        }
+
+        // Email validation using regex
+        var email = document.getElementById("email").value;
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+
+        // Password validation
+        var password = document.getElementById("password").value;
+        var repeatPassword = document.getElementById("repeat_password").value;
+
+        // Password rules: 8+ characters, at least one number, one special character
+        var passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+        if (!passwordPattern.test(password)) {
+            alert("Password must be at least 8 characters long and include a number and a special character.");
+            return false;
+        }
+
+        if (password !== repeatPassword) {
+            alert("Passwords do not match");
+            return false;
+        }
+
+        // Terms and Conditions checkbox validation
+        var terms = document.getElementById("terms").checked;
+        if (!terms) {
+            alert("You must agree to the Terms and Conditions");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </head>
 <body>
-    <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg navbar-light  bg-umber pb-0 pt-0">
-            <a class="navbar-brand ps-3 text-white  pb-0 pt-0" href="#">
-                <img class="imglogo" src="../adnan/Images/Books/Lumina-removebg-preview.png" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ">
-                    <li class="nav-item ">
-
-                        <a class="nav-link active text-white" id="homeTab" href="../jana/index.aspx">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" id="aboutTab" href="../jana/about.aspx">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-white" runat="server" id="books" href="../nada/show_books.aspx">Books</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-white" runat="server" id="rooms" href="../jana/ViewRooms.aspx">Rooms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-white" id="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
-
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click" />
-                <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click" />
-            </div>
-
-        </nav>
+    <form id="form1" runat="server" onsubmit="return validateForm()">
         <div class="container d-flex justify-content-center align-items-center vh-100">
             <div class="row w-100">
                 <div class="col-md-10 col-lg-8 mx-auto">
@@ -192,4 +204,3 @@
     </form>
 </body>
 </html>
-
