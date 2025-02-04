@@ -108,7 +108,7 @@
                 <asp:Button ID="logout" runat="server" Text="logout" OnClick="logout_Click" CssClass="abtn" />
             </div>
             <div class="content">
-                <asp:GridView ID="gvRequests" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered mt-3">
+                <asp:GridView ID="gvRequests" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered mt-3 table-hover" GridLines="None" HeaderStyle-CssClass="thead-dark">
                     <Columns>
                         <asp:BoundField DataField="Email" HeaderText="Email" />
                         <asp:BoundField DataField="UserName" HeaderText="User Name" />
