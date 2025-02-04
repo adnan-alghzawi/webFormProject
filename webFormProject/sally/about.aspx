@@ -682,14 +682,14 @@
                         </ul>
                     </div>
                     <div runat="server" id="buttons" visible="true">
-                        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
-                        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
-                    </div>
+     <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
+     <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
+ </div>
 
-                    <div runat="server" id="buttons2" visible="false">
-                        <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
-                        <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
-                    </div>
+    <div runat="server" id="buttons2" visible="false">
+    <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
+    <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
+</div>
                 </nav>
                 <div class="section__container header__container" id="home">
                     <p>UNIVARSITY LIBRARY</p>
@@ -889,7 +889,7 @@
                                 <a href="#!" class="text-reset">About us</a>
                             </p>
                             <p>
-                                <a href="#!" class="text-reset">Contact Us</a>
+                                <a href="../suleiman/contactUs.aspx" class="text-reset">Contact Us</a>
                             </p>
 
                         </div>

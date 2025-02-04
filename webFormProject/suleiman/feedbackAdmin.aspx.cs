@@ -67,12 +67,12 @@ namespace webFormProject.suleiman
 
         protected void editB_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/adnan/ShowBooks.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/sally/RoomAdmin.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)
@@ -83,6 +83,13 @@ namespace webFormProject.suleiman
         protected void Borrow_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/jana/index.aspx");
+            string filepath = Server.MapPath("~/hazem/data/logged.txt");
+            File.WriteAllText(filepath, "");
         }
     }
 }

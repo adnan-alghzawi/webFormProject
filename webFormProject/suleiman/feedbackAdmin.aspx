@@ -100,10 +100,11 @@
 
         <div class="sidebar animate hidden">
             <img src="imgs/Lumina__1_-removebg-preview.png" class="imglogo" />
-            <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
-            <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
+            <asp:Button ID="editB" runat="server" Text="All Books" OnClick="editB_Click" CssClass="abtn" />
+            <asp:Button ID="editR" runat="server" Text="All Room" OnClick="editR_Click" CssClass="abtn" />
             <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
             <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
+            <asp:Button ID="Button1" runat="server" Text="logout" OnClick="Button1_Click" CssClass="abtn" />
         </div>
         <div class="content">
 

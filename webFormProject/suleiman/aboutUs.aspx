@@ -87,12 +87,17 @@
                                 OnClick="rooms_Click" Text="Meeting Rooms"></asp:LinkButton>
                         </li>
                     </ul>
-                    <div>
-                        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0"
-                            OnClick="login_Click" />
-                        <asp:Button ID="register" runat="server" Text="register" class="btn btn-green my-2 my-sm-0"
-                            OnClick="register_Click" />
-                    </div>
+                   <div runat="server" id="buttons" visible="true">
+     <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
+     <asp:Button ID="rigester" runat="server" Text="register" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
+ </div>
+
+    <div runat="server" id="buttons2" visible="false">
+    <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
+    <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
+</div>
+
+
                 </div>
             </nav>
 

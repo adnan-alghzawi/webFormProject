@@ -14,7 +14,7 @@ namespace webFormProject.suleiman
             }
             string filepath = Server.MapPath("~/hazem/data/logged.txt");
             string s = File.ReadAllText(filepath);
-            if (s == "\"\"")
+            if (s == "\"\"" || s=="")
             {
                 buttons.Visible = true;
                 buttons2.Visible = false;

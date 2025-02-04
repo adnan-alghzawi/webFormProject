@@ -111,15 +111,15 @@
                 </asp:Panel>
                 <div class="mb-3">
                     <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txtName">Name</asp:Label>
-                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Required="true"></asp:TextBox>
+                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control" ></asp:TextBox>
                 </div>
                 <div class="mb-3">
                     <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txtEmail">Email</asp:Label>
-                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email" Required="true"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email" ></asp:TextBox>
                 </div>
                 <div class="mb-3">
                     <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txtMessage">Message</asp:Label>
-                    <asp:TextBox ID="txtMessage" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" Required="true"></asp:TextBox>
+                    <asp:TextBox ID="txtMessage" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" ></asp:TextBox>
                 </div>
                 <div class="text-center">
                     <asp:Button ID="btnSubmit" runat="server" Text="Send Message" CssClass="btn btn-green" OnClick="btnSubmit_Click" />

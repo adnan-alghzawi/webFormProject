@@ -14,7 +14,7 @@ namespace webFormProject.jana
         {
             string filepath = Server.MapPath("~/hazem/data/logged.txt");
             string s = File.ReadAllText(filepath);
-            if (s == "\"\"")
+            if (s == "\"\"" || s=="")
             {
                 buttons.Visible = true;
                 buttons2.Visible = false;
@@ -70,12 +70,32 @@ namespace webFormProject.jana
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/jana/ViewRooms.aspx");
+            string path = Server.MapPath("~/hazem/data/logged.txt");
+            string file = File.ReadAllText(path);
+            if (file == "\"\"" || file=="")
+            {
+                Response.Redirect("~/hazem/LogIn.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/jana/ViewRooms.aspx");
+            }
+            
         }
 
         protected void Button2_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("~/nada/show_books.aspx");
+            //Response.Redirect("~/nada/show_books.aspx");
+            string path = Server.MapPath("~/hazem/data/logged.txt");
+            string file = File.ReadAllText(path);
+            if (file == "\"\"" || file == "")
+            {
+                Response.Redirect("~/hazem/LogIn.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/jana/ViewRooms.aspx");
+            }
         }
     }
 }
