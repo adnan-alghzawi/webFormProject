@@ -153,5 +153,19 @@ namespace webFormProject.adnan
             File.WriteAllText(filepath, "");
             Response.Redirect("~/jana/index.aspx");
         }
+        //range 50-100
+        //output: even numbers
+        // structure : function
+        //public void even()
+        //{
+        //    for(int i = 50;i<=100; i += 2)
+        //    {
+        //        Console.Write(i + " , ");
+        //    }
+        //}
+        //event();
+
+        
     }
 }
+

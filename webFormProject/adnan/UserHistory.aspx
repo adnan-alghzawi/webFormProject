@@ -20,6 +20,7 @@
 /*            padding: 15px;*/
             border-radius: 8px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            min-height:max-content;
         }
         .gridview th {
             background-color: #007bff;
@@ -138,6 +139,10 @@
                 </Columns>
             </asp:GridView>
         </div>
+
+        <br />
+        <br />
+
 
         <!-- Footer -->
   <footer class="text-center text-lg-start bg-umber text-white fixed-bottom" >
