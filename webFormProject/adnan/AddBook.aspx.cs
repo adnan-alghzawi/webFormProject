@@ -124,12 +124,12 @@ namespace webFormProject.adnan
         }
         protected void editB_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/adnan/EditBook.aspx");
+            Response.Redirect("~/adnan/ShowBooks.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/sally/edit.aspx");
+            Response.Redirect("~/sally/RoomAdmin.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)
@@ -153,5 +153,19 @@ namespace webFormProject.adnan
             File.WriteAllText(filepath, "");
             Response.Redirect("~/jana/index.aspx");
         }
+        //range 50-100
+        //output: even numbers
+        // structure : function
+        //public void even()
+        //{
+        //    for(int i = 50;i<=100; i += 2)
+        //    {
+        //        Console.Write(i + " , ");
+        //    }
+        //}
+        //event();
+
+        
     }
 }
+

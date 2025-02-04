@@ -2,145 +2,140 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    
 <head runat="server">
     <title>User Borrowing History</title>
+
+    <!-- FontAwesome & Bootstrap -->
+    <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-/*            margin: 20px;*/
+            background-color: #EAE0D6;
+            font-family: 'Poppins', sans-serif;
         }
 
+        /* تحسين تصميم الجدول */
         .gridview-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
-            border: 1px solid #ddd;
-/*            padding: 15px;*/
-            border-radius: 8px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
         }
+
+        .gridview {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
         .gridview th {
-            background-color: #007bff;
+            background-color: #22333B;
+            
             color: white;
-            padding: 8px;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+        .text-u{
+            color:#22333B;
         }
 
         .gridview td {
-            padding: 8px;
+            padding: 10px;
             border-bottom: 1px solid #ddd;
         }
 
-                .bg-umber {
-            background-color: #22333B;
+        .gridview tr:hover {
+            background-color: #f1f1f1;
         }
 
-        body {
+        /* تحسين زر تسجيل الدخول والتسجيل */
+        .btn-custom {
+            background-color: #22333B;
+            color: #EAE0D6;
+            border-radius: 50px;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
             background-color: #EAE0D6;
+            color: #22333B;
+            border: 2px solid #22333B;
+        }
+
+        /* تحسين الهيدر */
+        .bg-umber {
+            background-color: #22333B;
         }
 
         .imglogo {
             width: 20%;
         }
 
-        .img-fluid {
-            max-height: 100%;  /* Ensure the image height matches the form height */
-            object-fit: cover; /* Cover will ensure the aspect ratio is maintained */
-        }
-
-        .btn-green {
-            --bs-btn-color: #22333B !important;
-            --bs-btn-bg: #EAE0D6 !important;
-            --bs-btn-border-color: #EAE0D6;
-            --bs-btn-hover-color: #EAE0D6;
-            --bs-btn-hover-bg: #22333B;
-            --bs-btn-hover-border-color: #EAE0D6 !important;
-            border-radius: 170px !important;
-            margin-right: 5px;
-        }
-
         .container-main {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch; /* Align items in their containers to stretch to match heights */
-            gap: 20px;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 87%;
             background-color: #22333B;
             color: #EAE0D6;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 87%;
+            margin: auto;
+            margin-top: 2rem;
         }
 
-        .contact-form {
-            flex: 1;  /* Allow the form to grow to use up extra space */
-            display: flex;
-            flex-direction: column;
-        }
-        .img-fluid {
-    max-width: 100%;
-    height: 90%;
-    border-radius: 20px;
-}
     </style>
 </head>
-<body>
+
+<body class="d-flex flex-column min-vh-100">
     <form id="form1" runat="server">
-       <nav class="navbar navbar-expand-lg navbar-light bg-umber">
-    <a class="navbar-brand ps-3 text-white" href="#">
-        <img class="imglogo" src="../adnan/Images/Books/Lumina-removebg-preview.png" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active text-white" id="homeTab" href="../jana/index.aspx">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" id="aboutTab" href="../jana/about.aspx">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" runat="server" id="books" href="../nada/show_books.aspx">Books</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" runat="server" id="rooms" href="../jana/ViewRooms.aspx">Rooms</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" id="contact" href="../suleiman/contactUs.aspx">Contact Us</a>
-            </li>
-        </ul>
-    </div>
-    <div runat="server" id="buttons" visible="true">
-        <asp:Button ID="login" runat="server" Text="login" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="login_Click"></asp:Button>
-        <asp:Button ID="rigester" runat="server" Text="rigester" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="rigester_Click"></asp:Button>
-    </div>
-    <div runat="server" id="buttons2" visible="false">
-        <asp:Button ID="logout" runat="server" Text="logout" class="btn btn-green my-2 my-sm-0 me-2 ps-4 pe-4" OnClick="logout_Click"></asp:Button>
-        <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-green my-2 my-sm-0 me-3 ps-4 pe-4" OnClick="prof_Click"></asp:Button>
-    </div>
-</nav>
-        <br />
-        <br />
-        <div class="gridview-container">
-            <h2 style="text-align: center;">User Borrowing History</h2>
-            <asp:GridView ID="gvUserHistory" runat="server" CssClass="gridview" AutoGenerateColumns="False" BorderStyle="Solid" BorderWidth="1px" Width="100%">
+        
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-umber">
+            <a class="navbar-brand ps-3 text-white" href="#">
+                <img class="imglogo" src="../adnan/Images/Books/Lumina-removebg-preview.png" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="../jana/index.aspx">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="../jana/about.aspx">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="../nada/show_books.aspx">Books</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="../jana/ViewRooms.aspx">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="../suleiman/contactUs.aspx">Contact Us</a></li>
+                </ul>
+            </div>
+            <div runat="server" id="buttons" visible="true">
+                <asp:Button ID="login" runat="server" Text="Login" class="btn btn-custom me-2" OnClick="login_Click"></asp:Button>
+                <asp:Button ID="rigester" runat="server" Text="Register" class="btn btn-custom" OnClick="rigester_Click"></asp:Button>
+            </div>
+            <div runat="server" id="buttons2" visible="false">
+                <asp:Button ID="logout" runat="server" Text="Logout" class="btn btn-custom me-2" OnClick="logout_Click"></asp:Button>
+                <asp:Button ID="prof" runat="server" Text="Profile" class="btn btn-custom" OnClick="prof_Click"></asp:Button>
+            </div>
+        </nav>
+
+        <!-- User Borrowing History Table -->
+        <div class="gridview-container mt-4">
+            <h2 class="mb-3 text-u">User Borrowing History</h2>
+            <asp:GridView ID="gvUserHistory" runat="server" CssClass="gridview" AutoGenerateColumns="False" BorderStyle="Solid" BorderWidth="1px">
                 <Columns>
                     <asp:BoundField DataField="Date" HeaderText="Date" />
                     <asp:BoundField DataField="Status" HeaderText="Status" />
                     <asp:BoundField DataField="Email" HeaderText="Email" />
                     <asp:BoundField DataField="BookID" HeaderText="Book ID" />
-                    <asp:BoundField DataField="BookName" HeaderText="Book name" />
+                    <asp:BoundField DataField="BookName" HeaderText="Book Name" />
                 </Columns>
             </asp:GridView>
         </div>
-
+        <br />
         <!-- Footer -->
-  <footer class="text-center text-lg-start bg-umber text-white fixed-bottom" >
+        <!-- Footer -->
+  <footer class="text-center text-lg-start bg-umber text-white mt-auto" >
       <!-- Section: Social media -->
       <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <!-- Left -->
@@ -253,7 +248,6 @@
       </div>
       <!-- Copyright -->
   </footer>
-  <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
     </form>
 </body>
 </html>

@@ -87,7 +87,7 @@ namespace webFormProject.jana
                         card.Append("<button class='btn btn-secondary' disabled>Reserved</button>");
                         card.AppendFormat("<a href='CancelReservation.aspx?roomID={0}' class='btn btn-danger'>Cancel</a>", columns[0].Trim());
                     }
-                    else if ((hasAnyReservation && hasOnlyPendingReservation))
+                    else if ((hasAnyReservation || hasOnlyPendingReservation))
                     {
                         // If all reservations for this room are "Pending", allow reservation
                         card.AppendFormat("<a href='ReservationForm.aspx?roomID={0}&roomType={1}' class='btn' style='background-color: #22333B; color: white;'>Reserve</a>", columns[0].Trim(), columns[2].Trim());

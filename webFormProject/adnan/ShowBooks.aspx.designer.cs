@@ -96,15 +96,6 @@ namespace webFormProject.adnan
         protected global::System.Web.UI.WebControls.Button btnExport;
 
         /// <summary>
-        /// btnEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
-
-        /// <summary>
         /// btnAddBook control.
         /// </summary>
         /// <remarks>
@@ -114,12 +105,12 @@ namespace webFormProject.adnan
         protected global::System.Web.UI.WebControls.Button btnAddBook;
 
         /// <summary>
-        /// rptBooks control.
+        /// gvBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptBooks;
+        protected global::System.Web.UI.WebControls.GridView gvBooks;
     }
 }

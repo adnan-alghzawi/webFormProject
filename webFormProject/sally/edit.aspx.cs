@@ -13,7 +13,14 @@ namespace webFormProject.sally
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                string roomId = Request.QueryString["roomId"];
+                if (!string.IsNullOrEmpty(roomId))
+                {
+                    LoadRoomData(roomId);
+                }
+            }
         }
 
         protected void homeTab_Click(object sender, EventArgs e)
@@ -59,16 +66,17 @@ namespace webFormProject.sally
             Response.Redirect("~/sally/AdminDash.aspx");
         }
 
-        protected void SearchRoom_Click(object sender, EventArgs e)
+        protected void LoadRoomData(string roomid)
         {
             string filePath = Server.MapPath("rooms.txt");
 
             if (!File.Exists(filePath))
             {
-                lblMessage.Text = "⚠️ No books available.";
+                lblMessage.Text = "⚠️ No rooms available.";
                 return;
             }
 
+            search.Text = roomid;
 
             string[] rooms = File.ReadAllLines(filePath);
             bool roomFound = false;
@@ -77,7 +85,7 @@ namespace webFormProject.sally
             {
 
                 string[] details = room.Split('|');
-                if (search.Text == details[0])
+                if (roomid == details[0])
                 {
                     image.Src = "imgs/" + details[4];
                     image.Visible = true;
@@ -110,34 +118,34 @@ namespace webFormProject.sally
 
         protected void edit_Click(object sender, EventArgs e)
         {
+            string roomId = Request.QueryString["roomId"];
             string filePath = Server.MapPath("rooms.txt");
+
             if (File.Exists(filePath))
             {
-                string[] content = File.ReadAllLines(filePath);
+                var fileContent = File.ReadAllLines(filePath).ToList();
 
-
-                for (int i = 0; i < content.Length; i++)
+                for (int i = 0; i < fileContent.Count; i++)
                 {
-                    string[] room = content[i].Split('|');
-                    if (room[0] == search.Text)
+                    string[] columns = fileContent[i].Split('|');
+                    if (columns[0].Trim() == roomId)
                     {
-                        room[1] = roomName.Text;
-                        room[2] = type.SelectedValue;
-                        room[3] = Capacity.Text;
-                        room[5] = description.Text;
-                        room[6] = Available.SelectedValue;
+                        columns[1] = roomName.Text;
+                        columns[2] = type.SelectedValue;
+                        columns[3] = Capacity.Text;
+                        columns[5] = description.Text;
+                        columns[6] = Available.SelectedValue;
 
-                        content[i] = $"{room[0]}|{room[1]}|{room[2]}|{room[3]}|{room[4]}|{room[5]}|{room[6]}";
-
-                        Response.Write("<script>alert('information changed!');</script>");
-
+                        fileContent[i] = string.Join("|", columns);
                         break;
                     }
                 }
-                File.WriteAllLines(filePath, content);
+
+                File.WriteAllLines(filePath, fileContent);
+                lblMessage.Text = "Room updated successfully!";
             }
-            lblMessage.Text = "✅ Book updated successfully!";
         }
+
 
         protected void delete_Click(object sender, EventArgs e)
         {
@@ -177,12 +185,12 @@ namespace webFormProject.sally
 
         protected void editB_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/adnan/EditBook.aspx");
+            Response.Redirect("~/adnan/ShowBooks.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-            Response.Redirect("edit.aspx");
+            Response.Redirect("RoomAdmin.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)
@@ -193,6 +201,14 @@ namespace webFormProject.sally
         protected void Borrow_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/adnan/ConfirmBorrow.aspx");
+        }
+
+        protected void Capacity_TextChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(Capacity.Text) > 1)
+            {
+                type.SelectedIndex = 1;
+            }
         }
     }
 }

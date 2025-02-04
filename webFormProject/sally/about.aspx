@@ -194,6 +194,7 @@
 
                 .header__container h1 span {
                     color: var(--primary-color);
+                    color:whitesmoke;
                 }
 
         .booking__container {
@@ -267,6 +268,7 @@
         .team__grid {
             margin-top: 4rem;
             display: flex;
+            flex-wrap:wrap;
             gap: 1rem;
             justify-content: space-around;
         }
@@ -592,10 +594,10 @@
                 width: 20%;
             }
 
-            .team__card img{
-                min-height: 350px;
-                margin-bottom:5px;
-            }
+                .team__card img {
+                    min-height: 350px;
+                    margin-bottom: 5px;
+                }
 
             .nav__btn {
                 display: block;
@@ -622,7 +624,7 @@
                 align-items: center;
             }
 
-            
+
 
             .service__content {
                 grid-column: 2/3;
@@ -691,7 +693,7 @@
                 </nav>
                 <div class="section__container header__container" id="home">
                     <p>UNIVARSITY LIBRARY</p>
-                    <h1>what is<span>LUMINA!</span>.</h1>
+                    <h1>what is <span>LUMINA!</span>.</h1>
                 </div>
             </header>
 
@@ -758,17 +760,38 @@
                 <h2 class="section__header">A Dedicated Team Ready to Assist You</h2>
                 <div class="team__grid">
                     <div class="team__card">
-                        <img src="imgs/librarian.jpg" alt="Librarian" />
-                        <h4>Dr. Ali Khalid</h4>
-                        <p>Head Librarian & Research Specialist</p>
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Librarian" />
+                        <h4>Adnan ALghzawi</h4>
+                        <p>Scrum master</p>
                     </div>
                     <div class="team__card">
-                        <img src="imgs/assistant.jpg" alt="Assistant" />
-                        <h4>Ahmad Al-Najjar</h4>
-                        <p>Research Assistant & Data Curator</p>
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Assistant" />
+                        <h4>Nada Qdesat</h4>
+                        <p>Product owner</p>
+                    </div>
+                    <div class="team__card">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Assistant" />
+                        <h4>Sally Alzoubi</h4>
+                        <p>Developer</p>
+                    </div>
+                    <div class="team__card">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Assistant" />
+                        <h4>Hazem alfrehat</h4>
+                        <p>Developer</p>
+                    </div>
+                    <div class="team__card">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Assistant" />
+                        <h4>Jana abd alsalam</h4>
+                        <p>Developer</p>
+                    </div>
+                    <div class="team__card">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Assistant" />
+                        <h4>Suleiman Khashashneh</h4>
+                        <p>Developer</p>
                     </div>
                 </div>
-            </section>
+        </div>
+        </section>
 
 
             <section class="section__container testimonials__container" id="testimonials">
@@ -786,197 +809,197 @@
                 </div>
             </section>
 
-            <!-- Footer -->
-            <footer class="text-center text-lg-start bg-umber text-white">
-                <!-- Section: Social media -->
-                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-                    <!-- Left -->
-                    <div class="me-5 d-none d-lg-block">
-                        <span>Get connected with us on social networks:</span>
-                    </div>
-                    <!-- Left -->
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-umber text-white">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
 
-                    <!-- Right -->
-                    <div>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="" class="me-4 text-reset">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <!-- Right -->
-                </section>
-                <!-- Section: Social media -->
+                <!-- Right -->
+                <div>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
 
-                <!-- Section: Links  -->
-                <section class="">
-                    <div class="container text-center text-md-start mt-5">
-                        <!-- Grid row -->
-                        <div class="row mt-3">
-                            <!-- Grid column -->
-                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                                <!-- Content -->
-                                <img src="imgs/Lumina__1_-removebg-preview.png" style="width:70%" />
-                                <p>
-                                   University Library System
-                                </p>
-                            </div>
-                            <!-- Grid column -->
-
-                            <!-- Grid column -->
-                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <!-- Links -->
-                                <h6 class="text-uppercase fw-bold mb-4">Services
-          </h6>
-                                <p>
-                                    <a href="#!" class="text-reset">Books</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-reset">Meeting rooms</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-reset">Private rooms</a>
-                                </p>
-                                
-                            </div>
-                            <!-- Grid column -->
-
-                            <!-- Grid column -->
-                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <!-- Links -->
-                                <h6 class="text-uppercase fw-bold mb-4">Useful links
-          </h6>
-                                <p>
-                                    <a href="#!" class="text-reset">Home</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-reset">About us</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-reset">Contact Us</a>
-                                </p>
-                               
-                            </div>
-                            <!-- Grid column -->
-
-                            <!-- Grid column -->
-                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                                <!-- Links -->
-                                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                                <p><i class="fas fa-home me-3"></i>New York, NY 10012, US</p>
-                                <p>
-                                    <i class="fas fa-envelope me-3"></i>
-                                    LUMINA@gmail.com
-         
-                                </p>
-                                <p><i class="fas fa-phone me-3"></i>+ 01 234 567 88</p>
-                                <p><i class="fas fa-print me-3"></i>+ 01 234 567 89</p>
-                            </div>
-                            <!-- Grid column -->
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <img src="imgs/Lumina__1_-removebg-preview.png" style="width: 70%" />
+                            <p>
+                                University Library System
+                            </p>
                         </div>
-                        <!-- Grid row -->
-                    </div>
-                </section>
-                <!-- Section: Links  -->
+                        <!-- Grid column -->
 
-                <!-- Copyright -->
-                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                    © 2025 Copyright:
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Services
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Books</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Meeting rooms</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Private rooms</a>
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Useful links
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Home</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">About us</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Contact Us</a>
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                            <p><i class="fas fa-home me-3"></i>New York, NY 10012, US</p>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                LUMINA@gmail.com
+         
+                            </p>
+                            <p><i class="fas fa-phone me-3"></i>+ 01 234 567 88</p>
+                            <p><i class="fas fa-print me-3"></i>+ 01 234 567 89</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2025 Copyright:
    
                     <a class="text-reset fw-bold" href="https://mdbootstrap.com/">LUMINA.com</a>
-                </div>
-                <!-- Copyright -->
-            </footer>
-            <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
 
-            <script src="https://unpkg.com/scrollreveal"></script>
-            <script src="main.js"></script>
-            <script>
-                const menuBtn = document.getElementById("menu-btn");
-                const navLinks = document.getElementById("nav-links");
-                const menuBtnIcon = menuBtn.querySelector("i");
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="main.js"></script>
+        <script>
+            const menuBtn = document.getElementById("menu-btn");
+            const navLinks = document.getElementById("nav-links");
+            const menuBtnIcon = menuBtn.querySelector("i");
 
-                menuBtn.addEventListener("click", () => {
-                    navLinks.classList.toggle("open");
+            menuBtn.addEventListener("click", () => {
+                navLinks.classList.toggle("open");
 
-                    const isOpen = navLinks.classList.contains("open");
-                    menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
-                });
+                const isOpen = navLinks.classList.contains("open");
+                menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+            });
 
-                navLinks.addEventListener("click", () => {
-                    navLinks.classList.remove("open");
-                    menuBtnIcon.setAttribute("class", "ri-menu-line");
-                });
+            navLinks.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuBtnIcon.setAttribute("class", "ri-menu-line");
+            });
 
-                const scrollRevealOption = {
-                    distance: "50px",
-                    origin: "bottom",
-                    duration: 1000,
-                };
+            const scrollRevealOption = {
+                distance: "50px",
+                origin: "bottom",
+                duration: 1000,
+            };
 
-                // header container
-                ScrollReveal().reveal(".header__container p", {
-                    ...scrollRevealOption,
-                });
+            // header container
+            ScrollReveal().reveal(".header__container p", {
+                ...scrollRevealOption,
+            });
 
-                ScrollReveal().reveal(".header__container h1", {
-                    ...scrollRevealOption,
-                    delay: 500,
-                });
+            ScrollReveal().reveal(".header__container h1", {
+                ...scrollRevealOption,
+                delay: 500,
+            });
 
-                // about container
-                ScrollReveal().reveal(".about__image img", {
-                    ...scrollRevealOption,
-                    origin: "left",
-                });
+            // about container
+            ScrollReveal().reveal(".about__image img", {
+                ...scrollRevealOption,
+                origin: "left",
+            });
 
-                ScrollReveal().reveal(".about__content .section__subheader", {
-                    ...scrollRevealOption,
-                    delay: 500,
-                });
+            ScrollReveal().reveal(".about__content .section__subheader", {
+                ...scrollRevealOption,
+                delay: 500,
+            });
 
-                ScrollReveal().reveal(".about__content .section__header", {
-                    ...scrollRevealOption,
-                    delay: 1000,
-                });
+            ScrollReveal().reveal(".about__content .section__header", {
+                ...scrollRevealOption,
+                delay: 1000,
+            });
 
-                ScrollReveal().reveal(".about__content .section__description", {
-                    ...scrollRevealOption,
-                    delay: 1500,
-                });
+            ScrollReveal().reveal(".about__content .section__description", {
+                ...scrollRevealOption,
+                delay: 1500,
+            });
 
-                ScrollReveal().reveal(".about__btn", {
-                    ...scrollRevealOption,
-                    delay: 2000,
-                });
+            ScrollReveal().reveal(".about__btn", {
+                ...scrollRevealOption,
+                delay: 2000,
+            });
 
-                // room container
-                ScrollReveal().reveal(".room__card", {
-                    ...scrollRevealOption,
-                    interval: 500,
-                });
+            // room container
+            ScrollReveal().reveal(".room__card", {
+                ...scrollRevealOption,
+                interval: 500,
+            });
 
-                // service container
-                ScrollReveal().reveal(".service__list li", {
-                    ...scrollRevealOption,
-                    interval: 500,
-                    origin: "right",
-                });
+            // service container
+            ScrollReveal().reveal(".service__list li", {
+                ...scrollRevealOption,
+                interval: 500,
+                origin: "right",
+            });
 
-            </script>
+        </script>
         </div>
     </form>
 </body>

@@ -119,26 +119,21 @@
 </head>
 <body>
     <form id="form1" class="" runat="server">
-        <div>
+        <div class="d-flex flex-column min-vh-100">
             <div class="sidebar animate hidden">
                 <img src="imgs/Lumina__1_-removebg-preview.png" class="imglogo" />
-                                <asp:Button ID="Dashboard" runat="server" Text="dashboard" OnClick="Dashboard_Click" CssClass="abtn" />
+                <asp:Button ID="Dashboard" runat="server" Text="dashboard" OnClick="Dashboard_Click" CssClass="abtn" />
 
-                <asp:Button ID="editB" runat="server" Text="Edit Books" OnClick="editB_Click" CssClass="abtn" />
-                <asp:Button ID="editR" runat="server" Text="Edit Room" OnClick="editR_Click" CssClass="abtn" />
+                <asp:Button ID="editB" runat="server" Text="All Books" OnClick="editB_Click" CssClass="abtn" />
+                <asp:Button ID="editR" runat="server" Text="All Room" OnClick="editR_Click" CssClass="abtn" />
                 <asp:Button ID="Reservations" runat="server" Text="Reservations" OnClick="Reservations_Click" CssClass="abtn" />
-                <asp:Button ID="Borrow" runat="server" Text="Borrow" OnClick="Borrow_Click" CssClass="abtn" />
-                                <asp:Button ID="logout" runat="server" Text="logout" OnClick="logout_Click" CssClass="abtn" />
+                <asp:Button ID="Borrow" runat="server" Text="Borrow Book" OnClick="Borrow_Click" CssClass="abtn" />
+                <asp:Button ID="logout" runat="server" Text="logout" OnClick="logout_Click" CssClass="abtn" />
 
             </div>
             <div class="content">
                 <div class="container my-5 ">
-                    <div class="row d-flex w-100">
-                        <asp:Button ID="backtodash" runat="server" Text="Back" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="backtodash_Click"></asp:Button>
-                        <asp:Button ID="EditRooms" runat="server" Text="Edit Rooms" CssClass="btn btn-green1 my-2 my-sm-0 " OnClick="EditRoom_Click"></asp:Button>
-                        <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="AddRooms_Click"></asp:Button>
-                        <asp:Button ID="ReservationConfirm" runat="server" Text="Reservations" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="ReservationConfirm_Click"></asp:Button>
-                        <asp:Button ID="Export" runat="server" Text="Export Report" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="Export_Click"></asp:Button>
+                    <div class="row d-flex justify-content-center w-100">
                         <asp:DropDownList CssClass="form-select w-25 me-1" ID="ddlSearchRoom" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SearchRoom_Click">
                             <asp:ListItem Text="Select Room" Value="" />
                             <asp:ListItem Text="Private Room" Value="Private room" />
@@ -146,16 +141,38 @@
                             <asp:ListItem Text="Available" Value="true" />
                             <asp:ListItem Text="not Available" Value="false" />
                         </asp:DropDownList>
+                        <asp:Button ID="AddRooms" runat="server" Text="Add Rooms" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="AddRooms_Click"></asp:Button>
+                        <asp:Button ID="Export" runat="server" Text="Export Report" CssClass="btn btn-green1 my-2 my-sm-0" OnClick="Export_Click"></asp:Button>
+
 
                         <%--<asp:Button ID="SearchRoom" runat="server" Text="Search" CssClass="btn btn-green1 my-2 my-sm-0 me-5 " OnClick="SearchRoom_Click"></asp:Button>--%>
                     </div>
                 </div>
-                <div class="container pt-3 d-flex gap-2 flex-wrap" id="Cards" runat="server">
-                </div>
+                <asp:GridView ID="gvRooms" runat="server" AutoGenerateColumns="false" DataKeyNames="ID"
+                    CssClass="table table-bordered mt-3" OnRowCommand="gvRooms_RowCommand">
+                    <Columns>
+                        <asp:BoundField DataField="ID" HeaderText="ID" />
+                        <asp:BoundField DataField="Name" HeaderText="Room Name" />
+                        <asp:BoundField DataField="RoomType" HeaderText="Room Type" />
+                        <asp:BoundField DataField="Capacity" HeaderText="Capacity" />
+                        <asp:BoundField DataField="Description" HeaderText="Description" />
+                        <asp:BoundField DataField="IsAvailable" HeaderText="Available" />
+
+                        <asp:TemplateField HeaderText="Action">
+                            <ItemTemplate>
+                                <asp:Button ID="btnEdit" runat="server" Text="Edit" CssClass="btn btn-primary btn-sm"
+                                    CommandName="EditRoom" CommandArgument='<%# Container.DataItemIndex %>' />
+                                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger btn-sm"
+                                    CommandName="DeleteRoom" CommandArgument='<%# Container.DataItemIndex %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+
             </div>
         </div>
 
-        <footer class="bg-umber text-center text-lg-start text-white">
+        <footer class="bg-umber text-center text-lg-start text-white mt-auto">
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2020 Copyright:

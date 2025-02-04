@@ -17,65 +17,77 @@ namespace webFormProject.sally
         {
             if (!IsPostBack)
             {
-                Load();
+                LoadRooms();
             }
         }
 
-        private void Load( string fileName = "rooms.txt")
+        public class Room
         {
-            string filePath = Server.MapPath(fileName);
+            public int ID { get; set; }
+            public string Name { get; set; }
+            public string RoomType { get; set; }
+            public int Capacity { get; set; }
+            public string Description { get; set; }
+            public string ImagePath { get; set; }
+            public bool IsAvailable { get; set; }
+        }
+
+        private const string FilePath = "~/sally/rooms.txt";
+
+        private void LoadRooms(string FilePath= "~/sally/rooms.txt")
+        {
+            string filePath = Server.MapPath(FilePath);
             if (File.Exists(filePath))
             {
                 var fileContent = File.ReadAllLines(filePath);
-                StringBuilder card = new StringBuilder();
-
+                var rooms = new List<Room>();
 
                 foreach (var line in fileContent)
                 {
-                    string[] columns = line.Split('|');
-                    string imgPath = "imgs/" + columns[4];
-
+                    var columns = line.Split('|');
                     if (columns.Length >= 7)
                     {
-                        if (columns[6].Trim() == "true")
+                        rooms.Add(new Room
                         {
-                            card.Append("<div class=\"card\" style=\"width: 18rem;\">");
-                            card.AppendFormat("<img class=\"card-img-top\" src=\"{0}\" alt=\"Card image cap\">", imgPath);
-                            card.Append("<div class=\"card-body\">");
-                            card.AppendFormat("<h5 class=\"card-title\">{0}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{1} person</h5>", columns[1], columns[3]);
-                            card.AppendFormat("<p class=\"card-text\">" +
-                                "ID:{0}<br/>" +
-                                "Type: {1}<br/>" +
-                                "Description: {2}<br/>" +
-
-                                "Available: {3}</p>",columns[0], columns[2], columns[5], columns[6]);
-                            card.Append(" <asp:Button ID=\"EditRooms\" runat=\"server\" Text=\"Edit Rooms\" CssClass=\"btn btn-green1 my-2 my-sm-0 \"></asp:Button>");
-                            card.Append("</div>");
-                            card.Append("</div>");
-                        }
-                        else
-                        {
-                            card.Append("<div class=\"card\" style=\"width: 18rem;  border: 2px solid red !important; background-color: \">");
-                            card.AppendFormat("<img class=\"card-img-top\" src=\"{0}\" alt=\"Card image cap\">", imgPath);
-                            card.Append("<div class=\"card-body\">");
-                            card.AppendFormat("<h5 class=\"card-title text-muted\">{0}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{1} person</h5>", columns[1], columns[3]);
-                            card.AppendFormat("<p class=\"card-text text-muted\">" +
-                                "ID:{0}<br/>" +
-                                "Type: {1}<br/>" +
-                                "Description: {2}<br/>" +
-                                "Available: {3}</p>", columns[0], columns[2], columns[5], columns[6]);
-                            card.Append("</div>");
-                            card.Append("</div>");
-                        }
+                            ID = int.Parse(columns[0]),
+                            Name = columns[1],
+                            RoomType = columns[2],
+                            Capacity = int.Parse(columns[3]),
+                            Description = columns[5],
+                            ImagePath = "imgs/" + columns[4],
+                            IsAvailable = columns[6].Trim().ToLower() == "true"
+                        });
                     }
                 }
 
-                Cards.InnerHtml = card.ToString();
+                gvRooms.DataSource = rooms;
+                gvRooms.DataBind();
             }
-            else
+        }
+
+        protected void gvRooms_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+            int roomId = Convert.ToInt32(gvRooms.DataKeys[rowIndex].Value);
+
+            if (e.CommandName == "EditRoom")
             {
-                Cards.InnerHtml = "<tr><td colspan='4'>File not found.</td></tr>";
+                Response.Redirect($"edit.aspx?roomId={roomId}");
             }
+            else if (e.CommandName == "DeleteRoom")
+            {
+                DeleteRoom(roomId);
+            }
+        }
+
+        private void DeleteRoom(int roomId)
+        {
+            string filePath = Server.MapPath(FilePath);
+            var lines = new List<string>(File.ReadAllLines(filePath));
+            lines.RemoveAll(line => line.StartsWith(roomId.ToString() + "|"));
+
+            File.WriteAllLines(filePath, lines);
+            LoadRooms();
         }
 
         protected void logout_Click(object sender, EventArgs e)
@@ -134,7 +146,7 @@ namespace webFormProject.sally
                         File.AppendAllText(filePath2, content + "\n");
                     }
                 }
-                Load("request.txt");
+                LoadRooms("request.txt");
             }
            
             
@@ -198,12 +210,12 @@ namespace webFormProject.sally
 
         protected void editB_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/adnan/EditBook.aspx");
+            Response.Redirect("~/adnan/ShowBooks.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-            Response.Redirect("edit.aspx");
+            Response.Redirect("RoomAdmin.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)

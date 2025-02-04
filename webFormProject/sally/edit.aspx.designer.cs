@@ -87,15 +87,6 @@ namespace webFormProject.sally
         protected global::System.Web.UI.WebControls.TextBox search;
 
         /// <summary>
-        /// SearchRoom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchRoom;
-
-        /// <summary>
         /// back control.
         /// </summary>
         /// <remarks>
@@ -168,22 +159,22 @@ namespace webFormProject.sally
         protected global::System.Web.UI.WebControls.TextBox description;
 
         /// <summary>
-        /// Button1 control.
+        /// btnEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnEdit;
 
         /// <summary>
-        /// delete control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button delete;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
 
         /// <summary>
         /// res control.

@@ -56,11 +56,11 @@ namespace webFormProject.sally
                     for (int i = 0; i < content.Length; i++)
                     {
                         string[] user = content[i].Split(' ');
-                        if (user[0] == userEmail)
+                        if (user[1].Trim() == userEmail.Trim())
                         {
                             user[2] = newPass.Text;
                             user[3] = newPass.Text;
-                            content[i] = $"{user[0]},{user[1]},{user[2]},{user[3]},{user[4]},{user[5]}";
+                            content[i] = $"{user[0]} {user[1]} {user[2]} {user[3]} {user[4]} {user[5]}";
 
                             Response.Write("<script>alert('information changed!');</script>");
                             resetForm.Visible = false;

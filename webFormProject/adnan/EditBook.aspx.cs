@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace webFormProject.adnan
 {
@@ -14,11 +12,19 @@ namespace webFormProject.adnan
         {
             if (!IsPostBack)
             {
-                LoadBooks();
+                string bookID = Request.QueryString["bookID"];
+                if (!string.IsNullOrEmpty(bookID))
+                {
+                    LoadBookDetails(bookID);
+                }
+                else
+                {
+                    lblMessage.Text = "⚠️ No book selected for editing.";
+                }
             }
         }
 
-        private void LoadBooks()
+        private void LoadBookDetails(string bookID)
         {
             string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
 
@@ -28,7 +34,6 @@ namespace webFormProject.adnan
                 return;
             }
 
-            ddlBooks.Items.Clear();
             string[] books = File.ReadAllLines(filePath);
 
             foreach (string book in books)
@@ -36,25 +41,7 @@ namespace webFormProject.adnan
                 string[] details = book.Split('|');
                 if (details.Length < 7) continue;
 
-                ddlBooks.Items.Add(new ListItem(details[1], details[0])); // Book Name as text, Book ID as value
-            }
-        }
-
-        protected void ddlBooks_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
-            string selectedBookID = ddlBooks.SelectedValue;
-
-            if (!File.Exists(filePath)) return;
-
-            string[] books = File.ReadAllLines(filePath);
-
-            foreach (string book in books)
-            {
-                string[] details = book.Split('|');
-                if (details.Length < 7) continue;
-
-                if (details[0] == selectedBookID)
+                if (details[0] == bookID)
                 {
                     txtBookID.Text = details[0];
                     txtBookName.Text = details[1];
@@ -75,7 +62,9 @@ namespace webFormProject.adnan
             if (!File.Exists(filePath)) return;
 
             string[] books = File.ReadAllLines(filePath);
-            File.WriteAllText(filePath, ""); // Clear the file
+            bool bookUpdated = false;
+
+            List<string> updatedBooks = new List<string>();
 
             foreach (string book in books)
             {
@@ -110,7 +99,7 @@ namespace webFormProject.adnan
                         newImagePath = "~/adnan/Images/Books/" + fileName;
                     }
 
-                    details = new string[]
+                    updatedBooks.Add(string.Join("|", new string[]
                     {
                         selectedBookID,
                         txtBookName.Text.Trim(),
@@ -119,19 +108,19 @@ namespace webFormProject.adnan
                         newImagePath,
                         txtDescription.Text.Trim(),
                         ddlAvailability.SelectedValue
-                    };
-                }
+                    }));
 
-                File.AppendAllText(filePath, string.Join("|", details) + Environment.NewLine);
+                    bookUpdated = true;
+                }
+                else
+                {
+                    updatedBooks.Add(book);
+                }
             }
 
-            lblMessage.Text = "✅ Book updated successfully!";
-            LoadBooks();
-        }
+            File.WriteAllLines(filePath, updatedBooks);
 
-        protected void show_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("https://localhost:44356/adnan/ShowBooks.aspx");
+            lblMessage.Text = bookUpdated ? "✅ Book updated successfully!" : "⚠️ Book not found.";
         }
 
         protected void delete_Click(object sender, EventArgs e)
@@ -165,17 +154,40 @@ namespace webFormProject.adnan
 
             File.WriteAllLines(filePath, updatedBooks);
 
+            lblMessage.Text = bookDeleted ? "✅ Book deleted successfully!" : "⚠️ Book not found.";
             if (bookDeleted)
             {
-                lblMessage.Text = "✅ Book deleted successfully!";
-                LoadBooks(); // Reload books to update the dropdown
                 ClearFields(); // Clear form fields
             }
-            else
+        }
+        protected void ddlBooks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filePath = Server.MapPath("~/adnan/App_Data/Books.txt");
+            string selectedBookID = ddlBooks.SelectedValue;
+
+            if (!File.Exists(filePath)) return;
+
+            string[] books = File.ReadAllLines(filePath);
+
+            foreach (string book in books)
             {
-                lblMessage.Text = "⚠️ Book not found.";
+                string[] details = book.Split('|');
+                if (details.Length < 7) continue;
+
+                if (details[0] == selectedBookID)
+                {
+                    txtBookID.Text = details[0];
+                    txtBookName.Text = details[1];
+                    txtType.Text = details[2];
+                    txtLevel.Text = details[3];
+                    txtDescription.Text = details[5];
+                    ddlAvailability.SelectedValue = details[6];
+                    break;
+                }
             }
         }
+
+
         private void ClearFields()
         {
             txtBookID.Text = "";
@@ -185,14 +197,15 @@ namespace webFormProject.adnan
             txtDescription.Text = "";
             ddlAvailability.SelectedIndex = 0;
         }
+
         protected void editB_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/adnan/EditBook.aspx");
+            Response.Redirect("~/adnan/ShowBooks.aspx");
         }
 
         protected void editR_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/sally/edit.aspx");
+            Response.Redirect("~/sally/RoomAdmin.aspx");
         }
 
         protected void Reservations_Click(object sender, EventArgs e)
