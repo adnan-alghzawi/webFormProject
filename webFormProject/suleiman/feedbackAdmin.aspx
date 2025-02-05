@@ -94,7 +94,7 @@
     </style>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <form id="form1" runat="server">
         <!-- navbar -->
 
@@ -120,14 +120,14 @@
             </div>
 
         </div>
-        <footer class="bg-umber text-center text-lg-start text-white">
+       <%-- <footer class="bg-umber text-center text-lg-start text-white mt-auto">
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
                 © 2020 Copyright:
         <span>LUMINA</span>
             </div>
             <!-- Copyright -->
-        </footer>
+        </footer>--%>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,15 +1,2 @@
-﻿John Smith,john.smith@email.com,The website is great but could use better navigation,2024-03-15
-Sarah Johnson,sarah.j@example.com,I love the new design! Very user-friendly,2024-03-14
-Mike Brown,mike.b@testmail.com,Found a small bug in the checkout process. Please check,2024-03-13
-Emma Wilson,emma.wilson@email.net,The customer service was excellent. Thank you!,2024-03-12
-David Lee,david.lee@company.com,Would love to see more product categories added,2024-03-11
-Lisa Chen,lisa.chen@email.org,The mobile version needs some improvement,2024-03-10
-Robert Taylor,rob.t@example.net,Great experience overall. Will recommend to others!,2024-03-09
-Maria Garcia,maria.g@email.com,The new features are amazing. Keep up the good work,2024-03-08
-salem,ghg@gmail.com,dsdsdfsdf,2025-02-01
-falah,falah01@gmail.com,hello ,2025-02-01
-aaa,adnanalghzawi7@gmail.com,hhhhhhhhhhhhhhhh,2025-02-02
-aaa,adnanalghzawi7@gmail.com,ffffffffffffffff,2025-02-02
-adnan,adnanalghzawi7@gmail.com,aaaaaaa,2025-02-04
-adnan,adnanalghzawi7@gmail.com,note,2025-02-04
-adnan,adnanalghzawi7@gmail.com,note,2025-02-04
+﻿Sally,sallyalzoubi@gmail.com,dfghjkl;,2025-02-05
+Sally,sallyalzoubi@gmail.com,hello,2025-02-05

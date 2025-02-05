@@ -1,4 +1,2 @@
-1|rr|a|a|~/adnan/Images/Books/Lumina-removebg-preview.png|a|Available
-2|Calculus|Math|Bachelors|~/adnan/Images/Books/calc.jpg|Calculus 1 book|Available
-3|Physics|science|Bachelors|~/adnan/Images/Books/pyhsic.jpg|Physics 2 book|Available
+1|Lumina|Library|a|~/adnan/Images/Books/Lumina-removebg-preview.png|a|Unavailable
 4|Music Theory|Art|Bachelors|~/adnan/Images/Books/muisc.jpg|Music Theory in Arts|Available

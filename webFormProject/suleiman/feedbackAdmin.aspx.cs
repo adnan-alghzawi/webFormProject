@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI;
 
@@ -27,7 +28,9 @@ namespace webFormProject.suleiman
                     <th>Action</th>
                 </tr>";
 
-            foreach (var line in File.ReadAllLines(filePath))
+            var lines = File.ReadAllLines(filePath).Reverse();
+
+            foreach (var line in lines)
             {
                 var parts = line.Split(',');
                 if (parts.Length < 4) continue;
